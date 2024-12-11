@@ -1,0 +1,219 @@
+{
+  "nextjs": {
+    "name": "Next.js",
+    "icon": "nextjs",
+    "link": "https://nextjs.org/",
+    "main": true,
+    "order": 10
+  },
+  "react": {
+    "name": "React",
+    "icon": "react",
+    "link": "https://react.dev/",
+    "main": true,
+    "order": 20
+  },
+  "reduxToolkit": {
+    "name": "Redux Toolkit",
+    "icon": "redux-toolkit",
+    "link": "https://redux-toolkit.js.org/",
+    "main": true,
+    "order": 21
+  },
+  "javascript": {
+    "name": "JavaScript",
+    "icon": "javascript",
+    "link": null,
+    "main": true,
+    "order": 30
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "icon": "typescript",
+    "link": "https://www.typescriptlang.org/",
+    "main": true,
+    "order": 30
+  },
+  "css": {
+    "name": "CSS",
+    "icon": "css",
+    "link": null,
+    "main": true,
+    "order": 40
+  },
+  "sass": {
+    "name": "Sass",
+    "icon": "sass",
+    "link": "https://sass-lang.com/",
+    "main": true,
+    "order": 40
+  },
+  "tailwind": {
+    "name": "Tailwind CSS",
+    "icon": "tailwind",
+    "link": "https://tailwindcss.com/",
+    "main": true,
+    "order": 40
+  },
+  "html": {
+    "name": "HTML",
+    "icon": "html",
+    "link": null,
+    "main": true,
+    "order": 50
+  },
+  "pug": {
+    "name": "Pug",
+    "icon": "pug",
+    "link": "https://pugjs.org/",
+    "main": true,
+    "order": 50
+  },
+  "crossbrowser": {
+    "name": "Cross-browser compatibility",
+    "icon": "crossbrowser",
+    "link": null,
+    "main": false,
+    "order": 60
+  },
+  "responsive": {
+    "name": "Responsive design",
+    "icon": "responsive",
+    "link": null,
+    "main": false,
+    "order": 61
+  },
+  "desktopFirst": {
+    "name": "Desktop First",
+    "icon": "desktop-first",
+    "link": null,
+    "main": false,
+    "order": 62
+  },
+  "mobileFirst": {
+    "name": "Mobile First",
+    "icon": "mobile-first",
+    "link": null,
+    "main": false,
+    "order": 62
+  },
+  "retina": {
+    "name": "Retina display support",
+    "icon": "retina",
+    "link": null,
+    "main": false,
+    "order": 63
+  },
+  "a11y": {
+    "name": "Accessibility",
+    "icon": "a11y",
+    "link": null,
+    "main": false,
+    "order": 64
+  },
+  "vitest": {
+    "name": "Vitest",
+    "icon": "vitest",
+    "link": "https://vitest.dev/",
+    "main": false,
+    "order": 70
+  },
+  "googleMapsAPI": {
+    "name": "Google Maps API",
+    "icon": "google-maps-api",
+    "link": "https://developers.google.com/maps",
+    "main": false,
+    "order": 70
+  },
+  "chartJs": {
+    "name": "Chart.js",
+    "icon": "chart-js",
+    "link": "https://www.chartjs.org/",
+    "main": false,
+    "order": 70
+  },
+  "dayjs": {
+    "name": "Day.js",
+    "icon": "dayjs",
+    "link": "https://day.js.org/",
+    "main": false,
+    "order": 70
+  },
+  "i18next": {
+    "name": "i18next",
+    "icon": "i18next",
+    "link": "https://www.i18next.com/",
+    "main": false,
+    "order": 70
+  },
+  "libphonenumberJs": {
+    "name": "libphonenumber-js",
+    "icon": "libphonenumber-js",
+    "link": "https://www.npmjs.com/package/libphonenumber-js",
+    "main": false,
+    "order": 70
+  },
+  "lodash": {
+    "name": "Lodash",
+    "icon": "lodash",
+    "link": "https://lodash.com/",
+    "main": false,
+    "order": 70
+  },
+  "mathjs": {
+    "name": "math.js",
+    "icon": "mathjs",
+    "link": "https://mathjs.org/",
+    "main": false,
+    "order": 70
+  },
+  "minisearch": {
+    "name": "MiniSearch",
+    "icon": "minisearch",
+    "link": "https://lucaong.github.io/minisearch/",
+    "main": false,
+    "order": 70
+  },
+  "vite": {
+    "name": "Vite",
+    "icon": "vite",
+    "link": "https://vitejs.dev/",
+    "main": false,
+    "order": 80
+  },
+  "webpack": {
+    "name": "Webpack",
+    "icon": "webpack",
+    "link": "https://webpack.js.org/",
+    "main": false,
+    "order": 81
+  },
+  "gulp": {
+    "name": "Gulp",
+    "icon": "gulp",
+    "link": "https://gulpjs.com/",
+    "main": false,
+    "order": 82
+  },
+  "eslint": {
+    "name": "ESLint",
+    "icon": "eslint",
+    "link": "https://eslint.org/",
+    "main": false,
+    "order": 90
+  },
+  "stylelint": {
+    "name": "Stylelint",
+    "icon": "stylelint",
+    "link": "https://stylelint.io/",
+    "main": false,
+    "order": 91
+  },
+  "prettier": {
+    "name": "Prettier",
+    "icon": "prettier",
+    "link": "https://prettier.io/",
+    "main": false,
+    "order": 92
+  }
+}
