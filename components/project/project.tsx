@@ -85,7 +85,7 @@ function PreviewImage({ className, data }: PreviewImageProps) {
         className={clsx(
           className,
           data.centeredPreviewImage ? 'object-center' : 'object-top',
-          data.id === 'xafiro'
+          data.id === 'alt-xafiro'
             ? 'shadow-[0px_-2px_3px_2px_rgba(0,0,0,0.7)]'
             : ''
         )}
@@ -187,15 +187,7 @@ type StatusProps = CustomComponentProps & {
 };
 
 function Status({ className, data }: StatusProps) {
-  if (
-    data.status === 'active' ||
-    (data.status === 'archive' &&
-      (data.type === 'learning' ||
-        data.type === 'training' ||
-        data.type === 'test-assignment'))
-  ) {
-    return null;
-  }
+  if (data.status === 'done') return null;
 
   return (
     <div

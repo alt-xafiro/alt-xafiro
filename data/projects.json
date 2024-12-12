@@ -1,15 +1,15 @@
 [
   {
-    "id": "xafiro",
+    "id": "alt-xafiro",
     "name": "Portfolio",
     "sourceURL": "https://github.com/alt-xafiro/alt-xafiro",
     "previewURL": null,
     "noPreviewURLComment": "You're already here",
-    "previewImage": "xafiro",
+    "previewImage": "alt-xafiro",
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "pet",
-    "status": "active",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -35,7 +35,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "pet",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -64,7 +64,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "pet",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "eslint",
       "javascript",
@@ -84,7 +84,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "pet",
-    "status": "active",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -100,31 +100,6 @@
     ]
   },
   {
-    "id": "cheelee",
-    "name": "«Cheelee»",
-    "sourceURL": "https://github.com/alt-xafiro/cheelee",
-    "previewURL": "https://cheelee.xafiro.site/",
-    "noPreviewURLComment": null,
-    "previewImage": "cheelee",
-    "centeredPreviewImage": false,
-    "iconsTheme": "light",
-    "type": "test-assignment",
-    "status": "archive",
-    "stackList": [
-      "a11y",
-      "crossbrowser",
-      "eslint",
-      "gulp",
-      "javascript",
-      "prettier",
-      "pug",
-      "retina",
-      "sass",
-      "stylelint",
-      "webpack"
-    ]
-  },
-  {
     "id": "direct-linker",
     "name": "Direct Linker",
     "sourceURL": "https://github.com/alt-xafiro/direct-linker",
@@ -134,7 +109,7 @@
     "centeredPreviewImage": true,
     "iconsTheme": "dark",
     "type": "pet",
-    "status": "active",
+    "status": "done",
     "stackList": [
       "typescript",
       "vitest",
@@ -154,7 +129,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "training",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -181,7 +156,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "training",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -198,6 +173,31 @@
     ]
   },
   {
+    "id": "cheelee",
+    "name": "«Cheelee»",
+    "sourceURL": "https://github.com/alt-xafiro/cheelee",
+    "previewURL": "https://cheelee.xafiro.site/",
+    "noPreviewURLComment": null,
+    "previewImage": "cheelee",
+    "centeredPreviewImage": false,
+    "iconsTheme": "light",
+    "type": "test-assignment",
+    "status": "done",
+    "stackList": [
+      "a11y",
+      "crossbrowser",
+      "eslint",
+      "gulp",
+      "javascript",
+      "prettier",
+      "pug",
+      "retina",
+      "sass",
+      "stylelint",
+      "webpack"
+    ]
+  },
+  {
     "id": "roman-nums",
     "name": "Roman numerals converter",
     "sourceURL": "https://github.com/alt-xafiro/roman-nums",
@@ -207,7 +207,7 @@
     "centeredPreviewImage": true,
     "iconsTheme": "light",
     "type": "training",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -232,7 +232,7 @@
     "centeredPreviewImage": true,
     "iconsTheme": "dark",
     "type": "training",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -257,7 +257,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "training",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -285,7 +285,7 @@
     "centeredPreviewImage": true,
     "iconsTheme": "light",
     "type": "training",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -312,7 +312,7 @@
     "centeredPreviewImage": true,
     "iconsTheme": "light",
     "type": "pet",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -336,7 +336,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "learning",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "chartJs",
       "crossbrowser",
@@ -358,7 +358,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "learning",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -380,7 +380,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "light",
     "type": "learning",
-    "status": "archive",
+    "status": "done",
     "stackList": [
       "a11y",
       "crossbrowser",
@@ -408,7 +408,7 @@
     "centeredPreviewImage": false,
     "iconsTheme": "dark",
     "type": "learning",
-    "status": "archive",
+    "status": "done",
     "stackList": ["a11y", "crossbrowser", "css", "googleMapsAPI", "html"]
   }
 ]

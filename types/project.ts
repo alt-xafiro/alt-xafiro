@@ -2,7 +2,7 @@ import { StackList } from '@/types';
 
 export type IconsTheme = 'dark' | 'light';
 
-export type ProjectStatus = 'active' | 'archive' | 'development';
+export type ProjectStatus = 'done' | 'development';
 
 export type ProjectType = 'pet' | 'test-assignment' | 'training' | 'learning';
 
