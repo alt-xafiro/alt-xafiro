@@ -76,7 +76,7 @@ export default function Project({ className, data }: ProjectProps) {
       <div
         className={clsx(
           className,
-          'relative h-[225px] w-full min-w-[312px] max-w-[480px] rounded-[24px] bg-space-800/40 text-space-700 shadow-2xl'
+          'group/project relative h-[225px] w-full min-w-[312px] max-w-[480px] rounded-[24px] bg-space-800/40 text-space-700 shadow-2xl'
         )}
       >
         <button
@@ -86,7 +86,9 @@ export default function Project({ className, data }: ProjectProps) {
         >
           <PreviewImage
             className={clsx(
-              active ? 'blur-[12px] brightness-[0.7]' : '',
+              active
+                ? 'blur-[12px] brightness-[0.7]'
+                : 'group-hover/project:brightness-[1.13]',
               'h-full w-full rounded-[24px] object-cover transition-all'
             )}
             data={data}
