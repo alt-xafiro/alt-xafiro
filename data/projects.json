@@ -61,7 +61,7 @@
     "previewURL": "https://steamcommunity.com/sharedfiles/filedetails/?id=3039379904",
     "noPreviewURLComment": null,
     "previewImage": "wallpaper-gallery",
-    "centeredPreviewImage": false,
+    "centeredPreviewImage": true,
     "iconsTheme": "light",
     "type": "pet",
     "status": "done",
