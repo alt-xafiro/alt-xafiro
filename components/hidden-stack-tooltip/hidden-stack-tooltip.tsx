@@ -17,7 +17,7 @@ export default function HiddenStackTooltip({
 }: HiddenStackTooltipProps) {
   return (
     <Tooltip
-      className="!z-[9000] !rounded-[24px] !bg-space-700 !p-[20px] !text-base !transition-none !duration-0 h-md:!p-[16px] h-md:!text-sm sm:!p-[16px] sm:!text-sm"
+      className="!z-[9000] !rounded-[24px] !bg-space-700/95 !p-[20px] !text-base !transition-none !duration-0 h-md:!p-[16px] h-md:!text-sm sm:!p-[16px] sm:!text-sm"
       anchorSelect=".hidden-stack-button"
       globalCloseEvents={{
         escape: true
