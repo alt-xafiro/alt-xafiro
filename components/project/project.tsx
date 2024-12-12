@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
+import { MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
 
 import projectStatusJson from '@/data/locales/project-status.json';
 import projectTypeJson from '@/data/locales/project-type.json';
@@ -29,32 +30,91 @@ type ProjectProps = CustomComponentProps & {
 };
 
 export default function Project({ className, data }: ProjectProps) {
+  const [active, setActive] = useState<boolean>(false);
+
+  const previewRef = useRef<HTMLButtonElement>(null);
+  const linksRef = useRef<HTMLDivElement>(null);
+  const typeStatusRef = useRef<HTMLDivElement>(null);
+  const stackRef = useRef<HTMLDivElement>(null);
+
+  const toggleActive = () => {
+    setActive(!active);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (evt: MouseEvent | TouchEvent) => {
+      if (!active) return;
+
+      if (
+        [previewRef, linksRef, typeStatusRef, stackRef].every(
+          (el) => el.current && !el.current.contains(evt.target as Node)
+        )
+      ) {
+        setActive(false);
+      }
+    };
+
+    const handleKeydown = (evt: KeyboardEvent) => {
+      if (evt.key === 'Escape') {
+        if (!active) return;
+
+        setActive(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleKeydown);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('keydown', handleKeydown);
+    };
+  }, [active]);
+
   return (
     <div className="flex w-full flex-col items-center justify-start">
       <div
         className={clsx(
           className,
-          'group/project relative h-[225px] w-full min-w-[312px] max-w-[480px] rounded-[24px] bg-space-800/40 text-space-700 shadow-2xl'
+          'relative h-[225px] w-full min-w-[312px] max-w-[480px] rounded-[24px] bg-space-800/40 text-space-700 shadow-2xl'
         )}
-        tabIndex={0}
       >
-        <PreviewImage
-          className="h-full w-full rounded-[24px] object-cover transition-all group-focus-within/project:blur-[12px] group-focus-within/project:brightness-[0.7] group-hover/project:blur-[12px] group-hover/project:brightness-[0.7]"
-          data={data}
-        />
+        <button
+          className="h-full w-full cursor-pointer"
+          ref={previewRef}
+          onClick={() => toggleActive()}
+        >
+          <PreviewImage
+            className={clsx(
+              active ? 'blur-[12px] brightness-[0.7]' : '',
+              'h-full w-full rounded-[24px] object-cover transition-all'
+            )}
+            data={data}
+          />
+        </button>
 
         <Links
-          className="absolute left-1/2 top-1/2 hidden h-[48px] w-[160px] -translate-x-1/2 -translate-y-1/2 transform flex-row items-center justify-between group-focus-within/project:flex group-hover/project:flex h-md:h-[36px] h-md:w-[120px] sm:h-[36px] sm:w-[120px]"
+          className={clsx(
+            active ? 'flex' : 'hidden',
+            'absolute left-1/2 top-1/2 h-[48px] w-[160px] -translate-x-1/2 -translate-y-1/2 transform flex-row items-center justify-between h-md:h-[36px] h-md:w-[120px] sm:h-[36px] sm:w-[120px]'
+          )}
+          ref={linksRef}
           data={data}
+          onClick={() => toggleActive()}
         />
 
-        <div className="absolute right-[12px] top-[12px] flex flex-row items-center justify-end space-x-4">
+        <div
+          className="absolute right-[12px] top-[12px] flex cursor-pointer flex-row items-center justify-end space-x-4"
+          ref={typeStatusRef}
+          onClick={() => toggleActive()}
+        >
           <Type data={data} />
           <Status data={data} />
         </div>
 
         <Stack
           className="absolute bottom-[12px] right-[14px]"
+          ref={stackRef}
           projectID={data.id}
           stackList={data.stackList}
         />
@@ -99,18 +159,20 @@ function PreviewImage({ className, data }: PreviewImageProps) {
 }
 
 type ProjectLinksProps = CustomComponentProps & {
+  ref?: Ref<HTMLDivElement>;
   data: ProjectData;
+  onClick?: MouseEventHandler<HTMLDivElement> | undefined;
 };
 
-function Links({ className, data }: ProjectLinksProps) {
+function Links({ className, ref, data, onClick }: ProjectLinksProps) {
   return (
-    <div className={className}>
+    <div className={clsx(className, 'cursor-pointer')} ref={ref}>
       {data.previewURL !== null ? (
         <a
+          className="tooltip"
           href={data.previewURL}
           target="_blank"
           rel="noreferrer"
-          className="tooltip"
           data-tooltip-content="Preview"
           data-tooltip-place="left"
         >
@@ -123,7 +185,7 @@ function Links({ className, data }: ProjectLinksProps) {
         </a>
       ) : (
         <div
-          className="tooltip h-[48px] w-[64px] text-space-800 h-md:h-[36px] h-md:w-[48px] sm:h-[36px] sm:w-[48px]"
+          className="tooltip h-[48px] w-[64px] cursor-default text-space-800 h-md:h-[36px] h-md:w-[48px] sm:h-[36px] sm:w-[48px]"
           tabIndex={0}
           data-tooltip-content={data.noPreviewURLComment}
           data-tooltip-place="left"
@@ -135,12 +197,13 @@ function Links({ className, data }: ProjectLinksProps) {
           />
         </div>
       )}
+      <div className="h-full flex-grow" onClick={onClick} />
       <div>
         <a
+          className="tooltip"
           href={data.sourceURL}
           target="_blank"
           rel="noreferrer"
-          className="tooltip"
           data-tooltip-content="GitHub"
           data-tooltip-place="right"
         >

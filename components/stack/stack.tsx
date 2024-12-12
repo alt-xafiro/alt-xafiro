@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Ref } from 'react';
 import { PlacesType } from 'react-tooltip';
 
 import { SHOWN_STACK_SIZE } from '@/consts';
@@ -9,11 +10,17 @@ import { CustomComponentProps, StackItem, StackList } from '@/types';
 import SVGIcon from '@/components/svg-icon/svg-icon';
 
 type StackProps = CustomComponentProps & {
+  ref?: Ref<HTMLDivElement>;
   projectID: string;
   stackList?: StackList;
 };
 
-export default function Stack({ className, projectID, stackList }: StackProps) {
+export default function Stack({
+  className,
+  ref,
+  projectID,
+  stackList
+}: StackProps) {
   if (!stackList) {
     return null;
   }
@@ -33,6 +40,7 @@ export default function Stack({ className, projectID, stackList }: StackProps) {
         'before:absolute before:-bottom-[8px] before:-left-[10px] before:-right-[10px] before:-top-[8px] before:-z-10 before:block before:rounded-[20px] before:bg-space-700/85',
         className
       )}
+      ref={ref}
     >
       {shownStack.length > 0 && (
         <ul className="flex flex-row items-center justify-end space-x-[8px] h-md:space-x-[6px] sm:space-x-[6px]">
