@@ -9,7 +9,7 @@ type HeaderProps = CustomComponentProps;
 
 export default function Header({ className }: HeaderProps) {
   return (
-    <div
+    <header
       className={clsx(
         className,
         'flex h-[208px] w-full items-start justify-center lg:h-[168px] h-md:h-[128px] sm:h-[128px]'
@@ -23,6 +23,6 @@ export default function Header({ className }: HeaderProps) {
         <Logo />
         <Navigation />
       </div>
-    </div>
+    </header>
   );
 }

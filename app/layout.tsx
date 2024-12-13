@@ -44,9 +44,9 @@ export default function RootLayout({
       >
         <Background />
         <Header />
-        <div className="flex items-start justify-center">
+        <main className="flex items-start justify-center">
           <div className="h-full w-[1440px] 2xl:w-full">{children}</div>
-        </div>
+        </main>
       </body>
     </html>
   );
