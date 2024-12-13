@@ -80,7 +80,7 @@ export default function Project({ className, data }: ProjectProps) {
         )}
       >
         <button
-          className="h-full w-full cursor-pointer"
+          className="relative h-full w-full cursor-pointer"
           ref={previewRef}
           onClick={() => toggleActive()}
         >
@@ -89,7 +89,7 @@ export default function Project({ className, data }: ProjectProps) {
               active
                 ? 'blur-[12px] brightness-[0.7]'
                 : 'group-hover/project:brightness-[1.13]',
-              'h-full w-full rounded-[24px] object-cover transition-all'
+              'rounded-[24px] transition-all'
             )}
             data={data}
           />
@@ -134,29 +134,22 @@ type PreviewImageProps = CustomComponentProps & {
 
 function PreviewImage({ className, data }: PreviewImageProps) {
   return (
-    <picture>
-      <source
-        media="(min-resolution: 3dppx), (min-resolution: 288dpi)"
-        srcSet={`/projects/${data.previewImage}@3x.png`}
-      />
-      <source
-        media="(min-resolution: 2dppx), (min-resolution: 192dpi)"
-        srcSet={`/projects/${data.previewImage}@2x.png`}
-      />
-      <Image
-        className={clsx(
-          className,
-          data.centeredPreviewImage ? 'object-center' : 'object-top',
-          data.id === 'alt-xafiro'
-            ? 'shadow-[0px_-2px_3px_2px_rgba(0,0,0,0.7)]'
-            : ''
-        )}
-        src={`/projects/${data.previewImage}.png`}
-        alt={data.name}
-        quality={95}
-        fill
-      />
-    </picture>
+    <Image
+      className={clsx(
+        className,
+        'h-auto w-full object-cover',
+        data.centeredPreviewImage ? 'object-center' : 'object-top',
+        data.id === 'alt-xafiro'
+          ? 'shadow-[0px_-2px_3px_2px_rgba(0,0,0,0.7)]'
+          : ''
+      )}
+      src={`/projects/${data.previewImage}.png`}
+      alt={data.name}
+      quality={95}
+      priority={true}
+      fill
+      sizes="480px, (min-resolution: 2dppx) 960px, (min-resolution: 192dpi) 960px, (min-resolution: 3dppx) 1440px, (min-resolution: 288dpi) 1440px"
+    />
   );
 }
 
