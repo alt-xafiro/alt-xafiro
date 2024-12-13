@@ -25,7 +25,11 @@ export const metadata: Metadata = {
       url: '/favicon-apple.png'
     }
   ],
-  manifest: '/favicon.webmanifest'
+  manifest: '/favicon.webmanifest',
+  openGraph: {
+    siteName: 'Safiro | Front-End Developer',
+    url: 'https://xafiro.site'
+  }
 };
 
 export default function RootLayout({
