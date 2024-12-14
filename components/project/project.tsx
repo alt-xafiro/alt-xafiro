@@ -128,9 +128,7 @@ function PreviewImage({ className, data }: PreviewImageProps) {
         className,
         'h-auto w-full object-cover',
         data.centeredPreviewImage ? 'object-center' : 'object-top',
-        data.id === 'alt-xafiro'
-          ? 'shadow-[0px_-2px_3px_2px_rgba(0,0,0,0.7)]'
-          : ''
+        data.id === 'alt-xafiro' && 'shadow-[0px_-2px_3px_2px_rgba(0,0,0,0.7)]'
       )}
       src={`/projects/${data.previewImage}.png`}
       alt={t(data.locale)}
