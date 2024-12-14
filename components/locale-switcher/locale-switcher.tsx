@@ -29,11 +29,11 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
     setModalOpen(false);
   };
 
-  const onLocaleSwitcherClick = () => {
+  const handleOnLocaleSwitcherClick = () => {
     openModal();
   };
 
-  const onLocaleItemClick = (value: string) => {
+  const handleOnLocaleItemClick = (value: string) => {
     closeModal();
 
     const locale = value as Locale;
@@ -53,9 +53,11 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
           'text-2xl font-semibold uppercase text-white/60 hover:text-space-100/60 active:text-space-200/60 sm:text-xl',
           'transition-colors'
         )}
-        onClick={onLocaleSwitcherClick}
+        onClick={handleOnLocaleSwitcherClick}
       >
-        <span className="sr-only">{t('label')} — {t(currentLocale)}</span>
+        <span className="sr-only">
+          {t('label')} — {t(currentLocale)}
+        </span>
         <span aria-hidden="true">{t(`${currentLocale}-abbr`)}</span>
       </button>
 
@@ -85,7 +87,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
                           'transition-colors hover:text-space-100 active:text-space-200'
                       )}
                       disabled={isCurrentLocale}
-                      onClick={() => onLocaleItemClick(locale)}
+                      onClick={() => handleOnLocaleItemClick(locale)}
                     >
                       <p>{t(locale)}</p>
                     </button>
