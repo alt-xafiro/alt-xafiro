@@ -6,6 +6,11 @@
     "ru": "Русский",
     "ru-abbr": "Ru"
   },
+  "Metadata": {
+    "title": "Safiro | Фронтенд-разработчик",
+    "description": "Привет! Я Максим, фронтенд-разработчик.",
+    "site-name": "Safiro | Фронтенд-разработчик"
+  },
   "Navigation": {
     "burger-button": "Открыть меню"
   },

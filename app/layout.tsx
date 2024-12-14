@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import '@/styles/globals.css';
 
@@ -10,29 +10,39 @@ import { exo2 } from '@/ui/fonts';
 import Background from '@/components/background/background';
 import Header from '@/components/header/header';
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://xafiro.site'),
-  title: 'Safiro | Front-End Developer',
-  description: "Hi! I'm Maxim, a front-end developer.",
-  authors: [
-    {
-      name: 'Safiro',
-      url: 'https://github.com/alt-xafiro'
-    }
-  ],
-  icons: [
-    '/favicon.ico',
-    {
-      rel: 'apple-touch-icon',
-      url: '/favicon-apple.png'
-    }
-  ],
-  manifest: '/favicon.webmanifest',
-  openGraph: {
-    siteName: 'Safiro | Front-End Developer',
-    url: 'https://xafiro.site'
-  }
+type generateMetadataProps = {
+  params: { locale: string };
 };
+
+export async function generateMetadata({
+  params: { locale }
+}: generateMetadataProps) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    metadataBase: new URL('https://xafiro.site'),
+    title: t('title'),
+    description: t('description'),
+    authors: [
+      {
+        name: 'Safiro',
+        url: 'https://github.com/alt-xafiro'
+      }
+    ],
+    icons: [
+      '/favicon.ico',
+      {
+        rel: 'apple-touch-icon',
+        url: '/favicon-apple.png'
+      }
+    ],
+    manifest: '/manifest.webmanifest',
+    openGraph: {
+      siteName: t('site-name'),
+      url: 'https://xafiro.site'
+    }
+  };
+}
 
 export default async function RootLayout({
   children
