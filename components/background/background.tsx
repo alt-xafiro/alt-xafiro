@@ -8,9 +8,7 @@ export default function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    if (!canvasRef.current) {
-      return;
-    }
+    if (!canvasRef.current) return;
 
     renderStars(canvasRef.current);
   }, []);

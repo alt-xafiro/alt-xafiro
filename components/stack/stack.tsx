@@ -28,9 +28,7 @@ export default function Stack({
 
   const shownStack = getShownStack(stackList, SHOWN_STACK_SIZE);
 
-  if (!shownStack) {
-    return;
-  }
+  if (!shownStack) return;
 
   const hasHiddenStack = stackList.length > shownStack.length;
 
