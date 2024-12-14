@@ -8,10 +8,9 @@ export type ProjectType = 'pet' | 'test-assignment' | 'training' | 'learning';
 
 export type ProjectData = {
   id: string;
-  name: string;
+  locale: string;
   sourceURL: string;
   previewURL: string | null;
-  noPreviewURLComment: string | null;
   previewImage: string;
   centeredPreviewImage: boolean;
   iconsTheme: IconsTheme;

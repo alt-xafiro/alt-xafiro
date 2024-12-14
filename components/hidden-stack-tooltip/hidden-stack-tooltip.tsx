@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { Tooltip } from 'react-tooltip';
 
 import { SHOWN_STACK_SIZE } from '@/consts';
@@ -52,7 +53,7 @@ export default function HiddenStackTooltip({
               return (
                 <li
                   className="flex h-[32px] w-full flex-row items-center space-x-[12px] text-white h-md:h-[28px] h-md:space-x-[8px] sm:h-[28px] sm:space-x-[8px]"
-                  key={stackItem.name}
+                  key={stackItem.locale}
                 >
                   {stackItem.link ? (
                     <a
@@ -83,13 +84,15 @@ type HiddenStackItemProps = CustomComponentProps & {
 };
 
 function HiddenStackItem({ data }: HiddenStackItemProps) {
+  const t = useTranslations('Stack');
+
   return (
     <>
       <SVGIcon
         className="h-[32px] w-[32px] h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
         icon={data.icon}
       />
-      <span>{data.name}</span>
+      <span>{t(data.locale)}</span>
     </>
   );
 }

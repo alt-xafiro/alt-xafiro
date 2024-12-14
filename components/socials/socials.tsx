@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 
 import socialsJson from '@/data/socials.json';
 
@@ -9,6 +10,8 @@ type SocialsProps = CustomComponentProps;
 const socialLinks = socialsJson as unknown as SocialsLinks;
 
 export default function Socials({ className }: SocialsProps) {
+  const t = useTranslations('Socials');
+
   return (
     <ul
       className={clsx(
@@ -18,7 +21,7 @@ export default function Socials({ className }: SocialsProps) {
     >
       {socialLinks.map((social) => {
         return (
-          <li key={social.name}>
+          <li key={social.locale}>
             <a
               className={clsx(
                 className,
@@ -28,7 +31,7 @@ export default function Socials({ className }: SocialsProps) {
               target="_blank"
               rel="noreferrer"
             >
-              {social.name}
+              {t(social.locale)}
             </a>
           </li>
         );

@@ -1,0 +1,100 @@
+{
+  "LocaleSwitcher": {
+    "label": "Язык",
+    "en": "English",
+    "en-abbr": "En",
+    "ru": "Русский",
+    "ru-abbr": "Ru"
+  },
+  "Navigation": {
+    "burger-button": "Открыть меню"
+  },
+  "Pages": {
+    "not-found": "404",
+    "not-found-description": "Страница не найдена.",
+    "about-me": "Обо мне",
+    "projects": "Проекты",
+    "socials": "Контакты"
+  },
+  "AboutMe": {
+    "hi": "Привет!",
+    "who": "Я Максим, фронтенд-разработчик.",
+    "i": "Я",
+    "what": "веб-технологии и создавать."
+  },
+  "ProjectLinks": {
+    "preview": "Посмотреть",
+    "source": "GitHub"
+  },
+  "ProjectStatus": {
+    "development": "В разработке",
+    "done": "Завершён"
+  },
+  "ProjectType": {
+    "learning": "Учебный проект",
+    "pet": "Личный проект",
+    "test-assignment": "Тестовое задание",
+    "training": "Проект для практики"
+  },
+  "Projects": {
+    "alt-xafiro": "Портфолио",
+    "alt-xafiro-no-preview": "Вы уже здесь",
+    "calc": "Калькулятор",
+    "cheelee": "«Cheelee»",
+    "cinemaddict": "«Киноман»",
+    "cinemaddict-no-preview": "Серверы HTML Academy отключены",
+    "dbd-perks": "DBD Perks",
+    "direct-linker": "Direct Linker",
+    "direct-linker-no-preview": "Нет GUI",
+    "kekstagram": "«Кекстаграм»",
+    "maine-coon": "«Питомник Мейн‑Кунов»",
+    "mental-calc": "Тренажёр устного счёта",
+    "nerds": "«Nёrds»",
+    "pognali": "«Погнали?»",
+    "roman-nums": "Конвертер римских чисел",
+    "smart-device": "«Smart Device»",
+    "star-likes": "«Star Likes»",
+    "starter-kit-vanilla": "Starter kit для фронтенда",
+    "starter-kit-vanilla-no-preview": "Нет GUI",
+    "wallpaper-gallery": "Wallpaper Gallery",
+    "when-next-gta": "Когда выйдет GTA?"
+  },
+  "Stack": {
+    "a11y": "Доступность",
+    "chart-js": "Chart.js",
+    "crossbrowser": "Кроссбраузерность",
+    "css": "CSS",
+    "dayjs": "Day.js",
+    "desktop-first": "Desktop First",
+    "eslint": "ESLint",
+    "google-maps-api": "Google Maps API",
+    "gulp": "Gulp",
+    "html": "HTML",
+    "i18next": "i18next",
+    "javascript": "JavaScript",
+    "libphonenumber-js": "libphonenumber-js",
+    "lodash": "Lodash",
+    "mathjs": "math.js",
+    "minisearch": "MiniSearch",
+    "mobile-first": "Mobile First",
+    "nextjs": "Next.js",
+    "prettier": "Prettier",
+    "pug": "Pug",
+    "react": "React",
+    "redux-toolkit": "Redux Toolkit",
+    "responsive": "Адаптивность",
+    "retina": "Поддержка Retina-дисплеев",
+    "sass": "Sass",
+    "stylelint": "Stylelint",
+    "tailwind": "Tailwind CSS",
+    "typescript": "TypeScript",
+    "vite": "Vite",
+    "vitest": "Vitest",
+    "webpack": "Webpack"
+  },
+  "Socials": {
+    "github": "GitHub",
+    "telegram": "Telegram",
+    "email": "E-mail"
+  }
+}

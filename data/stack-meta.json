@@ -1,216 +1,216 @@
 {
   "nextjs": {
-    "name": "Next.js",
+    "locale": "nextjs",
     "icon": "nextjs",
     "link": "https://nextjs.org/",
     "main": true,
     "order": 10
   },
   "react": {
-    "name": "React",
+    "locale": "react",
     "icon": "react",
     "link": "https://react.dev/",
     "main": true,
     "order": 20
   },
   "reduxToolkit": {
-    "name": "Redux Toolkit",
+    "locale": "redux-toolkit",
     "icon": "redux-toolkit",
     "link": "https://redux-toolkit.js.org/",
     "main": true,
     "order": 21
   },
   "javascript": {
-    "name": "JavaScript",
+    "locale": "javascript",
     "icon": "javascript",
     "link": null,
     "main": true,
     "order": 30
   },
   "typescript": {
-    "name": "TypeScript",
+    "locale": "typescript",
     "icon": "typescript",
     "link": "https://www.typescriptlang.org/",
     "main": true,
     "order": 30
   },
   "css": {
-    "name": "CSS",
+    "locale": "css",
     "icon": "css",
     "link": null,
     "main": true,
     "order": 40
   },
   "sass": {
-    "name": "Sass",
+    "locale": "sass",
     "icon": "sass",
     "link": "https://sass-lang.com/",
     "main": true,
     "order": 40
   },
   "tailwind": {
-    "name": "Tailwind CSS",
+    "locale": "tailwind",
     "icon": "tailwind",
     "link": "https://tailwindcss.com/",
     "main": true,
     "order": 40
   },
   "html": {
-    "name": "HTML",
+    "locale": "html",
     "icon": "html",
     "link": null,
     "main": true,
     "order": 50
   },
   "pug": {
-    "name": "Pug",
+    "locale": "pug",
     "icon": "pug",
     "link": "https://pugjs.org/",
     "main": true,
     "order": 50
   },
   "crossbrowser": {
-    "name": "Cross-browser compatibility",
+    "locale": "crossbrowser",
     "icon": "crossbrowser",
     "link": null,
     "main": false,
     "order": 60
   },
   "responsive": {
-    "name": "Responsive design",
+    "locale": "responsive",
     "icon": "responsive",
     "link": null,
     "main": false,
     "order": 61
   },
   "desktopFirst": {
-    "name": "Desktop First",
+    "locale": "desktop-first",
     "icon": "desktop-first",
     "link": null,
     "main": false,
     "order": 62
   },
   "mobileFirst": {
-    "name": "Mobile First",
+    "locale": "mobile-first",
     "icon": "mobile-first",
     "link": null,
     "main": false,
     "order": 62
   },
   "retina": {
-    "name": "Retina display support",
+    "locale": "retina",
     "icon": "retina",
     "link": null,
     "main": false,
     "order": 63
   },
   "a11y": {
-    "name": "Accessibility",
+    "locale": "a11y",
     "icon": "a11y",
     "link": null,
     "main": false,
     "order": 64
   },
   "vitest": {
-    "name": "Vitest",
+    "locale": "vitest",
     "icon": "vitest",
     "link": "https://vitest.dev/",
     "main": false,
     "order": 70
   },
   "googleMapsAPI": {
-    "name": "Google Maps API",
+    "locale": "google-maps-api",
     "icon": "google-maps-api",
     "link": "https://developers.google.com/maps",
     "main": false,
     "order": 70
   },
   "chartJs": {
-    "name": "Chart.js",
+    "locale": "chart-js",
     "icon": "chart-js",
     "link": "https://www.chartjs.org/",
     "main": false,
     "order": 70
   },
   "dayjs": {
-    "name": "Day.js",
+    "locale": "dayjs",
     "icon": "dayjs",
     "link": "https://day.js.org/",
     "main": false,
     "order": 70
   },
   "i18next": {
-    "name": "i18next",
+    "locale": "i18next",
     "icon": "i18next",
     "link": "https://www.i18next.com/",
     "main": false,
     "order": 70
   },
   "libphonenumberJs": {
-    "name": "libphonenumber-js",
+    "locale": "libphonenumber-js",
     "icon": "libphonenumber-js",
     "link": "https://www.npmjs.com/package/libphonenumber-js",
     "main": false,
     "order": 70
   },
   "lodash": {
-    "name": "Lodash",
+    "locale": "lodash",
     "icon": "lodash",
     "link": "https://lodash.com/",
     "main": false,
     "order": 70
   },
   "mathjs": {
-    "name": "math.js",
+    "locale": "mathjs",
     "icon": "mathjs",
     "link": "https://mathjs.org/",
     "main": false,
     "order": 70
   },
   "minisearch": {
-    "name": "MiniSearch",
+    "locale": "minisearch",
     "icon": "minisearch",
     "link": "https://lucaong.github.io/minisearch/",
     "main": false,
     "order": 70
   },
   "vite": {
-    "name": "Vite",
+    "locale": "vite",
     "icon": "vite",
     "link": "https://vitejs.dev/",
     "main": false,
     "order": 80
   },
   "webpack": {
-    "name": "Webpack",
+    "locale": "webpack",
     "icon": "webpack",
     "link": "https://webpack.js.org/",
     "main": false,
     "order": 81
   },
   "gulp": {
-    "name": "Gulp",
+    "locale": "gulp",
     "icon": "gulp",
     "link": "https://gulpjs.com/",
     "main": false,
     "order": 82
   },
   "eslint": {
-    "name": "ESLint",
+    "locale": "eslint",
     "icon": "eslint",
     "link": "https://eslint.org/",
     "main": false,
     "order": 90
   },
   "stylelint": {
-    "name": "Stylelint",
+    "locale": "stylelint",
     "icon": "stylelint",
     "link": "https://stylelint.io/",
     "main": false,
     "order": 91
   },
   "prettier": {
-    "name": "Prettier",
+    "locale": "prettier",
     "icon": "prettier",
     "link": "https://prettier.io/",
     "main": false,

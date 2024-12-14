@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import { Ref } from 'react';
 import { PlacesType } from 'react-tooltip';
 
@@ -46,7 +47,7 @@ export default function Stack({
         <ul className="flex flex-row items-center justify-end space-x-[8px] h-md:space-x-[6px] sm:space-x-[6px]">
           {shownStack.map((stackItem, i) => {
             return (
-              <li key={stackItem.name}>
+              <li key={stackItem.locale}>
                 <ShownStackItem
                   className="h-[32px] w-[32px] h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
                   data={stackItem}
@@ -73,6 +74,8 @@ type ShownStackItemProps = CustomComponentProps & {
 };
 
 function ShownStackItem({ className, data, firstItem }: ShownStackItemProps) {
+  const t = useTranslations('Stack');
+
   const tooltipPlace: PlacesType = firstItem ? 'left' : 'bottom';
   const tooltipOffset = firstItem ? 11 : 10;
 
@@ -82,7 +85,7 @@ function ShownStackItem({ className, data, firstItem }: ShownStackItemProps) {
       href={data.link}
       target="_blank"
       rel="noreferrer"
-      data-tooltip-content={data.name}
+      data-tooltip-content={t(data.locale)}
       data-tooltip-place={tooltipPlace}
       data-tooltip-offset={tooltipOffset}
     >
@@ -92,7 +95,7 @@ function ShownStackItem({ className, data, firstItem }: ShownStackItemProps) {
     <div
       className={clsx(className, 'tooltip flex items-center justify-center')}
       tabIndex={0}
-      data-tooltip-content={data.name}
+      data-tooltip-content={t(data.locale)}
       data-tooltip-place={tooltipPlace}
       data-tooltip-offset={tooltipOffset}
     >
@@ -106,10 +109,12 @@ type ShownStackItemIconProps = CustomComponentProps & {
 };
 
 function ShownStackItemIcon({ data }: ShownStackItemIconProps) {
+  const t = useTranslations('Stack');
+
   return (
     <>
       <SVGIcon className="w-full" icon={data.icon} />
-      <span className="sr-only">{data.name}</span>
+      <span className="sr-only">{t(data.locale)}</span>
     </>
   );
 }

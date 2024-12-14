@@ -1,14 +1,14 @@
 export const PAGES = [
   {
-    name: 'About me',
-    href: '/'
+    href: '/',
+    locale: 'about-me'
   },
   {
-    name: 'Projects',
-    href: '/projects'
+    href: '/projects',
+    locale: 'projects'
   },
   {
-    name: 'Socials',
-    href: '/socials'
+    href: '/socials',
+    locale: 'socials'
   }
 ];

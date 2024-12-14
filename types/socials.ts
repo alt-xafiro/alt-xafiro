@@ -1,4 +1,4 @@
 export type SocialsLinks = {
-  name: 'string';
+  locale: 'string';
   href: 'string';
 }[];

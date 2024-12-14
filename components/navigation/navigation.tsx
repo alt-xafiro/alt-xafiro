@@ -3,6 +3,7 @@
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { useWindowSize } from '@uidotdev/usehooks';
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MouseEventHandler, useEffect, useState } from 'react';
@@ -89,6 +90,8 @@ type LinksProps = CustomComponentProps & {
 };
 
 function Links({ className, onLinkClick = () => {} }: LinksProps) {
+  const t = useTranslations('Pages');
+
   const currentPathname = usePathname();
 
   return (
@@ -98,7 +101,7 @@ function Links({ className, onLinkClick = () => {} }: LinksProps) {
 
         return (
           <Link
-            key={page.name}
+            key={page.href}
             href={page.href}
             className={clsx(
               isActive &&
@@ -109,7 +112,7 @@ function Links({ className, onLinkClick = () => {} }: LinksProps) {
             )}
             onClick={onLinkClick}
           >
-            <p>{page.name}</p>
+            <p>{t(page.locale)}</p>
           </Link>
         );
       })}
@@ -121,13 +124,15 @@ type BurgerMenuProps = CustomComponentProps & {
 };
 
 function BurgerMenu({ className, onClick }: BurgerMenuProps) {
+  const t = useTranslations('Navigation');
+
   return (
     <div className={className}>
       <button
         className="group/burger flex h-[64px] w-[64px] items-center justify-center"
         onClick={onClick}
       >
-        <span className="sr-only">Open navigation menu</span>
+        <span className="sr-only">{t('burger-button')}</span>
         <div className="relative h-[41px] w-full lg:h-[32px] lg:w-[48px] sm:h-[27px] sm:w-[36px]">
           <BurgerDash className="top-0" />
           <BurgerDash className="top-[18px] lg:top-[14px] sm:top-[12px]" />

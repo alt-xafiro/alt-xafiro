@@ -3,7 +3,7 @@ import { SVGIcon } from '@/components/svg-icon/svg-icon';
 export type StackList = string[] | null;
 
 export type StackItem = {
-  name: string;
+  locale: string;
   icon: SVGIcon;
   link: string | null;
   main: boolean;

@@ -1,14 +1,14 @@
 [
   {
-    "name": "GitHub",
-    "href": "https://github.com/alt-xafiro"
+    "href": "https://github.com/alt-xafiro",
+    "locale": "github"
   },
   {
-    "name": "Telegram",
-    "href": "https://t.me/axafiro"
+    "href": "https://t.me/axafiro",
+    "locale": "telegram"
   },
   {
-    "name": "E-mail",
-    "href": "mailto:altxafiro@gmail.com"
+    "href": "mailto:altxafiro@gmail.com",
+    "locale": "email"
   }
 ]

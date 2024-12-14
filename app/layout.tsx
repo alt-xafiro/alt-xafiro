@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 
 import '@/styles/globals.css';
 
@@ -32,13 +34,16 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="en" className="scrollbar-gutter-stable h-full min-h-full">
+    <html lang={locale} className="scrollbar-gutter-stable h-full min-h-full">
       <body
         className={clsx(
           exo2.className,
@@ -46,11 +51,13 @@ export default function RootLayout({
           'scrollbar scrollbar-track-space-900 scrollbar-thumb-space-800'
         )}
       >
-        <Background />
-        <Header />
-        <main className="flex items-start justify-center">
-          <div className="h-full w-[1440px] 2xl:w-full">{children}</div>
-        </main>
+        <NextIntlClientProvider messages={messages}>
+          <Background />
+          <Header />
+          <main className="flex items-start justify-center">
+            <div className="h-full w-[1440px] 2xl:w-full">{children}</div>
+          </main>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

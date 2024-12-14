@@ -2,6 +2,7 @@ import clsx from 'clsx';
 
 import { CustomComponentProps } from '@/types';
 
+import LocaleSwitcher from '@/components/locale-switcher/locale-switcher';
 import Logo from '@/components/logo/logo';
 import Navigation from '@/components/navigation/navigation';
 
@@ -21,6 +22,7 @@ export default function Header({ className }: HeaderProps) {
         )}
       >
         <Logo />
+        <LocaleSwitcher className="ml-10 mr-auto mt-2 3lg:ml-auto 3lg:mr-10 3lg:mt-0 lg:mr-6 sm:mr-2" />
         <Navigation />
       </div>
     </header>
