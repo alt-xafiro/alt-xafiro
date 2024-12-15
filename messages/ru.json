@@ -87,7 +87,7 @@
     "pug": "Pug",
     "react": "React",
     "redux-toolkit": "Redux Toolkit",
-    "responsive": "Адаптивность",
+    "responsive": "Адаптивность / Отзывчивость",
     "retina": "Поддержка Retina-дисплеев",
     "sass": "Sass",
     "stylelint": "Stylelint",
