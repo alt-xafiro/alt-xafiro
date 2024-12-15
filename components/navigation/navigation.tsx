@@ -1,10 +1,8 @@
 'use client';
 
-import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { useWindowSize } from '@uidotdev/usehooks';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MouseEventHandler, useEffect, useState } from 'react';
 
@@ -13,6 +11,9 @@ import { PAGES } from '@/consts';
 import { CustomComponentProps } from '@/types';
 
 import { getBreakpoint } from '@/ui/tailwind-config';
+
+import MenuItem from '@/components/menu-item/menu-item';
+import Modal from '@/components/modal/modal';
 
 type NavigationProps = CustomComponentProps;
 
@@ -47,40 +48,23 @@ export default function Navigation({ className }: NavigationProps) {
 
   return (
     <>
-      <Links
+      <div
         className={clsx(
           className,
           'inline-flex flex-row flex-wrap items-center justify-end space-x-11 3lg:hidden'
         )}
-      />
+      >
+        <Links onLinkClick={closeModal} />
+      </div>
 
       <BurgerMenu
-        className="hidden 3lg:block"
+        className={clsx(className, 'hidden 3lg:block')}
         onClick={handleNavigationButtonClick}
       />
 
-      <Dialog
-        className="relative z-50 transition data-[closed]:opacity-0"
-        open={modalOpen}
-        onClose={closeModal}
-        transition
-      >
-        <DialogBackdrop className="fixed inset-0 bg-space-900/70" />
-
-        <div className="fixed inset-0 w-screen overflow-y-auto p-4">
-          <div className="flex min-h-full items-center justify-center">
-            <DialogPanel className="inline-flex w-[320px] justify-center rounded-lg bg-space-800 p-12">
-              <Links
-                className={clsx(
-                  className,
-                  'inline-flex flex-col items-center space-y-4'
-                )}
-                onLinkClick={closeModal}
-              />
-            </DialogPanel>
-          </div>
-        </div>
-      </Dialog>
+      <Modal open={modalOpen} closeModal={closeModal}>
+        <Links onLinkClick={closeModal} />
+      </Modal>
     </>
   );
 }
@@ -89,34 +73,29 @@ type LinksProps = CustomComponentProps & {
   onLinkClick?: () => void;
 };
 
-function Links({ className, onLinkClick = () => {} }: LinksProps) {
+function Links({ onLinkClick = () => {} }: LinksProps) {
   const t = useTranslations('Pages');
 
   const currentPathname = usePathname();
 
   return (
-    <div className={className}>
+    <>
       {PAGES.map((page) => {
         const isActive = currentPathname === page.href;
 
         return (
-          <Link
+          <MenuItem
             key={page.href}
+            type="link"
             href={page.href}
-            className={clsx(
-              isActive &&
-                'cursor-default after:absolute after:-bottom-1 after:left-0 after:block after:h-0.5 after:w-full after:bg-white',
-              'relative text-3xl uppercase',
-              !isActive &&
-                'transition-colors hover:text-space-100 active:text-space-200'
-            )}
             onClick={onLinkClick}
+            active={isActive}
           >
-            <p>{t(page.locale)}</p>
-          </Link>
+            {t(page.locale)}
+          </MenuItem>
         );
       })}
-    </div>
+    </>
   );
 }
 type BurgerMenuProps = CustomComponentProps & {
