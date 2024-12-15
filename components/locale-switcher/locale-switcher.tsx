@@ -54,8 +54,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
           className,
           isPending && 'pointer-events-none',
           'h-[36px] w-[36px] 3lg:h-[64px] 3lg:w-[64px]',
-          'text-2xl font-semibold uppercase text-white/60 hover:text-space-100/60 active:text-space-200/60 sm:text-xl',
-          'transition-colors'
+          'text-2xl font-semibold uppercase text-white/60 transition-colors hover:text-space-100/60 active:text-space-200/60 sm:text-xl'
         )}
         onClick={handleOnLocaleSwitcherClick}
       >

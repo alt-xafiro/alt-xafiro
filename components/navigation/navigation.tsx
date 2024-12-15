@@ -129,7 +129,8 @@ function BurgerDash({ className }: BurgerDashProps) {
     <div
       className={clsx(
         className,
-        'absolute left-0 top-0 h-[5px] w-full rounded-full bg-white transition-colors group-hover/burger:bg-space-100 group-active/burger:bg-space-200 lg:h-[4px] sm:h-[3px]'
+        'absolute left-0 top-0 h-[5px] w-full lg:h-[4px] sm:h-[3px]',
+        'rounded-full bg-white transition-colors group-hover/burger:bg-space-100 group-active/burger:bg-space-200'
       )}
     ></div>
   );

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { Tooltip } from 'react-tooltip';
 
@@ -18,7 +19,10 @@ export default function HiddenStackTooltip({
 }: HiddenStackTooltipProps) {
   return (
     <Tooltip
-      className="!z-[9000] !rounded-[24px] !bg-space-700/95 !p-[20px] !text-base !transition-none !duration-0 h-md:!p-[16px] h-md:!text-sm sm:!p-[16px] sm:!text-sm"
+      className={clsx(
+        '!z-[9000] !p-[20px] h-md:!p-[16px] sm:!p-[16px]',
+        '!rounded-[24px] !bg-space-700/95 !text-base !transition-none !duration-0 h-md:!text-sm sm:!text-sm'
+      )}
       anchorSelect=".hidden-stack-button"
       globalCloseEvents={{
         escape: true
