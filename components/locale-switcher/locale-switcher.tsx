@@ -4,15 +4,15 @@ import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState, useTransition } from 'react';
 
+import { Locale } from '@/i18n/config';
+
 import { LOCALES } from '@/consts';
+import { setUserLocale } from '@/services/locale';
 
 import { CustomComponentProps } from '@/types';
 
 import MenuItem from '@/components/menu-item/menu-item';
 import Modal from '@/components/modal/modal';
-
-import { Locale } from '@/i18n/config';
-import { setUserLocale } from '@/services/locale';
 
 type LocaleSwitcherProps = CustomComponentProps;
 
