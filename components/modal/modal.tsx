@@ -31,9 +31,7 @@ export default function Modal({
       <div className="fixed inset-0 w-screen overflow-y-auto p-4">
         <div className="flex min-h-full items-center justify-center">
           <DialogPanel className="inline-flex w-[320px] justify-center rounded-lg bg-space-800 p-12">
-            <div className="inline-flex flex-col items-center space-y-4">
-              {children}
-            </div>
+            {children}
           </DialogPanel>
         </div>
       </div>

@@ -65,20 +65,24 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
       </button>
 
       <Modal open={modalOpen} closeModal={closeModal}>
-        {LOCALES.map((locale) => {
-          const isCurrentLocale = locale === currentLocale;
+        <ul className="inline-flex flex-col items-center space-y-4">
+          {LOCALES.map((locale) => {
+            const isCurrentLocale = locale === currentLocale;
 
-          return (
-            <MenuItem
-              key={locale}
-              type="button"
-              onClick={() => handleOnLocaleItemClick(locale)}
-              active={isCurrentLocale}
-            >
-              {t(locale)}
-            </MenuItem>
-          );
-        })}
+            return (
+              <li className="flex" key={locale}>
+                <MenuItem
+                  className="h-full w-full"
+                  type="button"
+                  onClick={() => handleOnLocaleItemClick(locale)}
+                  active={isCurrentLocale}
+                >
+                  {t(locale)}
+                </MenuItem>
+              </li>
+            );
+          })}
+        </ul>
       </Modal>
     </>
   );

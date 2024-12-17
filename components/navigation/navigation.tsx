@@ -48,14 +48,12 @@ export default function Navigation({ className }: NavigationProps) {
 
   return (
     <>
-      <div
-        className={clsx(
-          className,
-          'inline-flex flex-row flex-wrap items-center justify-end space-x-11 3lg:hidden'
-        )}
-      >
-        <Links onLinkClick={closeModal} />
-      </div>
+      <nav className={clsx(className, 'inline-flex 3lg:hidden')}>
+        <Links
+          className="inline-flex h-full w-full flex-row flex-wrap items-center justify-end space-x-11"
+          onLinkClick={closeModal}
+        />
+      </nav>
 
       <BurgerMenu
         className={clsx(className, 'hidden 3lg:block')}
@@ -63,7 +61,12 @@ export default function Navigation({ className }: NavigationProps) {
       />
 
       <Modal open={modalOpen} closeModal={closeModal}>
-        <Links onLinkClick={closeModal} />
+        <nav className="flex">
+          <Links
+            className="inline-flex flex-col items-center space-y-4"
+            onLinkClick={closeModal}
+          />
+        </nav>
       </Modal>
     </>
   );
@@ -73,29 +76,31 @@ type LinksProps = CustomComponentProps & {
   onLinkClick?: () => void;
 };
 
-function Links({ onLinkClick = () => {} }: LinksProps) {
+function Links({ className, onLinkClick = () => {} }: LinksProps) {
   const t = useTranslations('Pages');
 
   const currentPathname = usePathname();
 
   return (
-    <>
+    <ul className={clsx(className, 'h-full w-full')}>
       {PAGES.map((page) => {
         const isActive = currentPathname === page.href;
 
         return (
-          <MenuItem
-            key={page.href}
-            type="link"
-            href={page.href}
-            onClick={onLinkClick}
-            active={isActive}
-          >
-            {t(page.locale)}
-          </MenuItem>
+          <li className="flex" key={page.href}>
+            <MenuItem
+              className="h-full w-full"
+              type="link"
+              href={page.href}
+              onClick={onLinkClick}
+              active={isActive}
+            >
+              {t(page.locale)}
+            </MenuItem>
+          </li>
         );
       })}
-    </>
+    </ul>
   );
 }
 type BurgerMenuProps = CustomComponentProps & {

@@ -30,13 +30,13 @@ export default function MenuItem({
     <>
       {type === 'link' && (
         <Link href={href} className={menuItemClassMame} onClick={onClick}>
-          <p>{children}</p>
+          {children}
         </Link>
       )}
 
       {type === 'button' && (
         <button className={menuItemClassMame} onClick={onClick}>
-          <p>{children}</p>
+          {children}
         </button>
       )}
     </>
