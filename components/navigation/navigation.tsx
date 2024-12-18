@@ -117,11 +117,11 @@ function BurgerMenu({ className, onClick }: BurgerMenuProps) {
         onClick={onClick}
       >
         <span className="sr-only">{t('burger-button')}</span>
-        <div className="relative h-[41px] w-full lg:h-[32px] lg:w-[48px] sm:h-[27px] sm:w-[36px]">
+        <span className="relative h-[41px] w-full lg:h-[32px] lg:w-[48px] sm:h-[27px] sm:w-[36px]">
           <BurgerDash className="top-0" />
           <BurgerDash className="top-[18px] lg:top-[14px] sm:top-[12px]" />
           <BurgerDash className="top-[36px] lg:top-[28px] sm:top-[24px]" />
-        </div>
+        </span>
       </button>
     </div>
   );
