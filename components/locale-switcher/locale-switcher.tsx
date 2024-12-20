@@ -56,6 +56,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
           'h-[36px] w-[36px] 3lg:h-[64px] 3lg:w-[64px]',
           'text-2xl font-semibold uppercase text-white/60 transition-colors hover:text-space-100/60 active:text-space-200/60 sm:text-xl'
         )}
+        type="button"
         onClick={handleOnLocaleSwitcherClick}
       >
         <span className="sr-only">

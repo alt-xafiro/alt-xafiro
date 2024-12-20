@@ -115,6 +115,7 @@ function BurgerMenu({ className, onClick }: BurgerMenuProps) {
       <button
         className="group/burger flex h-[64px] w-[64px] items-center justify-center"
         onClick={onClick}
+        type="button"
       >
         <span className="sr-only">{t('burger-button')}</span>
         <span className="relative h-[41px] w-full lg:h-[32px] lg:w-[48px] sm:h-[27px] sm:w-[36px]">

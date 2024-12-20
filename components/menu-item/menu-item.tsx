@@ -35,7 +35,7 @@ export default function MenuItem({
       )}
 
       {type === 'button' && (
-        <button className={menuItemClassMame} onClick={onClick}>
+        <button className={menuItemClassMame} onClick={onClick} type="button">
           {children}
         </button>
       )}

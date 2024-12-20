@@ -69,6 +69,7 @@ export default function Project({ className, data }: ProjectProps) {
       >
         <button
           className="relative h-full w-full cursor-pointer"
+          type="button"
           ref={previewRef}
           onClick={() => toggleActive()}
         >
