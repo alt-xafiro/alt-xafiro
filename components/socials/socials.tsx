@@ -29,7 +29,7 @@ export default function Socials({ className }: SocialsProps) {
               )}
               href={social.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               {t(social.locale)}
             </a>

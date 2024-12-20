@@ -82,7 +82,7 @@ function ShownStackItem({ className, data, firstItem }: ShownStackItemProps) {
       className={clsx(className, 'tooltip flex items-center justify-center')}
       href={data.link}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       data-tooltip-content={t(data.locale)}
       data-tooltip-place={tooltipPlace}
       data-tooltip-offset={tooltipOffset}

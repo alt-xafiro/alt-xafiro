@@ -158,7 +158,7 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
           className="tooltip"
           href={data.previewURL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           data-tooltip-content={t('ProjectLinks.preview')}
           data-tooltip-place="left"
         >
@@ -189,7 +189,7 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
           className="tooltip"
           href={data.sourceURL}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           data-tooltip-content={t('ProjectLinks.source')}
           data-tooltip-place="right"
         >

@@ -64,7 +64,7 @@ export default function HiddenStackTooltip({
                       className="flex h-full w-full flex-row items-center space-x-[12px] h-md:space-x-[8px] sm:space-x-[8px]"
                       href={stackItem.link}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       <HiddenStackItem data={stackItem} />
                     </a>
