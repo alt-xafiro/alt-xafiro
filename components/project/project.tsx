@@ -76,8 +76,8 @@ export default function Project({ className, data }: ProjectProps) {
           <PreviewImage
             className={clsx(
               active
-                ? 'blur-[12px] brightness-[0.7]'
-                : 'group-hover/project:brightness-[1.13]',
+                ? 'blur-[8px] brightness-[0.7]'
+                : 'blur-0 brightness-100 group-hover/project:brightness-[1.13]',
               'rounded-[24px] transition-all'
             )}
             data={data}
