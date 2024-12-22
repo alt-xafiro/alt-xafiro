@@ -20,17 +20,17 @@
     "main": true,
     "order": 21
   },
-  "javascript": {
-    "locale": "javascript",
-    "icon": "javascript",
+  "html": {
+    "locale": "html",
+    "icon": "html",
     "link": null,
     "main": true,
     "order": 30
   },
-  "typescript": {
-    "locale": "typescript",
-    "icon": "typescript",
-    "link": "https://www.typescriptlang.org/",
+  "pug": {
+    "locale": "pug",
+    "icon": "pug",
+    "link": "https://pugjs.org/",
     "main": true,
     "order": 30
   },
@@ -55,17 +55,17 @@
     "main": true,
     "order": 40
   },
-  "html": {
-    "locale": "html",
-    "icon": "html",
+  "javascript": {
+    "locale": "javascript",
+    "icon": "javascript",
     "link": null,
     "main": true,
     "order": 50
   },
-  "pug": {
-    "locale": "pug",
-    "icon": "pug",
-    "link": "https://pugjs.org/",
+  "typescript": {
+    "locale": "typescript",
+    "icon": "typescript",
+    "link": "https://www.typescriptlang.org/",
     "main": true,
     "order": 50
   },
