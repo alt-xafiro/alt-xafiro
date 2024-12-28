@@ -111,20 +111,6 @@
     "main": false,
     "order": 64
   },
-  "vitest": {
-    "locale": "vitest",
-    "icon": "vitest",
-    "link": "https://vitest.dev/",
-    "main": false,
-    "order": 70
-  },
-  "googleMapsAPI": {
-    "locale": "google-maps-api",
-    "icon": "google-maps-api",
-    "link": "https://developers.google.com/maps",
-    "main": false,
-    "order": 70
-  },
   "chartJs": {
     "locale": "chart-js",
     "icon": "chart-js",
@@ -136,6 +122,13 @@
     "locale": "dayjs",
     "icon": "dayjs",
     "link": "https://day.js.org/",
+    "main": false,
+    "order": 70
+  },
+  "googleMapsAPI": {
+    "locale": "google-maps-api",
+    "icon": "google-maps-api",
+    "link": "https://developers.google.com/maps",
     "main": false,
     "order": 70
   },
@@ -171,6 +164,20 @@
     "locale": "minisearch",
     "icon": "minisearch",
     "link": "https://lucaong.github.io/minisearch/",
+    "main": false,
+    "order": 70
+  },
+  "motion": {
+    "locale": "motion",
+    "icon": "motion",
+    "link": "https://motion.dev/",
+    "main": false,
+    "order": 70
+  },
+  "vitest": {
+    "locale": "vitest",
+    "icon": "vitest",
+    "link": "https://vitest.dev/",
     "main": false,
     "order": 70
   },

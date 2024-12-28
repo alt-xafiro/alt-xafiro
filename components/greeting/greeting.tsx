@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import * as motion from 'motion/react-client';
 import { useTranslations } from 'next-intl';
 
 import { CustomComponentProps } from '@/types';
@@ -10,6 +11,14 @@ import { sourceCodePro } from '@/ui/fonts';
 import SVGIcon from '@/components/svg-icon/svg-icon';
 
 type GreetingProps = CustomComponentProps;
+
+const Line = {
+  DELAY: 0.4,
+  TYPE: 'spring',
+  DURATION: 0.4,
+  OFFSET_Y: 200,
+  BOUNCE: 0.4
+};
 
 export default function Greeting({ className }: GreetingProps) {
   const t = useTranslations('AboutMe');
@@ -22,16 +31,58 @@ export default function Greeting({ className }: GreetingProps) {
         'text-4xl leading-[3.75rem] [font-weight:315] lg:text-[1.75rem] lg:leading-[3.25rem] md:text-[1.5rem] md:leading-[3rem] md:[font-weight:375] sm:text-[1.25rem] sm:leading-[2.75rem]'
       )}
     >
-      <p className="mb-[1em]">{t('hi')}</p>
-      <p>{t('who')}</p>
-      <p>
+      <motion.p
+        className="mb-[1em]"
+        initial={{ y: Line.OFFSET_Y, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: Line.DURATION,
+          y: { type: Line.TYPE, bounce: Line.BOUNCE }
+        }}
+      >
+        {t('hi')}
+      </motion.p>
+      <motion.p
+        initial={{ y: Line.OFFSET_Y, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: Line.DURATION,
+          y: {
+            delay: Line.DELAY,
+            type: Line.TYPE,
+            bounce: Line.BOUNCE
+          },
+          opacity: {
+            delay: Line.DELAY
+          }
+        }}
+      >
+        {t('who')}
+      </motion.p>
+      <motion.p
+        initial={{ y: Line.OFFSET_Y, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: Line.DURATION,
+          y: {
+            delay: Line.DELAY * 2,
+            type: Line.TYPE,
+            bounce: Line.BOUNCE
+          },
+          opacity: {
+            delay: Line.DELAY * 2
+          }
+        }}
+      >
         {t('i')}{' '}
-        <SVGIcon
-          className="relative -top-[3px] inline-block h-[32px] w-[32px] lg:h-[24px] lg:w-[24px] md:-top-[2px] md:h-[20px] md:w-[20px] sm:h-[16px] sm:w-[16px]"
-          icon="heart"
-        />
+        <motion.span className="inline-block" whileHover={{ scale: 1.2 }}>
+          <SVGIcon
+            className="relative -top-[3px] inline-block h-[32px] w-[32px] lg:h-[24px] lg:w-[24px] md:-top-[2px] md:h-[20px] md:w-[20px] sm:h-[16px] sm:w-[16px]"
+            icon="heart"
+          />
+        </motion.span>
         <span className="sr-only">🤍</span> {t('what')}
-      </p>
+      </motion.p>
     </div>
   );
 }

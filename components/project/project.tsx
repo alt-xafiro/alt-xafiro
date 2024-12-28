@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import * as motion from 'motion/react-client';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
@@ -60,12 +61,13 @@ export default function Project({ className, data }: ProjectProps) {
 
   return (
     <div className="flex w-full flex-col items-center justify-start">
-      <div
+      <motion.div
         className={clsx(
           className,
           'group/project relative h-[225px] w-full min-w-[312px] max-w-[480px]',
           'rounded-[24px] bg-space-800/40 text-space-700 shadow-2xl'
         )}
+        whileHover={{ scale: 1.03 }}
       >
         <button
           className="relative h-full w-full cursor-pointer"
@@ -109,7 +111,7 @@ export default function Project({ className, data }: ProjectProps) {
           projectID={data.id}
           stackList={data.stackList}
         />
-      </div>
+      </motion.div>
       <h2 className="w-full pt-[0.375rem] text-center text-[1.375rem] leading-[1.875rem] h-md:text-xl sm:text-xl">
         {t(`${data.locale}`)}
       </h2>
