@@ -12,7 +12,7 @@
   <br>
   <p>
     <a href="https://github.com/anuraghazra/github-readme-stats">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alt-xafiro&theme=nord&layout=donut&langs_count=20" href="https://xafiro.site/socials" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alt-xafiro&layout=compact&langs_count=20" href="https://xafiro.site/socials" />
     </a>
   </p>
 </div>
