@@ -1,7 +1,6 @@
 'use client';
 
 import clsx from 'clsx';
-import * as motion from 'motion/react-client';
 import { useRef } from 'react';
 
 import { CustomComponentProps } from '@/types';
@@ -13,16 +12,7 @@ type LogoProps = CustomComponentProps & {
 export default function Logo({ className }: LogoProps) {
   return (
     <div className={clsx(className, 'inline-flex items-center')}>
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{
-          duration: 0.4,
-          scale: { type: 'spring', visualDuration: 0.4, bounce: 0 }
-        }}
-      >
-        <X />
-      </motion.div>
+      <X />
       <Safiro />
     </div>
   );
