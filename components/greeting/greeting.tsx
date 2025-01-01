@@ -74,7 +74,11 @@ export default function Greeting({ className }: GreetingProps) {
         }}
       >
         {t('i')}{' '}
-        <motion.span className="inline-block" whileHover={{ scale: 1.2 }}>
+        <motion.span
+          className="inline-block"
+          whileHover={{ scale: 1.4 }}
+          whileTap={{ scale: 1.4 }}
+        >
           <SVGIcon
             className="relative -top-[3px] inline-block h-[32px] w-[32px] lg:h-[24px] lg:w-[24px] md:-top-[2px] md:h-[20px] md:w-[20px] sm:h-[16px] sm:w-[16px]"
             icon="heart"
