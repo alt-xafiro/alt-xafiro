@@ -58,10 +58,10 @@ export default function SVGIcon({
   icon,
   theme = 'dark'
 }: SVGIconProps): JSX.Element {
-  const getSvg = () => {
-    const FILL = theme === 'dark' ? 'currentColor' : '#d6d6d6';
-    const SHADOW = theme === 'light' ? 'drop-shadow(0 0 1px #000)' : 'none';
+  const FILL = theme === 'dark' ? 'currentColor' : '#d6d6d6';
+  const SHADOW = theme === 'light' ? 'drop-shadow(0 0 1px #000)' : 'none';
 
+  const getSvg = () => {
     switch (icon) {
       case 'a11y':
         return (
