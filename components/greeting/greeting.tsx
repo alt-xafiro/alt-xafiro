@@ -28,11 +28,10 @@ export default function Greeting({ className }: GreetingProps) {
       className={clsx(
         className,
         sourceCodePro.className,
-        'text-4xl leading-[3.75rem] [font-weight:315] lg:text-[1.75rem] lg:leading-[3.25rem] md:text-[1.5rem] md:leading-[3rem] md:[font-weight:375] sm:text-[1.25rem] sm:leading-[2.75rem]'
+        'space-y-4 text-4xl leading-[3.75rem] [font-weight:315] lg:text-[1.75rem] lg:leading-[3.25rem] md:text-[1.5rem] md:leading-[3rem] md:[font-weight:375] sm:text-[1.25rem] sm:leading-[2.75rem]'
       )}
     >
       <motion.p
-        className="mb-[1em]"
         initial={{ y: Line.OFFSET_Y, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
