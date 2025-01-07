@@ -30,6 +30,8 @@ export default function Stack({
 
   if (!shownStack) return;
 
+  const isHiddenStackExisting = hasHiddenStack(stackList, SHOWN_STACK_SIZE);
+
   return (
     <div
       className={clsx(
@@ -48,13 +50,15 @@ export default function Stack({
                   className="h-[32px] w-[32px] h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
                   data={stackItem}
                   firstItem={i === 0}
+                  lastItem={i === stackList.length - 1}
+                  isHiddenStackExisting={isHiddenStackExisting}
                 />
               </li>
             );
           })}
         </ul>
       )}
-      {hasHiddenStack(stackList, SHOWN_STACK_SIZE) && (
+      {isHiddenStackExisting && (
         <HiddenStackButton
           className="h-[32px] w-[32px] h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
           projectID={projectID}
@@ -67,13 +71,28 @@ export default function Stack({
 type ShownStackItemProps = CustomComponentProps & {
   data: StackItem;
   firstItem: boolean;
+  lastItem: boolean;
+  isHiddenStackExisting: boolean;
 };
 
-function ShownStackItem({ className, data, firstItem }: ShownStackItemProps) {
+function ShownStackItem({
+  className,
+  data,
+  firstItem,
+  lastItem,
+  isHiddenStackExisting
+}: ShownStackItemProps) {
   const t = useTranslations('Stack');
 
-  const tooltipPlace: PlacesType = firstItem ? 'left' : 'bottom';
-  const tooltipOffset = firstItem ? 11 : 10;
+  const isTooltipPlaceLeft = firstItem;
+  const isTooltipPlaceRight = lastItem && !isHiddenStackExisting;
+
+  const tooltipPlace: PlacesType = isTooltipPlaceLeft
+    ? 'left'
+    : isTooltipPlaceRight
+      ? 'right'
+      : 'bottom';
+  const tooltipOffset = isTooltipPlaceLeft || isTooltipPlaceRight ? 11 : 10;
 
   return data.link ? (
     <a
