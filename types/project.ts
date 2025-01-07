@@ -11,6 +11,7 @@ export type ProjectData = {
   locale: string;
   sourceURL: string;
   previewURL: string | null;
+  previewInternal: boolean;
   previewImage: string;
   centeredPreviewImage: boolean;
   iconsTheme: IconsTheme;

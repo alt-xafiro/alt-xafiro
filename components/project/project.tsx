@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import * as motion from 'motion/react-client';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 import { MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
 
 import { CustomComponentProps, ProjectData } from '@/types';
@@ -157,20 +158,36 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
   return (
     <div className={clsx(className, 'cursor-pointer')} ref={ref}>
       {data.previewURL !== null ? (
-        <ExternalLink
-          className="tooltip h-[48px] w-[64px] text-space-800 h-md:h-[28px] h-md:w-[48px] sm:h-[28px] sm:w-[48px]"
-          overwriteClassName={true}
-          href={data.previewURL}
-          data-tooltip-content={t('ProjectLinks.preview')}
-          data-tooltip-place="left"
-        >
-          <SVGIcon
-            className="h-full w-full"
-            icon="preview"
-            theme={data.iconsTheme}
-          />
-          <span className="sr-only">{t('ProjectLinks.preview')}</span>
-        </ExternalLink>
+        !data.previewInternal ? (
+          <ExternalLink
+            className="tooltip h-[48px] w-[64px] text-space-800 h-md:h-[28px] h-md:w-[48px] sm:h-[28px] sm:w-[48px]"
+            overwriteClassName={true}
+            href={data.previewURL}
+            data-tooltip-content={t('ProjectLinks.preview')}
+            data-tooltip-place="left"
+          >
+            <SVGIcon
+              className="h-full w-full"
+              icon="preview"
+              theme={data.iconsTheme}
+            />
+            <span className="sr-only">{t('ProjectLinks.preview')}</span>
+          </ExternalLink>
+        ) : (
+          <Link
+            className="tooltip h-[48px] w-[64px] text-space-800 h-md:h-[28px] h-md:w-[48px] sm:h-[28px] sm:w-[48px]"
+            href={data.previewURL}
+            data-tooltip-content={t('ProjectLinks.preview')}
+            data-tooltip-place="left"
+          >
+            <SVGIcon
+              className="h-full w-full"
+              icon="preview"
+              theme={data.iconsTheme}
+            />
+            <span className="sr-only">{t('ProjectLinks.preview')}</span>
+          </Link>
+        )
       ) : (
         <div
           className="tooltip h-[48px] w-[64px] cursor-default text-space-800 h-md:h-[36px] h-md:w-[48px] sm:h-[36px] sm:w-[48px]"
