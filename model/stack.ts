@@ -21,7 +21,7 @@ export const hasHiddenStack = (
   shownStackSize: number
 ) => {
   if (!stackList) {
-    return null;
+    return false;
   }
 
   return !(stackList.length <= shownStackSize);
