@@ -158,14 +158,14 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
     <div className={clsx(className, 'cursor-pointer')} ref={ref}>
       {data.previewURL !== null ? (
         <ExternalLink
-          className="tooltip"
+          className="tooltip h-[48px] w-[64px] text-space-800 h-md:h-[28px] h-md:w-[48px] sm:h-[28px] sm:w-[48px]"
           overwriteClassName={true}
           href={data.previewURL}
           data-tooltip-content={t('ProjectLinks.preview')}
           data-tooltip-place="left"
         >
           <SVGIcon
-            className="h-[48px] w-[64px] text-space-800 h-md:h-[28px] h-md:w-[48px] sm:h-[28px] sm:w-[48px]"
+            className="h-full w-full"
             icon="preview"
             theme={data.iconsTheme}
           />
@@ -186,22 +186,20 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
         </div>
       )}
       <div className="h-full flex-grow" onClick={onClick} />
-      <div>
-        <ExternalLink
-          className="tooltip"
-          overwriteClassName={true}
-          href={data.sourceURL}
-          data-tooltip-content={t('ProjectLinks.source')}
-          data-tooltip-place="right"
-        >
-          <SVGIcon
-            className="h-[48px] w-[48px] text-space-800 h-md:h-[36px] h-md:w-[36px] sm:h-[36px] sm:w-[36px]"
-            icon="github"
-            theme={data.iconsTheme}
-          />
-          <span className="sr-only">{t('ProjectLinks.source')}</span>
-        </ExternalLink>
-      </div>
+      <ExternalLink
+        className="tooltip h-[48px] w-[48px] text-space-800 h-md:h-[36px] h-md:w-[36px] sm:h-[36px] sm:w-[36px]"
+        overwriteClassName={true}
+        href={data.sourceURL}
+        data-tooltip-content={t('ProjectLinks.source')}
+        data-tooltip-place="right"
+      >
+        <SVGIcon
+          className="h-full w-full"
+          icon="github"
+          theme={data.iconsTheme}
+        />
+        <span className="sr-only">{t('ProjectLinks.source')}</span>
+      </ExternalLink>
     </div>
   );
 }
@@ -219,13 +217,16 @@ function Type({ className, data }: TypeProps) {
 
   return (
     <div
-      className={clsx(className, 'tooltip')}
+      className={clsx(
+        className,
+        'tooltip h-[36px] w-[36px] text-space-800 h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]'
+      )}
       tabIndex={0}
       data-tooltip-content={t(data.type)}
       data-tooltip-place="left"
     >
       <SVGIcon
-        className="h-[36px] w-[36px] text-space-800 h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
+        className="h-full w-full"
         icon={data.type}
         theme={data.iconsTheme}
       />
@@ -245,13 +246,16 @@ function Status({ className, data }: StatusProps) {
 
   return (
     <div
-      className={clsx(className, 'tooltip')}
+      className={clsx(
+        className,
+        'tooltip h-[36px] w-[36px] text-space-800 h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]'
+      )}
       tabIndex={0}
       data-tooltip-content={t(data.status)}
       data-tooltip-place="right"
     >
       <SVGIcon
-        className="h-[36px] w-[36px] text-space-800 h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
+        className="h-full w-full"
         icon={data.status}
         theme={data.iconsTheme}
       />
