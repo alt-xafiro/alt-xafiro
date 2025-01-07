@@ -19,7 +19,8 @@
     "not-found-description": "This page could not be found.",
     "about-me": "About me",
     "projects": "Projects",
-    "socials": "Socials"
+    "socials": "Socials",
+    "js30": "#JavaScript30"
   },
   "AboutMe": {
     "hi": "Hi!",
@@ -51,6 +52,7 @@
     "dbd-perks": "DBD Perks",
     "direct-linker": "Direct Linker",
     "direct-linker-no-preview": "No GUI",
+    "js30": "#JavaScript30",
     "kekstagram": "\"Kekstagram\"",
     "maine-coon": "\"Maine Coon cattery\"",
     "mental-calc": "Mental calculation trainer",
@@ -102,5 +104,41 @@
     "github": "GitHub",
     "telegram": "Telegram",
     "email": "E-mail"
+  },
+  "Js30": {
+    "day": "Day",
+    "script": "script.js",
+    "Days": {
+      "java-script-drum-kit": "JavaScript Drum Kit",
+      "css-js-clock": "CSS + JS Clock",
+      "playing-with-css-variables-and-js": "Playing with CSS Variables and JS",
+      "array-cardio-day-1": "Array Cardio Day 1",
+      "flex-panels-image-gallery": "Flex Panels Image Gallery",
+      "ajax-type-ahead": "Ajax Type Ahead",
+      "array-cardio-day-2": "Array Cardio Day 2",
+      "fun-with-html5-canvas": "Fun with HTML5 Canvas",
+      "14-must-know-dev-tools-tricks": "14 Must Know Dev Tools Tricks",
+      "hold-shift-to-check-multiple-checkboxes": "Hold Shift to Check Multiple Checkboxes",
+      "custom-html5-video-player": "Custom HTML5 Video Player",
+      "key-sequence-detection-konami-code": "Key Sequence Detection (KONAMI CODE)",
+      "slide-in-on-scroll": "Slide In on Scroll",
+      "object-and-arrays-reference-vs-copy": "Object and Arrays — Reference VS Copy",
+      "local-storage-and-event-delegation": "LocalStorage and Event Delegation",
+      "css-text-shadow-mouse-move-effect": "CSS Text Shadow Mouse Move Effect",
+      "sorting-band-names-without-articles": "Sorting Band Names without articles",
+      "tally-string-times-with-reduce": "Tally String Times with Reduce",
+      "unreal-webcam-fun": "Unreal Webcam Fun",
+      "native-speech-recognition": "Native Speech Recognition",
+      "geolocation-based-speedometer-and-compass": "Geolocation based Speedometer and Compass",
+      "follow-along-links": "Follow Along Links",
+      "speech-synthesis": "Speech Synthesis",
+      "sticky-nav": "Sticky Nav",
+      "event-capture-propagation-bubbling-and-once": "Event Capture, Propagation, Bubbling and Once",
+      "stripe-follow-along-dropdown": "Stripe Follow Along Dropdown",
+      "click-and-drag-to-scroll": "Click and Drag to Scroll",
+      "video-speed-controller-ui": "Video Speed Controller UI",
+      "countdown-clock": "Countdown Clock",
+      "whack-a-mole-game": "Whack A Mole Game"
+    }
   }
 }

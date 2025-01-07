@@ -1,5 +1,18 @@
 [
   {
+    "id": "js30",
+    "locale": "js30",
+    "sourceURL": "https://github.com/alt-xafiro/alt-xafiro/tree/master/public/projects/js30",
+    "previewURL": "/projects/js30",
+    "previewInternal": true,
+    "previewImage": "js30",
+    "centeredPreviewImage": true,
+    "iconsTheme": "light",
+    "type": "training",
+    "status": "development",
+    "stackList": ["javascript"]
+  },
+  {
     "id": "alt-xafiro",
     "locale": "alt-xafiro",
     "sourceURL": "https://github.com/alt-xafiro/alt-xafiro",
