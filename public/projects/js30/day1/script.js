@@ -28,12 +28,12 @@ class Drum {
     this._animationTimer = null;
   }
 
-  play() {
+  _sound() {
     this.audioNode.currentTime = 0;
     this.audioNode.play();
   }
 
-  animate() {
+  _animate() {
     this.keyNode.classList.add(this._animationClass);
 
     if (this._animationTimer) {
@@ -44,13 +44,27 @@ class Drum {
       this.keyNode.classList.remove(this._animationClass);
     }, this._animationDuration);
   }
+
+  play() {
+    this._sound();
+    this._animate();
+  }
+
+  addClickListener() {
+    this.keyNode.addEventListener('click', (evt) => {
+      evt.preventDefault();
+
+      this.play();
+    });
+  }
 }
 const generateDrums = () => {
   const result = {};
 
-  Object.keys(keyCodes).forEach(
-    (drumKey) => (result[keyCodes[drumKey]] = new Drum(drumKey))
-  );
+  Object.keys(keyCodes).forEach((drumKey) => {
+    result[keyCodes[drumKey]] = new Drum(drumKey);
+    result[keyCodes[drumKey]].addClickListener();
+  });
 
   return result;
 };
@@ -64,7 +78,6 @@ const onKeydown = (evt) => {
     evt.preventDefault();
 
     Drums[keyCode].play();
-    Drums[keyCode].animate();
   }
 };
 
