@@ -136,7 +136,7 @@ function PreviewImage({ className, data }: PreviewImageProps) {
         data.centeredPreviewImage ? 'object-center' : 'object-top',
         data.id === 'alt-xafiro' && 'shadow-[0px_-2px_3px_2px_rgba(0,0,0,0.7)]'
       )}
-      src={`/projects/${data.previewImage}.png`}
+      src={`/projects/images/${data.previewImage}.png`}
       alt={t(data.locale)}
       quality={95}
       priority={true}
