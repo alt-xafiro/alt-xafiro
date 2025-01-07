@@ -111,7 +111,7 @@ function ShownStackItemIcon({ data }: ShownStackItemIconProps) {
 
   return (
     <>
-      <SVGIcon className="w-full" icon={data.icon} />
+      <SVGIcon className="h-full w-full" icon={data.icon} />
       <span className="sr-only">{t(data.locale)}</span>
     </>
   );
@@ -131,7 +131,7 @@ function HiddenStackButton({ className, projectID }: HiddenStackProps) {
       tabIndex={0}
       data-project-id={projectID}
     >
-      <SVGIcon className="w-full" icon="more" />
+      <SVGIcon className="h-full w-full" icon="more" />
     </div>
   );
 }
