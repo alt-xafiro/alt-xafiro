@@ -4,9 +4,14 @@ import { Tooltip } from 'react-tooltip';
 
 import { SHOWN_STACK_SIZE } from '@/consts';
 import { getDataAttribute, getProjectDataById } from '@/lib/utils';
-import { getHiddenStack } from '@/model/stack';
+import { getStack } from '@/model/stack';
 
-import { CustomComponentProps, ProjectData, StackItem } from '@/types';
+import {
+  CustomComponentProps,
+  ProjectData,
+  StackItem,
+  StackType
+} from '@/types';
 
 import SVGIcon from '@/components/svg-icon/svg-icon';
 
@@ -45,7 +50,11 @@ export default function HiddenStackTooltip({
 
         const stackList = projectData.stackList;
 
-        const hiddenStack = getHiddenStack(stackList, SHOWN_STACK_SIZE);
+        const hiddenStack = getStack(
+          StackType.Hidden,
+          stackList,
+          SHOWN_STACK_SIZE
+        );
 
         if (!hiddenStack) {
           return null;

@@ -2,7 +2,7 @@ import stackMetaJson from '@/data/stack-meta.json';
 
 import { compareStackItemsByOrder } from '@/lib/utils';
 
-import { StackItem, StackList, StackMeta } from '@/types';
+import { StackItem, StackList, StackMeta, StackType } from '@/types';
 
 const stackMeta = stackMetaJson as unknown as StackMeta;
 
@@ -16,30 +16,36 @@ const getMainStack = (stack: StackItem[]) =>
 const getExtraStack = (stack: StackItem[]) =>
   stack.filter((stackItem) => !stackItem.main);
 
-export const getShownStack = (stackList: StackList, shownStackSize: number) => {
-  const stack = getSortedStack(stackList);
-
-  if (!stack) {
-    return null;
-  }
-
-  const mainStack = getMainStack(stack);
-
-  return mainStack.slice(0, shownStackSize);
-};
-
-export const getHiddenStack = (
+export const hasHiddenStack = (
   stackList: StackList,
   shownStackSize: number
 ) => {
-  const stack = getSortedStack(stackList);
-
-  if (!stack) {
+  if (!stackList) {
     return null;
   }
 
-  const mainStack = getMainStack(stack);
-  const extraStack = getExtraStack(stack);
+  return !(stackList.length <= shownStackSize);
+};
 
-  return [...mainStack.slice(shownStackSize), ...extraStack];
+export const getStack = (
+  type: StackType,
+  stackList: StackList,
+  shownStackSize: number
+) => {
+  const sortedStack = getSortedStack(stackList);
+
+  if (!sortedStack) {
+    return null;
+  }
+
+  if (!hasHiddenStack(stackList, shownStackSize)) {
+    return type === StackType.Shown ? sortedStack : null;
+  }
+
+  const mainStack = getMainStack(sortedStack);
+  const extraStack = getExtraStack(sortedStack);
+
+  return type === StackType.Shown
+    ? mainStack.slice(0, shownStackSize)
+    : [...mainStack.slice(shownStackSize), ...extraStack];
 };

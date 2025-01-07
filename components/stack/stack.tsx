@@ -4,9 +4,9 @@ import { Ref } from 'react';
 import { PlacesType } from 'react-tooltip';
 
 import { SHOWN_STACK_SIZE } from '@/consts';
-import { getShownStack } from '@/model/stack';
+import { getStack, hasHiddenStack } from '@/model/stack';
 
-import { CustomComponentProps, StackItem, StackList } from '@/types';
+import { CustomComponentProps, StackItem, StackList, StackType } from '@/types';
 
 import SVGIcon from '@/components/svg-icon/svg-icon';
 
@@ -26,11 +26,9 @@ export default function Stack({
     return null;
   }
 
-  const shownStack = getShownStack(stackList, SHOWN_STACK_SIZE);
+  const shownStack = getStack(StackType.Shown, stackList, SHOWN_STACK_SIZE);
 
   if (!shownStack) return;
-
-  const hasHiddenStack = stackList.length > shownStack.length;
 
   return (
     <div
@@ -56,7 +54,7 @@ export default function Stack({
           })}
         </ul>
       )}
-      {hasHiddenStack && (
+      {hasHiddenStack(stackList, SHOWN_STACK_SIZE) && (
         <HiddenStackButton
           className="h-[32px] w-[32px] h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
           projectID={projectID}
