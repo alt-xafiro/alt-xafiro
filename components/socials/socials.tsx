@@ -5,6 +5,8 @@ import socialsJson from '@/data/socials.json';
 
 import { CustomComponentProps, SocialsLinks } from '@/types';
 
+import ExternalLink from '@/components/external-link/external-link';
+
 type SocialsProps = CustomComponentProps;
 
 const socialLinks = socialsJson as unknown as SocialsLinks;
@@ -22,17 +24,7 @@ export default function Socials({ className }: SocialsProps) {
       {socialLinks.map((social) => {
         return (
           <li key={social.locale}>
-            <a
-              className={clsx(
-                className,
-                'transition-colors hover:text-space-100 active:text-space-200'
-              )}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t(social.locale)}
-            </a>
+            <ExternalLink href={social.href}>{t(social.locale)}</ExternalLink>
           </li>
         );
       })}

@@ -8,6 +8,7 @@ import { getStack, hasHiddenStack } from '@/model/stack';
 
 import { CustomComponentProps, StackItem, StackList, StackType } from '@/types';
 
+import ExternalLink from '@/components/external-link/external-link';
 import SVGIcon from '@/components/svg-icon/svg-icon';
 
 type StackProps = CustomComponentProps & {
@@ -95,17 +96,16 @@ function ShownStackItem({
   const tooltipOffset = isTooltipPlaceLeft || isTooltipPlaceRight ? 11 : 10;
 
   return data.link ? (
-    <a
+    <ExternalLink
       className={clsx(className, 'tooltip flex items-center justify-center')}
+      overwriteClassName={true}
       href={data.link}
-      target="_blank"
-      rel="noopener noreferrer"
       data-tooltip-content={t(data.locale)}
       data-tooltip-place={tooltipPlace}
       data-tooltip-offset={tooltipOffset}
     >
       <ShownStackItemIcon data={data} />
-    </a>
+    </ExternalLink>
   ) : (
     <div
       className={clsx(className, 'tooltip flex items-center justify-center')}

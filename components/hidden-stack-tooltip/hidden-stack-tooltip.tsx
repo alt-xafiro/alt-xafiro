@@ -13,6 +13,7 @@ import {
   StackType
 } from '@/types';
 
+import ExternalLink from '@/components/external-link/external-link';
 import SVGIcon from '@/components/svg-icon/svg-icon';
 
 type HiddenStackTooltipProps = CustomComponentProps & {
@@ -69,14 +70,13 @@ export default function HiddenStackTooltip({
                   key={stackItem.locale}
                 >
                   {stackItem.link ? (
-                    <a
+                    <ExternalLink
                       className="flex h-full w-full flex-row items-center space-x-[12px] h-md:space-x-[8px] sm:space-x-[8px]"
+                      overwriteClassName={true}
                       href={stackItem.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       <HiddenStackItem data={stackItem} />
-                    </a>
+                    </ExternalLink>
                   ) : (
                     <>
                       <HiddenStackItem data={stackItem} />

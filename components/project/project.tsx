@@ -8,6 +8,7 @@ import { MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
 
 import { CustomComponentProps, ProjectData } from '@/types';
 
+import ExternalLink from '@/components/external-link/external-link';
 import Stack from '@/components/stack/stack';
 import SVGIcon from '@/components/svg-icon/svg-icon';
 
@@ -156,11 +157,10 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
   return (
     <div className={clsx(className, 'cursor-pointer')} ref={ref}>
       {data.previewURL !== null ? (
-        <a
+        <ExternalLink
           className="tooltip"
+          overwriteClassName={true}
           href={data.previewURL}
-          target="_blank"
-          rel="noopener noreferrer"
           data-tooltip-content={t('ProjectLinks.preview')}
           data-tooltip-place="left"
         >
@@ -170,7 +170,7 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
             theme={data.iconsTheme}
           />
           <span className="sr-only">{t('ProjectLinks.preview')}</span>
-        </a>
+        </ExternalLink>
       ) : (
         <div
           className="tooltip h-[48px] w-[64px] cursor-default text-space-800 h-md:h-[36px] h-md:w-[48px] sm:h-[36px] sm:w-[48px]"
@@ -187,11 +187,10 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
       )}
       <div className="h-full flex-grow" onClick={onClick} />
       <div>
-        <a
+        <ExternalLink
           className="tooltip"
+          overwriteClassName={true}
           href={data.sourceURL}
-          target="_blank"
-          rel="noopener noreferrer"
           data-tooltip-content={t('ProjectLinks.source')}
           data-tooltip-place="right"
         >
@@ -201,7 +200,7 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
             theme={data.iconsTheme}
           />
           <span className="sr-only">{t('ProjectLinks.source')}</span>
-        </a>
+        </ExternalLink>
       </div>
     </div>
   );
