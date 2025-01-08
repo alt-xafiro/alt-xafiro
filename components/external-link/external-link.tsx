@@ -19,11 +19,11 @@ export default function ExternalLink({
   return (
     <a
       className={clsx(
+        className,
         !overwriteClassName && !active && 'text-white/50',
         !overwriteClassName &&
           active &&
-          'transition-colors hover:text-space-100 active:text-space-200',
-        className
+          'transition-colors hover:text-space-100 active:text-space-200'
       )}
       target="_blank"
       rel="noopener noreferrer"

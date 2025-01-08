@@ -20,9 +20,9 @@ export default function Js30Challenge({ className, data }: Js30ChallengeProps) {
   return (
     <div
       className={clsx(
+        className,
         sourceCodePro.className,
-        'flex flex-col items-center justify-start gap-16 pb-32 lg:gap-10 lg:pb-20 sm:gap-6 sm:pb-16',
-        className
+        'flex flex-col items-center justify-start gap-16 pb-32 lg:gap-10 lg:pb-20 sm:gap-6 sm:pb-16'
       )}
     >
       <h1 className="text-center text-6xl font-bold lg:text-5xl sm:text-4xl">
