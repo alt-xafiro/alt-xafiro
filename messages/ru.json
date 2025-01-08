@@ -101,9 +101,10 @@
     "webpack": "Webpack"
   },
   "Socials": {
+    "codewars": "Codewars",
+    "email": "E-mail",
     "github": "GitHub",
-    "telegram": "Telegram",
-    "email": "E-mail"
+    "telegram": "Telegram"
   },
   "Js30": {
     "day": "День",
