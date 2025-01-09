@@ -107,6 +107,7 @@
     "telegram": "Telegram"
   },
   "Js30": {
+    "description": "#JavaScript30 is a challenge to code in vanilla JavaScript for 30 days in a row. Participants get ready-made markup and styles, and their task is to implement the functionality. For me, this challenge is a quick way to practice different Web APIs.",
     "day": "Day",
     "script": "script.js",
     "Days": {
