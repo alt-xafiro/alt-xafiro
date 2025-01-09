@@ -31,11 +31,11 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
     setModalOpen(false);
   };
 
-  const handleOnLocaleSwitcherClick = () => {
+  const handleLocaleSwitcherClick = () => {
     openModal();
   };
 
-  const handleOnLocaleItemClick = (value: string) => {
+  const handleLocaleItemClick = (value: string) => {
     closeModal();
 
     const locale = value as Locale;
@@ -57,7 +57,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
           'text-2xl font-semibold uppercase text-white/60 transition-colors hover:text-space-100/60 active:text-space-200/60 sm:text-xl'
         )}
         type="button"
-        onClick={handleOnLocaleSwitcherClick}
+        onClick={handleLocaleSwitcherClick}
       >
         <span className="sr-only">
           {t('label')} — {t(currentLocale)}
@@ -75,7 +75,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
                 <MenuItem
                   className="h-full w-full"
                   type="button"
-                  onClick={() => handleOnLocaleItemClick(locale)}
+                  onClick={() => handleLocaleItemClick(locale)}
                   active={isCurrentLocale}
                 >
                   {t(locale)}

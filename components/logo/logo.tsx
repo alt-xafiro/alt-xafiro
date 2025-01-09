@@ -54,7 +54,7 @@ function X({ className }: XProps) {
     xRef.current.style.animation = '';
   };
 
-  const handleOnClick = () => {
+  const handleClick = () => {
     if (!xRef.current) {
       return null;
     }
@@ -72,7 +72,7 @@ function X({ className }: XProps) {
         className,
         'flex h-[160px] w-[160px] cursor-pointer items-center justify-center lg:h-[120px] lg:w-[120px] h-md:h-[80px] h-md:w-[80px] sm:h-[80px] sm:w-[80px]'
       )}
-      onClick={handleOnClick}
+      onClick={handleClick}
     >
       <div
         className="h-[116px] w-[118px] origin-[59px_58px] lg:h-[87px] lg:w-[89px] lg:origin-[45px_44px] h-md:h-[58px] h-md:w-[59px] h-md:origin-[29px_29px] sm:h-[58px] sm:w-[59px] sm:origin-[29px_29px]"
