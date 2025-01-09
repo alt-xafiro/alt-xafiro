@@ -15,7 +15,6 @@ const nextConfig: NextConfig = {
       'lib',
       'model',
       'pages',
-      'public',
       'services',
       'src',
       'store',
