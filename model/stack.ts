@@ -1,6 +1,6 @@
 import stackMetaJson from '@/data/stack-meta.json';
 
-import { compareStackItemsByOrder } from '@/lib/utils';
+import { compareStackItemsByOrder } from '@/utils';
 
 import { StackItem, StackList, StackMeta, StackType } from '@/types';
 

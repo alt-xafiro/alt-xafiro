@@ -1,6 +1,6 @@
 import projectsJson from '@/data/projects.json';
 
-import { getProjectDataById } from '@/lib/utils';
+import { getProjectDataById } from '@/utils';
 
 import { ProjectData } from '@/types';
 

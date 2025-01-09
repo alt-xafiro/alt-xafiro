@@ -19,7 +19,7 @@
           "^@/(data)/?(.*)$",
           "^@/(public)/?(.*)$",
           "^@/(i18n)/?(.*)$",
-          "^@/(model|consts|store|hooks|lib|services)/?(.*)$",
+          "^@/(model|consts|store|hooks|lib|utils|services)/?(.*)$",
           "^@/types/?(.*)$",
           "^@/styles/?(.*)$",
           "^@/ui/?(.*)$",

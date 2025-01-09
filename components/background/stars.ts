@@ -1,7 +1,7 @@
 import clamp from 'just-clamp';
 
 import { StarsConfig } from '@/consts';
-import { getRandomNumber } from '@/lib/utils';
+import { getRandomNumber } from '@/utils';
 
 export const renderStars = (canvas: HTMLCanvasElement) => {
   const ctx = canvas.getContext('2d');

@@ -3,8 +3,8 @@ import { useTranslations } from 'next-intl';
 import { Tooltip } from 'react-tooltip';
 
 import { SHOWN_STACK_SIZE } from '@/consts';
-import { getDataAttribute, getProjectDataById } from '@/lib/utils';
 import { getStack } from '@/model/stack';
+import { getDataAttribute, getProjectDataById } from '@/utils';
 
 import {
   CustomComponentProps,
