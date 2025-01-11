@@ -39,7 +39,17 @@ export async function generateMetadata({
     manifest: '/manifest.webmanifest',
     openGraph: {
       siteName: t('site-name'),
-      url: 'https://xafiro.site'
+      url: 'https://xafiro.site',
+      images: [
+        {
+          url: 'https://xafiro.site/opengraph-image.png',
+          width: 1200,
+          height: 630
+        }
+      ]
+    },
+    twitter: {
+      images: ['https://xafiro.site/opengraph-image.png']
     }
   };
 }
