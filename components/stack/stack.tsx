@@ -1,12 +1,17 @@
 import clsx from 'clsx';
-import { useTranslations } from 'next-intl';
 import { Ref } from 'react';
 import { PlacesType } from 'react-tooltip';
 
 import { SHOWN_STACK_SIZE } from '@/consts';
 import { getStack, hasHiddenStack } from '@/model/stack';
 
-import { CustomComponentProps, StackItem, StackList, StackType } from '@/types';
+import {
+  CustomComponentProps,
+  StackItem,
+  StackList,
+  StackLocales,
+  StackType
+} from '@/types';
 
 import ExternalLink from '@/components/external-link/external-link';
 import SVGIcon from '@/components/svg-icon/svg-icon';
@@ -15,13 +20,15 @@ type StackProps = CustomComponentProps & {
   ref?: Ref<HTMLDivElement>;
   projectID: string;
   stackList?: StackList;
+  stackLocales: StackLocales;
 };
 
 export default function Stack({
   className,
   ref,
   projectID,
-  stackList
+  stackList,
+  stackLocales
 }: StackProps) {
   if (!stackList) {
     return null;
@@ -53,6 +60,7 @@ export default function Stack({
                   firstItem={i === 0}
                   lastItem={i === stackList.length - 1}
                   isHiddenStackExisting={isHiddenStackExisting}
+                  stackLocale={stackLocales[stackItem.locale]}
                 />
               </li>
             );
@@ -74,6 +82,7 @@ type ShownStackItemProps = CustomComponentProps & {
   firstItem: boolean;
   lastItem: boolean;
   isHiddenStackExisting: boolean;
+  stackLocale: string;
 };
 
 function ShownStackItem({
@@ -81,10 +90,9 @@ function ShownStackItem({
   data,
   firstItem,
   lastItem,
-  isHiddenStackExisting
+  isHiddenStackExisting,
+  stackLocale
 }: ShownStackItemProps) {
-  const t = useTranslations('Stack');
-
   const isTooltipPlaceLeft = firstItem;
   const isTooltipPlaceRight = lastItem && !isHiddenStackExisting;
 
@@ -100,36 +108,35 @@ function ShownStackItem({
       className={clsx(className, 'tooltip flex items-center justify-center')}
       overwriteClassName={true}
       href={data.link}
-      data-tooltip-content={t(data.locale)}
+      data-tooltip-content={stackLocale}
       data-tooltip-place={tooltipPlace}
       data-tooltip-offset={tooltipOffset}
     >
-      <ShownStackItemIcon data={data} />
+      <ShownStackItemIcon data={data} stackLocale={stackLocale} />
     </ExternalLink>
   ) : (
     <div
       className={clsx(className, 'tooltip flex items-center justify-center')}
       tabIndex={0}
-      data-tooltip-content={t(data.locale)}
+      data-tooltip-content={stackLocale}
       data-tooltip-place={tooltipPlace}
       data-tooltip-offset={tooltipOffset}
     >
-      <ShownStackItemIcon data={data} />
+      <ShownStackItemIcon data={data} stackLocale={stackLocale} />
     </div>
   );
 }
 
 type ShownStackItemIconProps = CustomComponentProps & {
   data: StackItem;
+  stackLocale: string;
 };
 
-function ShownStackItemIcon({ data }: ShownStackItemIconProps) {
-  const t = useTranslations('Stack');
-
+function ShownStackItemIcon({ data, stackLocale }: ShownStackItemIconProps) {
   return (
     <>
       <SVGIcon className="h-full w-full" icon={data.icon} />
-      <span className="sr-only">{t(data.locale)}</span>
+      <span className="sr-only">{stackLocale}</span>
     </>
   );
 }

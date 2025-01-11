@@ -1,5 +1,7 @@
 import { useTranslations } from 'next-intl';
 
+import { socialLinks } from '@/model/socials';
+
 import CenteredContent from '@/components/centered-content/centered-content';
 import Socials from '@/components/socials/socials';
 
@@ -10,7 +12,7 @@ export default function Page() {
     <>
       <h1 className="sr-only">{t('socials')}</h1>
       <CenteredContent>
-        <Socials />
+        <Socials socialLinks={socialLinks} />
       </CenteredContent>
     </>
   );

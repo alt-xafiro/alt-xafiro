@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
+import { getLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 
 import '@/styles/globals.css';
@@ -60,7 +59,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
-  const messages = await getMessages();
 
   return (
     <html lang={locale} className="scrollbar-gutter-stable h-full min-h-full">
@@ -72,13 +70,11 @@ export default async function RootLayout({
           'scrollbar scrollbar-track-space-900 scrollbar-thumb-space-800'
         )}
       >
-        <NextIntlClientProvider messages={messages}>
-          <Background />
-          <Header />
-          <main className="flex items-start justify-center">
-            <div className="h-full w-[1440px] 2xl:w-full">{children}</div>
-          </main>
-        </NextIntlClientProvider>
+        <Background />
+        <Header />
+        <main className="flex items-start justify-center">
+          <div className="h-full w-[1440px] 2xl:w-full">{children}</div>
+        </main>
       </body>
     </html>
   );

@@ -2,7 +2,6 @@
 
 import { useWindowSize } from '@uidotdev/usehooks';
 import clsx from 'clsx';
-import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { MouseEventHandler, useEffect, useState } from 'react';
 
@@ -15,9 +14,14 @@ import { getBreakpoint } from '@/ui/tailwind-config';
 import MenuItem from '@/components/menu-item/menu-item';
 import Modal from '@/components/modal/modal';
 
-type NavigationProps = CustomComponentProps;
+type NavigationProps = CustomComponentProps & {
+  locales: {
+    pages: string[];
+    burgerButton: string;
+  };
+};
 
-export default function Navigation({ className }: NavigationProps) {
+export default function Navigation({ className, locales }: NavigationProps) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const { width: windowWidth } = useWindowSize();
@@ -52,12 +56,14 @@ export default function Navigation({ className }: NavigationProps) {
         <Links
           className="inline-flex h-full w-full flex-row flex-wrap items-center justify-end space-x-11"
           onLinkClick={closeModal}
+          pageLocales={locales.pages}
         />
       </nav>
 
       <BurgerMenu
         className={clsx(className, 'hidden 3lg:block')}
         onClick={handleNavigationButtonClick}
+        burgerButtonLocale={locales.burgerButton}
       />
 
       <Modal open={modalOpen} closeModal={closeModal}>
@@ -65,6 +71,7 @@ export default function Navigation({ className }: NavigationProps) {
           <Links
             className="inline-flex flex-col items-center space-y-4"
             onLinkClick={closeModal}
+            pageLocales={locales.pages}
           />
         </nav>
       </Modal>
@@ -74,16 +81,15 @@ export default function Navigation({ className }: NavigationProps) {
 
 type LinksProps = CustomComponentProps & {
   onLinkClick?: () => void;
+  pageLocales: string[];
 };
 
-function Links({ className, onLinkClick = () => {} }: LinksProps) {
-  const t = useTranslations('Pages');
-
+function Links({ className, onLinkClick = () => {}, pageLocales }: LinksProps) {
   const currentPathname = usePathname();
 
   return (
     <ul className={clsx(className, 'h-full w-full')}>
-      {PAGES.map((page) => {
+      {PAGES.map((page, i) => {
         const isActive = currentPathname === page.href;
 
         return (
@@ -95,7 +101,7 @@ function Links({ className, onLinkClick = () => {} }: LinksProps) {
               onClick={onLinkClick}
               active={isActive}
             >
-              {t(page.locale)}
+              {pageLocales[i]}
             </MenuItem>
           </li>
         );
@@ -105,11 +111,14 @@ function Links({ className, onLinkClick = () => {} }: LinksProps) {
 }
 type BurgerMenuProps = CustomComponentProps & {
   onClick: MouseEventHandler<HTMLButtonElement> | undefined;
+  burgerButtonLocale: string;
 };
 
-function BurgerMenu({ className, onClick }: BurgerMenuProps) {
-  const t = useTranslations('Navigation');
-
+function BurgerMenu({
+  className,
+  onClick,
+  burgerButtonLocale
+}: BurgerMenuProps) {
   return (
     <div className={className}>
       <button
@@ -117,7 +126,7 @@ function BurgerMenu({ className, onClick }: BurgerMenuProps) {
         onClick={onClick}
         type="button"
       >
-        <span className="sr-only">{t('burger-button')}</span>
+        <span className="sr-only">{burgerButtonLocale}</span>
         <span className="relative h-[41px] w-full lg:h-[32px] lg:w-[48px] sm:h-[27px] sm:w-[36px]">
           <BurgerDash className="top-0" />
           <BurgerDash className="top-[18px] lg:top-[14px] sm:top-[12px]" />

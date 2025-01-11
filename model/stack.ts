@@ -4,7 +4,7 @@ import { compareStackItemsByOrder } from '@/utils';
 
 import { StackItem, StackList, StackMeta, StackType } from '@/types';
 
-const stackMeta = stackMetaJson as unknown as StackMeta;
+export const stackMeta = stackMetaJson as unknown as StackMeta;
 
 const getSortedStack = (stackList: StackList) => {
   return stackList?.map((el) => stackMeta[el]).sort(compareStackItemsByOrder);

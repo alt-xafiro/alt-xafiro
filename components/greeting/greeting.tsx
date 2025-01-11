@@ -1,5 +1,3 @@
-'use client';
-
 import clsx from 'clsx';
 import * as motion from 'motion/react-client';
 import { useTranslations } from 'next-intl';

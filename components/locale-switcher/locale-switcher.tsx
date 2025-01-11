@@ -1,27 +1,31 @@
 'use client';
 
 import clsx from 'clsx';
-import { useLocale, useTranslations } from 'next-intl';
 import { useState, useTransition } from 'react';
-
-import { Locale } from '@/i18n/config';
 
 import { LOCALES } from '@/consts';
 import { setUserLocale } from '@/services/locale';
 
-import { CustomComponentProps } from '@/types';
+import { CustomComponentProps, Locale, LocalesLocales } from '@/types';
 
 import MenuItem from '@/components/menu-item/menu-item';
 import Modal from '@/components/modal/modal';
 
-type LocaleSwitcherProps = CustomComponentProps;
+type LocaleSwitcherProps = CustomComponentProps & {
+  currentLocale: Locale;
+  locales: {
+    label: string;
+    locales: LocalesLocales;
+  };
+};
 
-export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
-  const t = useTranslations('LocaleSwitcher');
+export default function LocaleSwitcher({
+  className,
+  currentLocale,
+  locales
+}: LocaleSwitcherProps) {
   const [isPending, startTransition] = useTransition();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-
-  const currentLocale = useLocale();
 
   const openModal = () => {
     setModalOpen(true);
@@ -35,10 +39,10 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
     openModal();
   };
 
-  const handleLocaleItemClick = (value: string) => {
+  const handleLocaleItemClick = (value: Locale) => {
     closeModal();
 
-    const locale = value as Locale;
+    const locale = value;
 
     if (locale === currentLocale) return;
 
@@ -60,9 +64,9 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
         onClick={handleLocaleSwitcherClick}
       >
         <span className="sr-only">
-          {t('label')} — {t(currentLocale)}
+          {locales.label} — {locales.locales[currentLocale].full}
         </span>
-        <span aria-hidden="true">{t(`${currentLocale}-abbr`)}</span>
+        <span aria-hidden="true">{locales.locales[currentLocale].abbr}</span>
       </button>
 
       <Modal open={modalOpen} closeModal={closeModal}>
@@ -78,7 +82,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
                   onClick={() => handleLocaleItemClick(locale)}
                   active={isCurrentLocale}
                 >
-                  {t(locale)}
+                  {locales.locales[locale].full}
                 </MenuItem>
               </li>
             );

@@ -11,4 +11,4 @@ export const PAGES = [
     href: '/socials',
     locale: 'socials'
   }
-];
+] as const;

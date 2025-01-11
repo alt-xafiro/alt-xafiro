@@ -7,4 +7,4 @@ export const StarsConfig = {
   STARS_SPEED: 0.005,
   SPACE_COLOR: colors.space['900'],
   STARS_DENSITY: 1608 // lower = more dense
-};
+} as const;

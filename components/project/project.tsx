@@ -2,12 +2,16 @@
 
 import clsx from 'clsx';
 import * as motion from 'motion/react-client';
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
 
-import { CustomComponentProps, ProjectData } from '@/types';
+import {
+  CustomComponentProps,
+  ProjectData,
+  ProjectLocales,
+  StackLocales
+} from '@/types';
 
 import ExternalLink from '@/components/external-link/external-link';
 import Stack from '@/components/stack/stack';
@@ -15,11 +19,13 @@ import SVGIcon from '@/components/svg-icon/svg-icon';
 
 type ProjectProps = CustomComponentProps & {
   data: ProjectData;
+  locales: {
+    project: ProjectLocales;
+    stack: StackLocales;
+  };
 };
 
-export default function Project({ className, data }: ProjectProps) {
-  const t = useTranslations('Projects');
-
+export default function Project({ className, data, locales }: ProjectProps) {
   const [active, setActive] = useState<boolean>(false);
 
   const previewRef = useRef<HTMLButtonElement>(null);
@@ -85,6 +91,7 @@ export default function Project({ className, data }: ProjectProps) {
               'rounded-[24px] transition-all'
             )}
             data={data}
+            alt={locales.project.data.name}
           />
         </button>
 
@@ -96,6 +103,15 @@ export default function Project({ className, data }: ProjectProps) {
           ref={linksRef}
           data={data}
           onClick={() => toggleActive()}
+          locales={{
+            data: {
+              noPreview: locales.project.data.noPreview
+            },
+            projectLinks: {
+              preview: locales.project.projectLinks.preview,
+              source: locales.project.projectLinks.source
+            }
+          }}
         />
 
         <div
@@ -103,8 +119,8 @@ export default function Project({ className, data }: ProjectProps) {
           ref={typeStatusRef}
           onClick={() => toggleActive()}
         >
-          <Type data={data} />
-          <Status data={data} />
+          <Type data={data} typeLocale={locales.project.data.type} />
+          <Status data={data} statusLocale={locales.project.data.status} />
         </div>
 
         <Stack
@@ -112,10 +128,11 @@ export default function Project({ className, data }: ProjectProps) {
           ref={stackRef}
           projectID={data.id}
           stackList={data.stackList}
+          stackLocales={locales.stack}
         />
       </motion.div>
       <h2 className="w-full pt-[0.375rem] text-center text-[1.375rem] leading-[1.875rem] h-md:text-xl sm:text-xl">
-        {t(`${data.locale}`)}
+        {locales.project.data.name}
       </h2>
     </div>
   );
@@ -123,11 +140,10 @@ export default function Project({ className, data }: ProjectProps) {
 
 type PreviewImageProps = CustomComponentProps & {
   data: ProjectData;
+  alt: string;
 };
 
-function PreviewImage({ className, data }: PreviewImageProps) {
-  const t = useTranslations('Projects');
-
+function PreviewImage({ className, data, alt }: PreviewImageProps) {
   return (
     <Image
       className={clsx(
@@ -137,7 +153,7 @@ function PreviewImage({ className, data }: PreviewImageProps) {
         data.id === 'alt-xafiro' && 'shadow-[0px_-2px_3px_2px_rgba(0,0,0,0.7)]'
       )}
       src={`/projects/images/${data.previewImage}.png`}
-      alt={t(data.locale)}
+      alt={alt}
       quality={95}
       priority={true}
       fill
@@ -146,15 +162,22 @@ function PreviewImage({ className, data }: PreviewImageProps) {
   );
 }
 
-type ProjectLinksProps = CustomComponentProps & {
+type LinksProps = CustomComponentProps & {
   ref?: Ref<HTMLDivElement>;
   data: ProjectData;
-  onClick?: MouseEventHandler<HTMLDivElement> | undefined;
+  onClick?: MouseEventHandler<HTMLDivElement>;
+  locales: {
+    data: {
+      noPreview: string | null;
+    };
+    projectLinks: {
+      preview: string;
+      source: string;
+    };
+  };
 };
 
-function Links({ className, ref, data, onClick }: ProjectLinksProps) {
-  const t = useTranslations();
-
+function Links({ className, ref, data, onClick, locales }: LinksProps) {
   return (
     <div className={clsx(className, 'cursor-pointer')} ref={ref}>
       {data.previewURL !== null ? (
@@ -163,7 +186,7 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
             className="tooltip h-[48px] w-[64px] text-space-800 h-md:h-[28px] h-md:w-[48px] sm:h-[28px] sm:w-[48px]"
             overwriteClassName={true}
             href={data.previewURL}
-            data-tooltip-content={t('ProjectLinks.preview')}
+            data-tooltip-content={locales.projectLinks.preview}
             data-tooltip-place="left"
           >
             <SVGIcon
@@ -171,13 +194,13 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
               icon="preview"
               theme={data.iconsTheme}
             />
-            <span className="sr-only">{t('ProjectLinks.preview')}</span>
+            <span className="sr-only">{locales.projectLinks.preview}</span>
           </ExternalLink>
         ) : (
           <Link
             className="tooltip h-[48px] w-[64px] text-space-800 h-md:h-[28px] h-md:w-[48px] sm:h-[28px] sm:w-[48px]"
             href={data.previewURL}
-            data-tooltip-content={t('ProjectLinks.preview')}
+            data-tooltip-content={locales.projectLinks.preview}
             data-tooltip-place="left"
           >
             <SVGIcon
@@ -185,14 +208,14 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
               icon="preview"
               theme={data.iconsTheme}
             />
-            <span className="sr-only">{t('ProjectLinks.preview')}</span>
+            <span className="sr-only">{locales.projectLinks.preview}</span>
           </Link>
         )
       ) : (
         <div
           className="tooltip h-[48px] w-[64px] cursor-default text-space-800 h-md:h-[36px] h-md:w-[48px] sm:h-[36px] sm:w-[48px]"
           tabIndex={0}
-          data-tooltip-content={t(`Projects.${data.locale}-no-preview`)}
+          data-tooltip-content={locales.data.noPreview}
           data-tooltip-place="left"
         >
           <SVGIcon
@@ -207,7 +230,7 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
         className="tooltip h-[48px] w-[48px] text-space-800 h-md:h-[36px] h-md:w-[36px] sm:h-[36px] sm:w-[36px]"
         overwriteClassName={true}
         href={data.sourceURL}
-        data-tooltip-content={t('ProjectLinks.source')}
+        data-tooltip-content={locales.projectLinks.source}
         data-tooltip-place="right"
       >
         <SVGIcon
@@ -215,7 +238,7 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
           icon="github"
           theme={data.iconsTheme}
         />
-        <span className="sr-only">{t('ProjectLinks.source')}</span>
+        <span className="sr-only">{locales.projectLinks.source}</span>
       </ExternalLink>
     </div>
   );
@@ -223,11 +246,10 @@ function Links({ className, ref, data, onClick }: ProjectLinksProps) {
 
 type TypeProps = CustomComponentProps & {
   data: ProjectData;
+  typeLocale: string;
 };
 
-function Type({ className, data }: TypeProps) {
-  const t = useTranslations('ProjectType');
-
+function Type({ className, data, typeLocale }: TypeProps) {
   if (data.type === 'pet') {
     return null;
   }
@@ -239,7 +261,7 @@ function Type({ className, data }: TypeProps) {
         'tooltip h-[36px] w-[36px] text-space-800 h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]'
       )}
       tabIndex={0}
-      data-tooltip-content={t(data.type)}
+      data-tooltip-content={typeLocale}
       data-tooltip-place="left"
     >
       <SVGIcon
@@ -247,18 +269,17 @@ function Type({ className, data }: TypeProps) {
         icon={data.type}
         theme={data.iconsTheme}
       />
-      <span className="sr-only">{t(data.type)}</span>
+      <span className="sr-only">{typeLocale}</span>
     </div>
   );
 }
 
 type StatusProps = CustomComponentProps & {
   data: ProjectData;
+  statusLocale: string;
 };
 
-function Status({ className, data }: StatusProps) {
-  const t = useTranslations('ProjectStatus');
-
+function Status({ className, data, statusLocale }: StatusProps) {
   if (data.status === 'done') return null;
 
   return (
@@ -268,7 +289,7 @@ function Status({ className, data }: StatusProps) {
         'tooltip h-[36px] w-[36px] text-space-800 h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]'
       )}
       tabIndex={0}
-      data-tooltip-content={t(data.status)}
+      data-tooltip-content={statusLocale}
       data-tooltip-place="right"
     >
       <SVGIcon
@@ -276,7 +297,7 @@ function Status({ className, data }: StatusProps) {
         icon={data.status}
         theme={data.iconsTheme}
       />
-      <span className="sr-only">{t(data.status)}</span>
+      <span className="sr-only">{statusLocale}</span>
     </div>
   );
 }

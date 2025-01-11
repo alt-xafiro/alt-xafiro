@@ -1,5 +1,6 @@
+'use client';
+
 import clsx from 'clsx';
-import { useTranslations } from 'next-intl';
 import { Tooltip } from 'react-tooltip';
 
 import { SHOWN_STACK_SIZE } from '@/consts';
@@ -10,6 +11,7 @@ import {
   CustomComponentProps,
   ProjectData,
   StackItem,
+  StackLocales,
   StackType
 } from '@/types';
 
@@ -18,10 +20,12 @@ import SVGIcon from '@/components/svg-icon/svg-icon';
 
 type HiddenStackTooltipProps = CustomComponentProps & {
   projects: ProjectData[];
+  stackLocales: StackLocales;
 };
 
 export default function HiddenStackTooltip({
-  projects
+  projects,
+  stackLocales
 }: HiddenStackTooltipProps) {
   return (
     <Tooltip
@@ -75,11 +79,17 @@ export default function HiddenStackTooltip({
                       overwriteClassName={true}
                       href={stackItem.link}
                     >
-                      <HiddenStackItem data={stackItem} />
+                      <HiddenStackItem
+                        data={stackItem}
+                        locale={stackLocales[stackItem.locale]}
+                      />
                     </ExternalLink>
                   ) : (
                     <>
-                      <HiddenStackItem data={stackItem} />
+                      <HiddenStackItem
+                        data={stackItem}
+                        locale={stackLocales[stackItem.locale]}
+                      />
                     </>
                   )}
                 </li>
@@ -94,18 +104,17 @@ export default function HiddenStackTooltip({
 
 type HiddenStackItemProps = CustomComponentProps & {
   data: StackItem;
+  locale: string;
 };
 
-function HiddenStackItem({ data }: HiddenStackItemProps) {
-  const t = useTranslations('Stack');
-
+function HiddenStackItem({ data, locale }: HiddenStackItemProps) {
   return (
     <>
       <SVGIcon
         className="h-[32px] w-[32px] h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
         icon={data.icon}
       />
-      <span>{t(data.locale)}</span>
+      <span>{locale}</span>
     </>
   );
 }

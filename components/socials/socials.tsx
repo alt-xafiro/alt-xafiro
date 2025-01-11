@@ -1,17 +1,15 @@
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 
-import socialsJson from '@/data/socials.json';
-
 import { CustomComponentProps, SocialsLinks } from '@/types';
 
 import ExternalLink from '@/components/external-link/external-link';
 
-type SocialsProps = CustomComponentProps;
+type SocialsProps = CustomComponentProps & {
+  socialLinks: SocialsLinks;
+};
 
-const socialLinks = socialsJson as unknown as SocialsLinks;
-
-export default function Socials({ className }: SocialsProps) {
+export default function Socials({ className, socialLinks }: SocialsProps) {
   const t = useTranslations('Socials');
 
   return (
