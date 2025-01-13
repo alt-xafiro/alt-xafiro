@@ -1,8 +1,26 @@
+import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import { projectsData } from '@/model/project';
 
 import Projects from '@/components/projects/projects';
+
+type generateMetadataProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({
+  params
+}: generateMetadataProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  const t = await getTranslations({ locale });
+
+  return {
+    title: `${t('Pages.projects')} ${t('Metadata.separator')} ${t('Metadata.title')}`
+  };
+}
 
 export default function Page() {
   const t = useTranslations('Pages');

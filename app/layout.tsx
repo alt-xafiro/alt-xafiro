@@ -20,7 +20,6 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL('https://xafiro.site'),
-    title: t('title'),
     description: t('description'),
     authors: [
       {

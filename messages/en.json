@@ -7,9 +7,10 @@
     "ru-abbr": "Ru"
   },
   "Metadata": {
-    "title": "Safiro | Front-End Developer",
+    "title": "Safiro",
+    "subtitle": "Front-End Developer",
     "description": "Hi! I'm Maxim, a front-end developer.",
-    "site-name": "Safiro | Front-End Developer"
+    "separator": "·"
   },
   "Navigation": {
     "burger-button": "Open navigation menu"

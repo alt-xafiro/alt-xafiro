@@ -1,9 +1,27 @@
+import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 import { socialLinks } from '@/model/socials';
 
 import CenteredContent from '@/components/centered-content/centered-content';
 import Socials from '@/components/socials/socials';
+
+type generateMetadataProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({
+  params
+}: generateMetadataProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  const t = await getTranslations({ locale });
+
+  return {
+    title: `${t('Pages.socials')} ${t('Metadata.separator')} ${t('Metadata.title')}`
+  };
+}
 
 export default function Page() {
   const t = useTranslations('Pages');
