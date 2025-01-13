@@ -30,6 +30,7 @@ export default function Greeting({ className }: GreetingProps) {
       )}
     >
       <motion.p
+        className="no-js-motion"
         initial={{ y: Line.OFFSET_Y, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
@@ -40,6 +41,7 @@ export default function Greeting({ className }: GreetingProps) {
         {t('hi')}
       </motion.p>
       <motion.p
+        className="no-js-motion"
         initial={{ y: Line.OFFSET_Y, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
@@ -57,6 +59,7 @@ export default function Greeting({ className }: GreetingProps) {
         {t('who')}
       </motion.p>
       <motion.p
+        className="no-js-motion"
         initial={{ y: Line.OFFSET_Y, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{

@@ -9,6 +9,7 @@ import { exo2 } from '@/ui/fonts';
 
 import Background from '@/components/background/background';
 import Header from '@/components/header/header';
+import NoJs from '@/components/no-js/no-js';
 
 type generateMetadataProps = {
   params: Promise<{ locale: string }>;
@@ -68,6 +69,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scrollbar-gutter-stable h-full min-h-full">
+      <head>
+        <NoJs />
+      </head>
       <body
         className={clsx(
           exo2.className,
