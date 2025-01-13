@@ -1,10 +1,6 @@
 {
   "LocaleSwitcher": {
-    "label": "Язык",
-    "en": "English",
-    "en-abbr": "En",
-    "ru": "Русский",
-    "ru-abbr": "Ru"
+    "label": "Язык"
   },
   "Metadata": {
     "title": "Safiro | Фронтенд-разработчик",
@@ -15,12 +11,10 @@
     "burger-button": "Открыть меню"
   },
   "Pages": {
-    "not-found": "404",
     "not-found-description": "Страница не найдена.",
     "about-me": "Обо мне",
     "projects": "Проекты",
-    "socials": "Контакты",
-    "js30": "#JavaScript30"
+    "socials": "Контакты"
   },
   "AboutMe": {
     "hi": "Привет!",
@@ -29,8 +23,7 @@
     "what": "веб-технологии и создавать новое."
   },
   "ProjectLinks": {
-    "preview": "Посмотреть",
-    "source": "GitHub"
+    "preview": "Посмотреть"
   },
   "ProjectStatus": {
     "development": "В разработке",
@@ -49,10 +42,7 @@
     "cheelee": "«Cheelee»",
     "cinemaddict": "«Киноман»",
     "cinemaddict-no-preview": "Серверы HTML Academy отключены",
-    "dbd-perks": "DBD Perks",
-    "direct-linker": "Direct Linker",
     "direct-linker-no-preview": "Нет GUI",
-    "js30": "#JavaScript30",
     "kekstagram": "«Кекстаграм»",
     "maine-coon": "«Питомник Мейн‑Кунов»",
     "mental-calc": "Тренажёр устного счёта",
@@ -63,84 +53,16 @@
     "star-likes": "«Star Likes»",
     "starter-kit-vanilla": "Starter kit для фронтенда",
     "starter-kit-vanilla-no-preview": "Нет GUI",
-    "wallpaper-gallery": "Wallpaper Gallery",
     "when-next-gta": "Когда выйдет GTA?"
   },
   "Stack": {
     "a11y": "Доступность",
-    "chart-js": "Chart.js",
     "crossbrowser": "Кроссбраузерность",
-    "css": "CSS",
-    "dayjs": "Day.js",
-    "desktop-first": "Desktop First",
-    "eslint": "ESLint",
-    "google-maps-api": "Google Maps API",
-    "gulp": "Gulp",
-    "html": "HTML",
-    "i18next": "i18next",
-    "javascript": "JavaScript",
-    "libphonenumber-js": "libphonenumber-js",
-    "lodash": "Lodash",
-    "mathjs": "math.js",
-    "minisearch": "MiniSearch",
-    "mobile-first": "Mobile First",
-    "motion": "Motion",
-    "nextjs": "Next.js",
-    "prettier": "Prettier",
-    "pug": "Pug",
-    "react": "React",
-    "redux-toolkit": "Redux Toolkit",
     "responsive": "Адаптивность / Отзывчивость",
-    "retina": "Поддержка Retina-дисплеев",
-    "sass": "Sass",
-    "stylelint": "Stylelint",
-    "tailwind": "Tailwind CSS",
-    "typescript": "TypeScript",
-    "vite": "Vite",
-    "vitest": "Vitest",
-    "webpack": "Webpack"
-  },
-  "Socials": {
-    "codewars": "Codewars",
-    "email": "E-mail",
-    "github": "GitHub",
-    "telegram": "Telegram"
+    "retina": "Поддержка Retina-дисплеев"
   },
   "Js30": {
     "description": "#JavaScript30 — это 30-дневный челлендж по программированию на ванильном JavaScript. Участник получает готовые разметку и стили, а его задача — реализовать функционал. Для меня этот челлендж — быстрый способ попрактиковаться в разных Web API.",
-    "day": "День",
-    "script": "script.js",
-    "Days": {
-      "java-script-drum-kit": "JavaScript Drum Kit",
-      "css-js-clock": "CSS + JS Clock",
-      "playing-with-css-variables-and-js": "Playing with CSS Variables and JS",
-      "array-cardio-day-1": "Array Cardio Day 1",
-      "flex-panels-image-gallery": "Flex Panels Image Gallery",
-      "ajax-type-ahead": "Ajax Type Ahead",
-      "array-cardio-day-2": "Array Cardio Day 2",
-      "fun-with-html5-canvas": "Fun with HTML5 Canvas",
-      "14-must-know-dev-tools-tricks": "14 Must Know Dev Tools Tricks",
-      "hold-shift-to-check-multiple-checkboxes": "Hold Shift to Check Multiple Checkboxes",
-      "custom-html5-video-player": "Custom HTML5 Video Player",
-      "key-sequence-detection-konami-code": "Key Sequence Detection (KONAMI CODE)",
-      "slide-in-on-scroll": "Slide In on Scroll",
-      "object-and-arrays-reference-vs-copy": "Object and Arrays — Reference VS Copy",
-      "local-storage-and-event-delegation": "LocalStorage and Event Delegation",
-      "css-text-shadow-mouse-move-effect": "CSS Text Shadow Mouse Move Effect",
-      "sorting-band-names-without-articles": "Sorting Band Names without articles",
-      "tally-string-times-with-reduce": "Tally String Times with Reduce",
-      "unreal-webcam-fun": "Unreal Webcam Fun",
-      "native-speech-recognition": "Native Speech Recognition",
-      "geolocation-based-speedometer-and-compass": "Geolocation based Speedometer and Compass",
-      "follow-along-links": "Follow Along Links",
-      "speech-synthesis": "Speech Synthesis",
-      "sticky-nav": "Sticky Nav",
-      "event-capture-propagation-bubbling-and-once": "Event Capture, Propagation, Bubbling and Once",
-      "stripe-follow-along-dropdown": "Stripe Follow Along Dropdown",
-      "click-and-drag-to-scroll": "Click and Drag to Scroll",
-      "video-speed-controller-ui": "Video Speed Controller UI",
-      "countdown-clock": "Countdown Clock",
-      "whack-a-mole-game": "Whack A Mole Game"
-    }
+    "day": "День"
   }
 }
