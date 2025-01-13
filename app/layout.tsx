@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 
@@ -10,12 +11,14 @@ import Background from '@/components/background/background';
 import Header from '@/components/header/header';
 
 type generateMetadataProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata({
-  params: { locale }
-}: generateMetadataProps) {
+  params
+}: generateMetadataProps): Promise<Metadata> {
+  const { locale } = await params;
+
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
@@ -36,7 +39,7 @@ export async function generateMetadata({
     ],
     manifest: '/manifest.webmanifest',
     openGraph: {
-      siteName: t('site-name'),
+      siteName: `${t('title')} — ${t('subtitle')}`,
       url: 'https://xafiro.site',
       images: [
         {
