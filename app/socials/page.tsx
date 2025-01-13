@@ -16,10 +16,10 @@ export async function generateMetadata({
 }: generateMetadataProps): Promise<Metadata> {
   const { locale } = await params;
 
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale, namespace: 'Pages' });
 
   return {
-    title: `${t('Pages.socials')} ${t('Metadata.separator')} ${t('Metadata.title')}`
+    title: `${t('socials')}`
   };
 }
 
