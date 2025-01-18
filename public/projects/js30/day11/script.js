@@ -1,3 +1,11 @@
+//
+//  There's a lot to improve, but I don't want to spend too much time
+//  on a one-time player, especially since the provided markup and styles are,
+//  let's just say, not perfect.
+//
+//  I've dug into the Video API, got the point, and that's enough for me.
+//
+
 const playerNode = document.querySelector('.player');
 const videoNode = playerNode.querySelector('.viewer');
 const playNode = playerNode.querySelector('.toggle');
