@@ -110,10 +110,22 @@ body {
 }
 
 .progress__filled {
-  width: 0;
   background: #ff4ab7;
   flex: 0;
   flex-basis: 0;
+  z-index: 2;
+}
+
+.progress__buffered {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+
+  width: 10px;
+
+  background: #757575;
 }
 
 /* unholy css to style input type="range" */

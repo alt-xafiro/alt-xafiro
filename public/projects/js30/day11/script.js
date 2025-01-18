@@ -3,6 +3,7 @@ const videoNode = playerNode.querySelector('.viewer');
 const playNode = playerNode.querySelector('.toggle');
 const progressNode = playerNode.querySelector('.progress');
 const progressBarNode = playerNode.querySelector('.progress__filled');
+const bufferBarNode = playerNode.querySelector('.progress__buffered');
 const skipButtonNodes = playerNode.querySelectorAll('[data-skip]');
 const sliderNodes = playerNode.querySelectorAll('.player__slider');
 
@@ -37,6 +38,14 @@ const handleTimeUpdate = () => {
   progressBarNode.style.flexBasis = `${percent}%`;
 };
 
+const handleBuffering = () => {
+  const bufferEnd = videoNode.buffered.end(videoNode.buffered.length - 1);
+
+  if (videoNode.duration > 0) {
+    bufferBarNode.style.width = `${(bufferEnd / videoNode.duration) * 100}%`;
+  }
+};
+
 const handleRangeChange = (evt) => {
   videoNode[evt.target.name] = evt.target.value;
 };
@@ -61,6 +70,7 @@ videoNode.addEventListener('click', () => togglePlay());
 videoNode.addEventListener('play', () => toggleButton());
 videoNode.addEventListener('pause', () => toggleButton());
 videoNode.addEventListener('timeupdate', handleTimeUpdate);
+videoNode.addEventListener('progress', handleBuffering);
 
 playNode.addEventListener('click', () => togglePlay());
 
