@@ -73,6 +73,7 @@
     "css": "CSS",
     "dayjs": "Day.js",
     "desktop-first": "Desktop First",
+    "desktop-only": "Desktop Only",
     "eslint": "ESLint",
     "google-maps-api": "Google Maps API",
     "gulp": "Gulp",

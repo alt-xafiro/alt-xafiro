@@ -10,7 +10,7 @@
     "iconsTheme": "light",
     "type": "training",
     "status": "development",
-    "stackList": ["javascript"]
+    "stackList": ["crossbrowser", "desktopOnly", "javascript"]
   },
   {
     "id": "alt-xafiro",
@@ -200,6 +200,7 @@
     "stackList": [
       "a11y",
       "crossbrowser",
+      "desktopOnly",
       "eslint",
       "gulp",
       "javascript",
@@ -423,6 +424,14 @@
     "iconsTheme": "dark",
     "type": "learning",
     "status": "done",
-    "stackList": ["a11y", "crossbrowser", "css", "googleMapsAPI", "html"]
+
+    "stackList": [
+      "a11y",
+      "crossbrowser",
+      "css",
+      "desktopOnly",
+      "googleMapsAPI",
+      "html"
+    ]
   }
 ]

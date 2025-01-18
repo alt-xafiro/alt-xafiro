@@ -83,6 +83,13 @@
     "main": false,
     "order": 61
   },
+  "desktopOnly": {
+    "locale": "desktop-only",
+    "icon": "desktop-only",
+    "link": null,
+    "main": false,
+    "order": 61
+  },
   "desktopFirst": {
     "locale": "desktop-first",
     "icon": "desktop-first",
