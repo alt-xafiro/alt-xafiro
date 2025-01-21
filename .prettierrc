@@ -16,7 +16,7 @@
         ],
         "importOrder": [
           "<THIRD_PARTY_MODULES>",
-          "^@/(data)/?(.*)$",
+          "^@/(data|messages)/?(.*)$",
           "^@/(public)/?(.*)$",
           "^@/(i18n)/?(.*)$",
           "^@/(model|consts|store|hooks|lib|utils|services)/?(.*)$",
