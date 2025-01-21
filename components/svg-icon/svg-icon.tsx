@@ -4,7 +4,7 @@ import { CustomComponentProps, IconsTheme } from '@/types';
 
 import { colors } from '@/ui/tailwind-config';
 
-export type SVGIcon =
+export type SvgIconName =
   | 'a11y'
   | 'chart-js'
   | 'code'
@@ -50,16 +50,16 @@ export type SVGIcon =
   | 'vitest'
   | 'webpack';
 
-type SVGIconProps = CustomComponentProps & {
-  icon: SVGIcon;
+type SvgIconProps = CustomComponentProps & {
+  icon: SvgIconName;
   theme?: IconsTheme;
 };
 
-export default function SVGIcon({
+export default function SvgIcon({
   className,
   icon,
   theme = 'dark'
-}: SVGIconProps): JSX.Element {
+}: SvgIconProps): JSX.Element {
   const FILL = theme === 'dark' ? 'currentColor' : '#e6e6e6';
   const SHADOW = theme === 'light' ? 'drop-shadow(0 0 1px #000)' : 'none';
 

@@ -6,7 +6,7 @@ import { CustomComponentProps } from '@/types';
 
 import { sourceCodePro } from '@/ui/fonts';
 
-import SVGIcon from '@/components/svg-icon/svg-icon';
+import SvgIcon from '@/components/svg-icon/svg-icon';
 
 type GreetingProps = CustomComponentProps;
 
@@ -81,7 +81,7 @@ export default function Greeting({ className }: GreetingProps) {
           whileTap={{ scale: 1.4 }}
           tabIndex={-1}
         >
-          <SVGIcon
+          <SvgIcon
             className="relative -top-[3px] inline-block h-[32px] w-[32px] lg:h-[24px] lg:w-[24px] md:-top-[2px] md:h-[20px] md:w-[20px] sm:h-[16px] sm:w-[16px]"
             icon="heart"
           />

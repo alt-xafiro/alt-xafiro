@@ -1,4 +1,4 @@
-import { SVGIcon } from '@/components/svg-icon/svg-icon';
+import { SvgIconName } from '@/components/svg-icon/svg-icon';
 
 export type StackList = string[] | null;
 
@@ -9,7 +9,7 @@ export enum StackType {
 
 export type StackItem = {
   locale: string;
-  icon: SVGIcon;
+  icon: SvgIconName;
   link: string | null;
   main: boolean;
   order: number;

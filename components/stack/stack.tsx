@@ -14,7 +14,7 @@ import {
 } from '@/types';
 
 import ExternalLink from '@/components/external-link/external-link';
-import SVGIcon from '@/components/svg-icon/svg-icon';
+import SvgIcon from '@/components/svg-icon/svg-icon';
 
 type StackProps = CustomComponentProps & {
   ref?: Ref<HTMLDivElement>;
@@ -135,7 +135,7 @@ type ShownStackItemIconProps = CustomComponentProps & {
 function ShownStackItemIcon({ data, stackLocale }: ShownStackItemIconProps) {
   return (
     <>
-      <SVGIcon className="h-full w-full" icon={data.icon} />
+      <SvgIcon className="h-full w-full" icon={data.icon} />
       <span className="sr-only">{stackLocale}</span>
     </>
   );
@@ -155,7 +155,7 @@ function HiddenStackButton({ className, projectID }: HiddenStackProps) {
       tabIndex={0}
       data-project-id={projectID}
     >
-      <SVGIcon className="h-full w-full" icon="more" />
+      <SvgIcon className="h-full w-full" icon="more" />
     </div>
   );
 }

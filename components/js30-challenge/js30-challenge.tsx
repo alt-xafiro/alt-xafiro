@@ -8,7 +8,7 @@ import { CustomComponentProps, Js30ChallengeData } from '@/types';
 import { sourceCodePro } from '@/ui/fonts';
 
 import ExternalLink from '@/components/external-link/external-link';
-import SVGIcon from '@/components/svg-icon/svg-icon';
+import SvgIcon from '@/components/svg-icon/svg-icon';
 
 type Js30ChallengeProps = CustomComponentProps & {
   data: Js30ChallengeData;
@@ -81,7 +81,7 @@ function DayN({ className, day, name, active }: DayNProps) {
             href={active ? previewLink : undefined}
             active={active}
           >
-            <SVGIcon
+            <SvgIcon
               icon="preview"
               className="h-5 w-5 flex-shrink-0 lg:h-[1.125rem] lg:w-[1.125rem] sm:h-4 sm:w-4"
             />{' '}
@@ -94,7 +94,7 @@ function DayN({ className, day, name, active }: DayNProps) {
             href={active ? scriptLink : undefined}
             active={active}
           >
-            <SVGIcon
+            <SvgIcon
               icon="code"
               className="h-5 w-5 flex-shrink-0 lg:h-[1.125rem] lg:w-[1.125rem] sm:h-4 sm:w-4"
             />

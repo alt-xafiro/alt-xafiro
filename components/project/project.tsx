@@ -15,7 +15,7 @@ import {
 
 import ExternalLink from '@/components/external-link/external-link';
 import Stack from '@/components/stack/stack';
-import SVGIcon from '@/components/svg-icon/svg-icon';
+import SvgIcon from '@/components/svg-icon/svg-icon';
 
 type ProjectProps = CustomComponentProps & {
   data: ProjectData;
@@ -189,7 +189,7 @@ function Links({ className, ref, data, onClick, locales }: LinksProps) {
             data-tooltip-content={locales.projectLinks.preview}
             data-tooltip-place="left"
           >
-            <SVGIcon
+            <SvgIcon
               className="h-full w-full"
               icon="preview"
               theme={data.iconsTheme}
@@ -203,7 +203,7 @@ function Links({ className, ref, data, onClick, locales }: LinksProps) {
             data-tooltip-content={locales.projectLinks.preview}
             data-tooltip-place="left"
           >
-            <SVGIcon
+            <SvgIcon
               className="h-full w-full"
               icon="preview"
               theme={data.iconsTheme}
@@ -218,7 +218,7 @@ function Links({ className, ref, data, onClick, locales }: LinksProps) {
           data-tooltip-content={locales.data.noPreview}
           data-tooltip-place="left"
         >
-          <SVGIcon
+          <SvgIcon
             className="h-full w-full"
             icon="no-preview"
             theme={data.iconsTheme}
@@ -233,7 +233,7 @@ function Links({ className, ref, data, onClick, locales }: LinksProps) {
         data-tooltip-content={locales.projectLinks.source}
         data-tooltip-place="right"
       >
-        <SVGIcon
+        <SvgIcon
           className="h-full w-full"
           icon="github"
           theme={data.iconsTheme}
@@ -264,7 +264,7 @@ function Type({ className, data, typeLocale }: TypeProps) {
       data-tooltip-content={typeLocale}
       data-tooltip-place="left"
     >
-      <SVGIcon
+      <SvgIcon
         className="h-full w-full"
         icon={data.type}
         theme={data.iconsTheme}
@@ -292,7 +292,7 @@ function Status({ className, data, statusLocale }: StatusProps) {
       data-tooltip-content={statusLocale}
       data-tooltip-place="right"
     >
-      <SVGIcon
+      <SvgIcon
         className="h-full w-full"
         icon={data.status}
         theme={data.iconsTheme}

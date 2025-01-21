@@ -16,7 +16,7 @@ import {
 } from '@/types';
 
 import ExternalLink from '@/components/external-link/external-link';
-import SVGIcon from '@/components/svg-icon/svg-icon';
+import SvgIcon from '@/components/svg-icon/svg-icon';
 
 type HiddenStackTooltipProps = CustomComponentProps & {
   projects: ProjectData[];
@@ -110,7 +110,7 @@ type HiddenStackItemProps = CustomComponentProps & {
 function HiddenStackItem({ data, locale }: HiddenStackItemProps) {
   return (
     <>
-      <SVGIcon
+      <SvgIcon
         className="h-[32px] w-[32px] h-md:h-[28px] h-md:w-[28px] sm:h-[28px] sm:w-[28px]"
         icon={data.icon}
       />
