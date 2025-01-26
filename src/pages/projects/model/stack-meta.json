@@ -1,0 +1,240 @@
+{
+  "nextjs": {
+    "locale": "nextjs",
+    "icon": "nextjs",
+    "link": "https://nextjs.org/",
+    "main": true,
+    "order": 10
+  },
+  "react": {
+    "locale": "react",
+    "icon": "react",
+    "link": "https://react.dev/",
+    "main": true,
+    "order": 20
+  },
+  "reduxToolkit": {
+    "locale": "redux-toolkit",
+    "icon": "redux-toolkit",
+    "link": "https://redux-toolkit.js.org/",
+    "main": true,
+    "order": 21
+  },
+  "fsd": {
+    "locale": "fsd",
+    "icon": "fsd",
+    "link": "https://feature-sliced.design/",
+    "main": true,
+    "order": 25
+  },
+  "html": {
+    "locale": "html",
+    "icon": "html",
+    "link": null,
+    "main": true,
+    "order": 30
+  },
+  "pug": {
+    "locale": "pug",
+    "icon": "pug",
+    "link": "https://pugjs.org/",
+    "main": true,
+    "order": 30
+  },
+  "css": {
+    "locale": "css",
+    "icon": "css",
+    "link": null,
+    "main": true,
+    "order": 40
+  },
+  "sass": {
+    "locale": "sass",
+    "icon": "sass",
+    "link": "https://sass-lang.com/",
+    "main": true,
+    "order": 40
+  },
+  "tailwind": {
+    "locale": "tailwind",
+    "icon": "tailwind",
+    "link": "https://tailwindcss.com/",
+    "main": true,
+    "order": 40
+  },
+  "javascript": {
+    "locale": "javascript",
+    "icon": "javascript",
+    "link": null,
+    "main": true,
+    "order": 50
+  },
+  "typescript": {
+    "locale": "typescript",
+    "icon": "typescript",
+    "link": "https://www.typescriptlang.org/",
+    "main": true,
+    "order": 50
+  },
+  "crossbrowser": {
+    "locale": "crossbrowser",
+    "icon": "crossbrowser",
+    "link": null,
+    "main": false,
+    "order": 60
+  },
+  "responsive": {
+    "locale": "responsive",
+    "icon": "responsive",
+    "link": null,
+    "main": false,
+    "order": 61
+  },
+  "desktopOnly": {
+    "locale": "desktop-only",
+    "icon": "desktop-only",
+    "link": null,
+    "main": false,
+    "order": 61
+  },
+  "desktopFirst": {
+    "locale": "desktop-first",
+    "icon": "desktop-first",
+    "link": null,
+    "main": false,
+    "order": 62
+  },
+  "mobileFirst": {
+    "locale": "mobile-first",
+    "icon": "mobile-first",
+    "link": null,
+    "main": false,
+    "order": 62
+  },
+  "retina": {
+    "locale": "retina",
+    "icon": "retina",
+    "link": null,
+    "main": false,
+    "order": 63
+  },
+  "a11y": {
+    "locale": "a11y",
+    "icon": "a11y",
+    "link": null,
+    "main": false,
+    "order": 64
+  },
+  "chartJs": {
+    "locale": "chart-js",
+    "icon": "chart-js",
+    "link": "https://www.chartjs.org/",
+    "main": false,
+    "order": 70
+  },
+  "dayjs": {
+    "locale": "dayjs",
+    "icon": "dayjs",
+    "link": "https://day.js.org/",
+    "main": false,
+    "order": 70
+  },
+  "googleMapsAPI": {
+    "locale": "google-maps-api",
+    "icon": "google-maps-api",
+    "link": "https://developers.google.com/maps",
+    "main": false,
+    "order": 70
+  },
+  "i18next": {
+    "locale": "i18next",
+    "icon": "i18next",
+    "link": "https://www.i18next.com/",
+    "main": false,
+    "order": 70
+  },
+  "libphonenumberJs": {
+    "locale": "libphonenumber-js",
+    "icon": "libphonenumber-js",
+    "link": "https://www.npmjs.com/package/libphonenumber-js",
+    "main": false,
+    "order": 70
+  },
+  "lodash": {
+    "locale": "lodash",
+    "icon": "lodash",
+    "link": "https://lodash.com/",
+    "main": false,
+    "order": 70
+  },
+  "mathjs": {
+    "locale": "mathjs",
+    "icon": "mathjs",
+    "link": "https://mathjs.org/",
+    "main": false,
+    "order": 70
+  },
+  "minisearch": {
+    "locale": "minisearch",
+    "icon": "minisearch",
+    "link": "https://lucaong.github.io/minisearch/",
+    "main": false,
+    "order": 70
+  },
+  "motion": {
+    "locale": "motion",
+    "icon": "motion",
+    "link": "https://motion.dev/",
+    "main": false,
+    "order": 70
+  },
+  "vitest": {
+    "locale": "vitest",
+    "icon": "vitest",
+    "link": "https://vitest.dev/",
+    "main": false,
+    "order": 70
+  },
+  "vite": {
+    "locale": "vite",
+    "icon": "vite",
+    "link": "https://vitejs.dev/",
+    "main": false,
+    "order": 80
+  },
+  "webpack": {
+    "locale": "webpack",
+    "icon": "webpack",
+    "link": "https://webpack.js.org/",
+    "main": false,
+    "order": 81
+  },
+  "gulp": {
+    "locale": "gulp",
+    "icon": "gulp",
+    "link": "https://gulpjs.com/",
+    "main": false,
+    "order": 82
+  },
+  "eslint": {
+    "locale": "eslint",
+    "icon": "eslint",
+    "link": "https://eslint.org/",
+    "main": false,
+    "order": 90
+  },
+  "stylelint": {
+    "locale": "stylelint",
+    "icon": "stylelint",
+    "link": "https://stylelint.io/",
+    "main": false,
+    "order": 91
+  },
+  "prettier": {
+    "locale": "prettier",
+    "icon": "prettier",
+    "link": "https://prettier.io/",
+    "main": false,
+    "order": 92
+  }
+}
