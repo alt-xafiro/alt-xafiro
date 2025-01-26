@@ -17,7 +17,7 @@ export function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://xafiro.site/projects/js30',
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'never',
       priority: 0.4
     },
     {
