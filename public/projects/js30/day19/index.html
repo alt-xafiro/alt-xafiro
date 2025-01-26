@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Get User Media Code Along!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="photobooth">
+      <div class="controls">
+        <button class="take-photo">Take Photo</button>
+
+        <label class="effect-label">
+          <input class="effect" type="checkbox" name="effect" checked />
+          Add effect
+        </label>
+      </div>
+
+      <canvas class="photo"></canvas>
+      <video class="player"></video>
+      <div class="strip"></div>
+    </div>
+
+    <audio class="snap" src="./snap.mp3" hidden></audio>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

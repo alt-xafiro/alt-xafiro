@@ -1,0 +1,126 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  background: radial-gradient(crimson, skyblue);
+}
+
+.photobooth {
+  background: white;
+  max-width: 100rem;
+  margin: 2rem auto;
+  border-radius: 2px;
+}
+
+/*clearfix*/
+.photobooth:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.photo {
+  width: 100%;
+  float: left;
+}
+
+.player {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+}
+
+.controls {
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.take-photo {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  line-height: 20px;
+
+  box-sizing: border-box;
+  display: inline-block;
+  height: 40px;
+  margin: 0;
+  padding: 10px 16px;
+  vertical-align: baseline;
+  border-radius: 8px;
+
+  background-color: rgb(234, 76, 137);
+  border-style: none;
+  color: #ffffff;
+  transition: 100ms;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.take-photo:hover {
+  background-color: rgb(206, 56, 113);
+}
+
+.take-photo:active {
+  background-color: rgb(194, 45, 102);
+}
+
+.effect-label {
+  margin-left: 10px;
+
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+
+  user-select: none;
+}
+
+/*
+  Strip!
+*/
+
+.strip {
+  padding: 2rem;
+}
+
+.strip img {
+  width: 100px;
+  overflow-x: scroll;
+  padding: 0.8rem 0.8rem 2.5rem 0.8rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+.strip a:nth-child(5n + 1) img {
+  transform: rotate(10deg);
+}
+
+.strip a:nth-child(5n + 2) img {
+  transform: rotate(-2deg);
+}
+
+.strip a:nth-child(5n + 3) img {
+  transform: rotate(8deg);
+}
+
+.strip a:nth-child(5n + 4) img {
+  transform: rotate(-11deg);
+}
+
+.strip a:nth-child(5n + 5) img {
+  transform: rotate(12deg);
+}
