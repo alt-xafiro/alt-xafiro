@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.09 461.23">
+  <defs>
+    <linearGradient id="a" x1="342.29" x2="104.52" y1="243.39" y2="243.39" gradientTransform="matrix(.9163 -.08242 .08186 -.92104 -122.3 344.96)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00138e"/>
+      <stop offset="0" stop-color="#00138e"/>
+      <stop offset=".59" stop-color="#004ba4"/>
+      <stop offset=".92" stop-color="#016cb2"/>
+    </linearGradient>
+    <linearGradient id="b" x1="313.78" x2="551.62" y1="34.01" y2="34.01" gradientTransform="matrix(.91629 -.08258 .0822 -.9211 -41.51 425.96)" gradientUnits="userSpaceOnUse">
+      <stop offset=".03" stop-color="#00138e"/>
+      <stop offset=".78" stop-color="#3f61a5"/>
+    </linearGradient>
+    <linearGradient id="c" x1="-1102.8" x2="-865.19" y1="-267.83" y2="-267.83" gradientTransform="matrix(.58927 -.70651 -.59302 -.70973 523.54 -526.7)" gradientUnits="userSpaceOnUse">
+      <stop offset=".13" stop-color="#016cb2"/>
+      <stop offset=".52" stop-color="#0045b2"/>
+      <stop offset=".79" stop-color="#0030b2"/>
+    </linearGradient>
+    <linearGradient id="d" x1="258.14" x2="495.75" y1="381.85" y2="381.85" gradientTransform="matrix(.91624 .08306 -.0827 -.92123 44.23 422.81)" gradientUnits="userSpaceOnUse">
+      <stop offset=".29" stop-color="#28367e"/>
+      <stop offset=".88" stop-color="#016cb2"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#a)" d="M137.18 193.12 11.58 67.53c-15.44-15.44-15.44-40.46 0-55.9 15.44-15.44 40.46-15.43 55.9 0l125.6 125.6c15.44 15.44 15.44 40.46 0 55.9-15.44 15.44-40.46 15.43-55.9 0Z"/>
+  <path fill="url(#b)" d="m322.91 268.16 125.6 125.6c15.44 15.44 15.44 40.46 0 55.9-15.44 15.44-40.46 15.43-55.9 0l-125.6-125.6c-15.44-15.44-15.44-40.46 0-55.9 15.44-15.44 40.46-15.43 55.9 0Z"/>
+  <rect width="256.68" height="79.05" x="-26.01" y="319.32" fill="url(#c)" rx="39.52" ry="39.52" transform="rotate(-45 102.328 358.844)"/>
+  <path fill="url(#d)" d="m267.01 137.18 125.6-125.6c15.44-15.44 40.46-15.44 55.9 0 15.44 15.44 15.43 40.46 0 55.9l-125.6 125.6c-15.44 15.44-40.46 15.44-55.9 0-15.44-15.44-15.43-40.46 0-55.9Z"/>
+</svg>

@@ -28,8 +28,13 @@ export async function generateMetadata({
     icons: [
       '/favicon.ico',
       {
+        type: 'image/svg+xml',
+        sizes: 'any',
+        url: '/favicon.svg'
+      },
+      {
         rel: 'apple-touch-icon',
-        url: '/favicon-apple.png'
+        url: '/apple-touch-icon.png'
       }
     ],
     manifest: '/manifest.webmanifest',
