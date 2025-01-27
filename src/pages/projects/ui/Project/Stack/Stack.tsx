@@ -10,8 +10,9 @@ import {
   getStack,
   hasHiddenStack
 } from '../../../lib/stack';
-import { HiddenStackButton } from './hidden-stack-button';
-import { ShownStackItem } from './shown-stack-item';
+
+import { HiddenStackButton } from './HiddenStackButton';
+import { ShownStackItem } from './ShownStackItem';
 
 export type StackLocales = {
   [key: string]: string;

@@ -7,11 +7,9 @@ import { getUserLocale } from '../lib/user-locale';
 export default getRequestConfig(async () => {
   const locale = await getUserLocale();
 
-  const defaultMessages = (
-    await import(`@shared/i18n/messages/${LOCALES[0]}.json`)
-  ).default;
-  const userMessages = (await import(`@shared/i18n/messages/${locale}.json`))
+  const defaultMessages = (await import(`../messages/${LOCALES[0]}.json`))
     .default;
+  const userMessages = (await import(`../messages/${locale}.json`)).default;
 
   return {
     locale,

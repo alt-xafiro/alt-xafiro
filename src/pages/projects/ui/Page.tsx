@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl';
 
 import { projectsData } from '../model/projects';
-import { Projects } from './projects';
+
+import { Projects } from './Projects';
 
 export function Page() {
   const t = useTranslations('Pages');

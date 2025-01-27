@@ -1,4 +1,4 @@
-import { IconTheme } from '@shared/ui/svg-icon/svg-icon';
+import { IconTheme } from '@shared/ui';
 
 import { StackList } from '../lib/stack';
 import projectsJson from './projects.json';

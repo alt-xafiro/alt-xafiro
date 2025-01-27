@@ -1,2 +1,2 @@
-export { Page } from './ui/page';
+export { Page } from './ui/Page';
 export { generateMetadata } from './config/metadata';

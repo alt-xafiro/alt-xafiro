@@ -6,9 +6,10 @@ import { Tooltip } from '@shared/ui';
 
 import { ProjectData } from '../model/projects';
 import { stackMeta } from '../model/stack-meta';
-import { Project } from './project/project';
-import { HiddenStackTooltip } from './project/stack/hidden-stack-tooltip';
-import { StackLocales } from './project/stack/stack';
+
+import { Project } from './Project/Project';
+import { HiddenStackTooltip } from './Project/Stack/HiddenStackTooltip';
+import { StackLocales } from './Project/Stack/Stack';
 
 type ProjectsProps = CustomComponentProps & {
   projects: ProjectData[];

@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 import { CustomComponentProps } from '@shared/lib';
 
-import { useStars } from './use-stars';
+import { useStars } from './useStars';
 
 type StarsProps = CustomComponentProps;
 

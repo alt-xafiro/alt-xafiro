@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 
-import { sourceCodePro } from '@shared/fonts';
 import { CustomComponentProps } from '@shared/lib';
-import { ExternalLink } from '@shared/ui';
+import { ExternalLink, sourceCodePro } from '@shared/ui';
 
 import { CHALLENGE_LINK } from '../config/challenge';
 import { ChallengeData } from '../model/challenge';
-import { Day } from './day';
+
+import { Day } from './Day';
 
 type ChallengeProps = CustomComponentProps & {
   data: ChallengeData;

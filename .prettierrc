@@ -23,6 +23,8 @@
           "^@entities/(.*)$",
           "^@shared/(.*)$",
           "^@@/(.*)$",
+          "^[./]+[a-z_]",
+          "^[./]+[A-Z_]",
           "^[./]"
         ],
         "importOrderSeparation": true,

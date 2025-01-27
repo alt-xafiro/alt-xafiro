@@ -1,8 +1,9 @@
-export { CenteredContent } from './centered-content/centered-content';
-export { ExternalLink } from './external-link/external-link';
-export { Logo } from './logo/logo';
-export { MenuItem } from './menu-item/menu-item';
-export { Modal } from './modal/modal';
-export { SvgIcon } from './svg-icon/svg-icon';
-export type { IconName } from './svg-icon/svg-icon';
-export { Tooltip } from './tooltip/tooltip';
+export { CenteredContent } from './CenteredContent/CenteredContent';
+export { ExternalLink } from './ExternalLink/ExternalLink';
+export { exo2, sourceCodePro } from './fonts/fonts';
+export { Logo } from './Logo/Logo';
+export { MenuItem } from './MenuItem/MenuItem';
+export { Modal } from './Modal/Modal';
+export { SvgIcon } from './SvgIcon/SvgIcon';
+export type { IconName, IconTheme } from './SvgIcon/SvgIcon';
+export { Tooltip } from './Tooltip/Tooltip';

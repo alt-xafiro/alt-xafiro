@@ -2,11 +2,10 @@ import clsx from 'clsx';
 import * as motion from 'motion/react-client';
 import { useTranslations } from 'next-intl';
 
-import { sourceCodePro } from '@shared/fonts';
 import { CustomComponentProps } from '@shared/lib';
-import { SvgIcon } from '@shared/ui';
+import { SvgIcon, sourceCodePro } from '@shared/ui';
 
-import { SlideIn } from './slide-in';
+import { SlideIn } from './SlideIn';
 
 type GreetingProps = CustomComponentProps;
 

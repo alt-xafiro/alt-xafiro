@@ -6,11 +6,12 @@ import { CustomComponentProps } from '@shared/lib';
 import { Logo } from '@shared/ui';
 
 import { NAVIGATION_PAGES } from '../config/navigation-pages';
+
 import {
   LocaleSwitcher,
   LocalesOfLocales
-} from './locale-switcher/locale-switcher';
-import { Navigation } from './navigation/navigation';
+} from './LocaleSwitcher/LocaleSwitcher';
+import { Navigation } from './Navigation/Navigation';
 
 type HeaderProps = CustomComponentProps;
 
