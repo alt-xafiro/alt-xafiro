@@ -2,6 +2,7 @@
   "private": true,
   "license": "WTFPL",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -10,7 +11,8 @@
     "test": "vitest"
   },
   "engines": {
-    "node": "22"
+    "node": "22",
+    "pnpm": "9"
   },
   "dependencies": {
     "@headlessui/react": "2.2.0",
