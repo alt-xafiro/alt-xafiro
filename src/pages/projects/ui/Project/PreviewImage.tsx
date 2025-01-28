@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import Image from 'next/image';
 
 import { CustomComponentProps } from '@shared/lib';

@@ -2,6 +2,7 @@
 
 import { useWindowSize } from '@uidotdev/usehooks';
 import clsx from 'clsx';
+
 import { useEffect, useState } from 'react';
 
 import { CustomComponentProps, getBreakpoint } from '@shared/lib';

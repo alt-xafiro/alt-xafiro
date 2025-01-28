@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+
 import { useState, useTransition } from 'react';
 
 import { LOCALES, Locale, setUserLocale } from '@shared/i18n';

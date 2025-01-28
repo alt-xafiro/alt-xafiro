@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+
 import { useRef } from 'react';
 
 import { CustomComponentProps } from '@shared/lib';

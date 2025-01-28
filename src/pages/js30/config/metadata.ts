@@ -1,5 +1,6 @@
-import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+
+import { Metadata } from 'next';
 
 type generateMetadataProps = {
   params: Promise<{ locale: string }>;

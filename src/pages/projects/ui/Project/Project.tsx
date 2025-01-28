@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import * as motion from 'motion/react-client';
+
 import { useEffect, useRef, useState } from 'react';
 
 import { CustomComponentProps } from '@shared/lib';

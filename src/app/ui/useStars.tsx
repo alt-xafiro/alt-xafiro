@@ -1,6 +1,7 @@
 'use client';
 
 import clamp from 'just-clamp';
+
 import { RefObject, useEffect } from 'react';
 
 import { Colors, getRandomNumber } from '@shared/lib';

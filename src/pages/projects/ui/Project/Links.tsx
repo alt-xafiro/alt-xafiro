@@ -1,5 +1,7 @@
 import clsx from 'clsx';
+
 import Link from 'next/link';
+
 import { MouseEventHandler, Ref } from 'react';
 
 import { CustomComponentProps } from '@shared/lib';

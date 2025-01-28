@@ -16,6 +16,8 @@
         ],
         "importOrder": [
           "<THIRD_PARTY_MODULES>",
+          "^(next/(.*)$)|^next$",
+          "^(react/(.*)$)|^react$",
           "^@app$",
           "^@pages/(.*)$",
           "^@widgets/(.*)$",
