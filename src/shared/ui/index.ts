@@ -1,3 +1,4 @@
+export { Background } from './Background/Background';
 export { CenteredContent } from './CenteredContent/CenteredContent';
 export { ExternalLink } from './ExternalLink/ExternalLink';
 export { exo2, sourceCodePro } from './fonts/fonts';

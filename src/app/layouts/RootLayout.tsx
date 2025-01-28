@@ -3,11 +3,10 @@ import { getLocale } from 'next-intl/server';
 
 import { Header } from '@widgets/header';
 
-import { exo2 } from '@shared/ui';
+import { Background, exo2 } from '@shared/ui';
 
 import { NoJs } from '../styles/NoJs';
 import '../styles/globals.css';
-import { Background } from '../ui/Background';
 
 export async function RootLayout({
   children
