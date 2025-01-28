@@ -1,3 +1,3 @@
-export { LOCALES } from './config/locales';
-export type { Locale } from './config/locales';
-export { setUserLocale } from './lib/user-locale';
+export { LOCALES } from './locales';
+export type { Locale } from './locales';
+export { setUserLocale } from './user-locale';
