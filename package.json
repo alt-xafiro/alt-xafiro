@@ -11,7 +11,9 @@
     "lint:fsd": "steiger ./src",
     "format": "prettier --write --ignore-unknown .",
     "format:check": "prettier --check --ignore-unknown .",
-    "test": "vitest",
+    "test": "npm run unit:no-watch",
+    "unit": "vitest",
+    "unit:no-watch": "vitest --watch=false",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky"
   },
