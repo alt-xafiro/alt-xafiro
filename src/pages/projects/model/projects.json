@@ -1,5 +1,32 @@
 [
   {
+    "id": "nophone",
+    "locale": "nophone",
+    "sourceURL": "https://github.com/alt-xafiro/nophone",
+    "previewURL": "https://nophone.xafiro.site/",
+    "previewInternal": false,
+    "previewImage": "nophone",
+    "centeredPreviewImage": true,
+    "iconTheme": "light",
+    "type": "training",
+    "status": "done",
+    "stackList": [
+      "a11y",
+      "crossbrowser",
+      "eslint",
+      "fsd",
+      "mobileFirst",
+      "nextjs",
+      "pnpm",
+      "prettier",
+      "react",
+      "responsive",
+      "retina",
+      "tailwind",
+      "typescript"
+    ]
+  },
+  {
     "id": "js30",
     "locale": "js30",
     "sourceURL": "https://github.com/alt-xafiro/alt-xafiro/tree/master/public/projects/js30",
@@ -31,6 +58,7 @@
       "fsd",
       "motion",
       "nextjs",
+      "pnpm",
       "prettier",
       "react",
       "responsive",

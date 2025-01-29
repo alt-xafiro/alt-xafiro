@@ -188,6 +188,13 @@
     "main": false,
     "order": 70
   },
+  "pnpm": {
+    "locale": "pnpm",
+    "icon": "pnpm",
+    "link": "https://pnpm.io/",
+    "main": false,
+    "order": 70
+  },
   "vitest": {
     "locale": "vitest",
     "icon": "vitest",
