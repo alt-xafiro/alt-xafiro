@@ -1,5 +1,5 @@
 {
-  "currentDay": 22,
+  "currentDay": 23,
   "projectLocales": [
     "java-script-drum-kit",
     "css-js-clock",
@@ -23,13 +23,13 @@
     "native-speech-recognition",
     "geolocation-based-speedometer-and-compass",
     "follow-along-links",
-    "speech-synthesis",
+    "whack-a-mole-game",
     "sticky-nav",
     "event-capture-propagation-bubbling-and-once",
     "stripe-follow-along-dropdown",
     "click-and-drag-to-scroll",
     "video-speed-controller-ui",
     "countdown-clock",
-    "whack-a-mole-game"
+    "speech-synthesis"
   ]
 }
