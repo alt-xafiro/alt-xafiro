@@ -29,6 +29,13 @@
 # misc
 .DS_Store
 *.pem
+[Dd]esktop.ini
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs_vista.db
+ehthumbs.db
+*.lnk
+.AppleDouble
 
 # debug
 npm-debug.log*
