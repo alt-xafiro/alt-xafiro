@@ -3,6 +3,7 @@
   "license": "WTFPL",
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:https": "next dev --turbopack --experimental-https",
     "build": "next build",
     "start": "next start",
     "lint": "pnpm lint:eslint && pnpm lint:ts && pnpm lint:fsd",
