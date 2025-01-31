@@ -1,5 +1,3 @@
-import type { JSX } from 'react';
-
 import { Colors, CustomComponentProps } from '@shared/lib';
 
 export type IconName =
@@ -57,11 +55,7 @@ type SvgIconProps = CustomComponentProps & {
   theme?: IconTheme;
 };
 
-export function SvgIcon({
-  className,
-  icon,
-  theme = 'dark'
-}: SvgIconProps): JSX.Element {
+export function SvgIcon({ className, icon, theme = 'dark' }: SvgIconProps) {
   const FILL = theme === 'dark' ? 'currentColor' : '#e6e6e6';
   const SHADOW = theme === 'light' ? 'drop-shadow(0 0 1px #000)' : 'none';
 
