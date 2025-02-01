@@ -94,7 +94,7 @@
     "locale": "desktop-only",
     "icon": "desktop-only",
     "link": null,
-    "main": false,
+    "main": true,
     "order": 61
   },
   "desktopFirst": {
