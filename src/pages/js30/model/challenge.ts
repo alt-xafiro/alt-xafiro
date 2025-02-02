@@ -1,7 +1,7 @@
 import challengeJson from './challenge.json';
 
 export type ChallengeData = {
-  currentDay: number;
+  challengeLink: string;
   projectLocales: string[];
 };
 

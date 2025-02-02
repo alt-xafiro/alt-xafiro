@@ -4,8 +4,8 @@ import { useTranslations } from 'next-intl';
 import { CustomComponentProps } from '@shared/lib';
 import { ExternalLink, sourceCodePro } from '@shared/ui';
 
-import { CHALLENGE_LINK } from '../config/challenge';
-import { ChallengeData } from '../model/challenge';
+import { CURRENT_DAY } from '../config/challenge';
+import { ChallengeData, challengeData } from '../model/challenge';
 
 import { Day } from './Day';
 
@@ -25,7 +25,9 @@ export function Challenge({ className, data }: ChallengeProps) {
       )}
     >
       <h1 className="text-center text-6xl font-bold lg:text-5xl sm:text-4xl">
-        <ExternalLink href={CHALLENGE_LINK}>{t('Pages.js30')}</ExternalLink>
+        <ExternalLink href={challengeData.challengeLink}>
+          {t('Pages.js30')}
+        </ExternalLink>
       </h1>
 
       <p className="mb-4 max-w-3xl text-justify text-xl lg:text-lg sm:text-base">
@@ -35,7 +37,7 @@ export function Challenge({ className, data }: ChallengeProps) {
       <ol className="flex max-w-2xl flex-col items-start justify-start gap-8 text-left lg:gap-6 sm:gap-4">
         {data.projectLocales.map((projectLocale, i) => {
           const day = ++i;
-          const isActive = day <= data.currentDay;
+          const isActive = day <= CURRENT_DAY;
           return (
             <Day
               key={projectLocale}
