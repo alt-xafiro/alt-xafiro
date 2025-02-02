@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+  background: url("./background.jpg") fixed;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(0.8);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+
+.items {
+  height: 800px;
+  padding: 100px;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: scale(1);
+  will-change: transform;
+  position: relative;
+  font-size: 0;
+  perspective: 700px;
+  scrollbar-width: none;
+}
+
+.items ::-webkit-scrollbar {
+  display: none;
+}
+
+.items.active {
+  cursor: grabbing;
+}
+
+.item {
+  width: 200px;
+  height: calc(100% - 40px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.item:nth-child(9n + 1) {
+  background: rgb(30, 144, 255, 0.95);
+}
+.item:nth-child(9n + 2) {
+  background: rgb(173, 14, 236, 0.95);
+}
+.item:nth-child(9n + 3) {
+  background: rgb(175, 238, 238, 0.95);
+}
+.item:nth-child(9n + 4) {
+  background: rgb(255, 97, 194, 0.95);
+}
+.item:nth-child(9n + 5) {
+  background: rgb(95, 158, 160, 0.95);
+}
+.item:nth-child(9n + 6) {
+  background: rgb(255, 99, 71, 0.95);
+}
+.item:nth-child(9n + 7) {
+  background: rgb(240, 128, 128, 0.95);
+}
+.item:nth-child(9n + 8) {
+  background: rgb(72, 61, 139, 0.95);
+}
+.item:nth-child(9n + 9) {
+  background: rgb(102, 51, 153, 0.95);
+}
+
+.item:nth-child(even) {
+  transform: scaleX(1.31) rotateY(40deg);
+}
+.item:nth-child(odd) {
+  transform: scaleX(1.31) rotateY(-40deg);
+}
