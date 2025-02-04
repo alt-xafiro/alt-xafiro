@@ -1,4 +1,7 @@
 {
+  "name": "Safiro",
+  "background_color": "#020512",
+  "theme_color": "#020512",
   "icons": [
     {
       "src": "icon-192x192.png",
