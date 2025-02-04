@@ -1,4 +1,4 @@
-export const CURRENT_DAY = 27;
+export const CURRENT_DAY = 28;
 
 export const Js30Project = {
   ROOT: '/projects/js30',
