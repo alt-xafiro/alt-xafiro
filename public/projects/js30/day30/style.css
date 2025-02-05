@@ -1,0 +1,110 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  background-image: url("./background.jpg");
+  background-position: center;
+  background-color: #dd778c;
+  background-size: cover;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.voiceinator {
+  padding: 1.5rem;
+  width: 50rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  width: 100%;
+  margin: -1.5rem 0 1.5rem -1.5rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
+  font-family: "Pacifico", cursive;
+  color: white;
+}
+
+.voiceinator input,
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border: 0;
+  font-size: 1.5rem;
+  color: white;
+  background: transparent;
+}
+
+label {
+  color: white;
+}
+
+option {
+  color: black;
+}
+
+textarea {
+  height: 15rem;
+  outline: none;
+}
+
+.voiceinator button {
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  width: 49%;
+  float: left;
+  font-family: "Pacifico", cursive;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.voiceinator button:active {
+  top: 2px;
+}
+
+.voiceinator button:nth-of-type(1) {
+  margin-right: 2%;
+}

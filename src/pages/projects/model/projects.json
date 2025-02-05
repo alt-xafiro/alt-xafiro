@@ -36,7 +36,7 @@
     "centeredPreviewImage": true,
     "iconTheme": "light",
     "type": "training",
-    "status": "development",
+    "status": "done",
     "stackList": ["crossbrowser", "desktopOnly", "javascript"]
   },
   {

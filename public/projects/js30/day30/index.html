@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Speech Synthesis</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>The Voiceinator</h1>
+      <div class="voiceinator">
+        <select name="voice" id="voices">
+          <option value="">Select A Voice</option>
+        </select>
+        <label for="rate">Rate:</label>
+        <input
+          id="rate"
+          name="rate"
+          type="range"
+          min="0"
+          max="3"
+          value="0.9"
+          step="0.1"
+        />
+        <label for="pitch">Pitch:</label>
+        <input
+          id="pitch"
+          name="pitch"
+          type="range"
+          min="0"
+          max="2"
+          value="1.4"
+          step="0.1"
+        />
+        <textarea name="text">
+I was in this steamy, tropical jungle and I came across the most fascinating, rigid python. I just couldn't resist reaching out and wrapping my hands around it. The way it pulsed and thrummed under my touch was absolutely mesmerizing.</textarea
+        >
+        <button id="stop">Stop!</button>
+        <button id="speak">Speak</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
