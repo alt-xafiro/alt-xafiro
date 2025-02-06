@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
   images: {
     contentDispositionType: 'inline',
     deviceSizes: [...imageConfigDefault.deviceSizes, 480, 960, 1440]
+  },
+  experimental: {
+    staleTimes: {
+      dynamic: 600
+    }
   }
 };
 
