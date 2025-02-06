@@ -2,6 +2,9 @@
   "LocaleSwitcher": {
     "label": "Язык"
   },
+  "General": {
+    "loading": "Загрузка..."
+  },
   "Metadata": {
     "subtitle": "Фронтенд-разработчик",
     "description": "Привет! Я Максим, фронтенд-разработчик."

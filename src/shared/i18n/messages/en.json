@@ -6,6 +6,9 @@
     "ru": "Русский",
     "ru-abbr": "Ru"
   },
+  "General": {
+    "loading": "Loading..."
+  },
   "Metadata": {
     "title": "Safiro",
     "subtitle": "Front-End Developer",

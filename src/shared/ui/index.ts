@@ -2,6 +2,7 @@ export { Background } from './Background/Background';
 export { CenteredContent } from './CenteredContent/CenteredContent';
 export { ExternalLink } from './ExternalLink/ExternalLink';
 export { exo2, sourceCodePro } from './fonts/fonts';
+export { Loading } from './Loading/Loading';
 export { Logo } from './Logo/Logo';
 export { MenuItem } from './MenuItem/MenuItem';
 export { Modal } from './Modal/Modal';
