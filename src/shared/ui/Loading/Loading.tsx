@@ -1,17 +1,15 @@
 import { useTranslations } from 'next-intl';
 
-import './styles.css';
-
 import { CenteredContent } from '../CenteredContent/CenteredContent';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 
 export function Loading() {
   const t = useTranslations('General');
-
   return (
     <>
-      <p className="sr-only">{t('loading')}</p>
       <CenteredContent>
-        <div className="loading"></div>
+        <p className="sr-only">{t('loading')}</p>
+        <LoadingSpinner className="h-[64px] w-[64px] sm:h-[48px] sm:w-[48px]" />
       </CenteredContent>
     </>
   );

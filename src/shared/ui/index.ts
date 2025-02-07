@@ -3,6 +3,7 @@ export { CenteredContent } from './CenteredContent/CenteredContent';
 export { ExternalLink } from './ExternalLink/ExternalLink';
 export { exo2, sourceCodePro } from './fonts/fonts';
 export { Loading } from './Loading/Loading';
+export { LoadingSpinner } from './LoadingSpinner/LoadingSpinner';
 export { Logo } from './Logo/Logo';
 export { MenuItem } from './MenuItem/MenuItem';
 export { Modal } from './Modal/Modal';
