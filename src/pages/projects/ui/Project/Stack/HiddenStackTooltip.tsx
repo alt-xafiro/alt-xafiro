@@ -76,12 +76,10 @@ export function HiddenStackTooltip({
                       />
                     </ExternalLink>
                   ) : (
-                    <>
-                      <HiddenStackItem
-                        data={stackItem}
-                        locale={stackLocales[stackItem.locale]}
-                      />
-                    </>
+                    <HiddenStackItem
+                      data={stackItem}
+                      locale={stackLocales[stackItem.locale]}
+                    />
                   )}
                 </li>
               );
