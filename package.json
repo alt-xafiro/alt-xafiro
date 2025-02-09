@@ -6,6 +6,7 @@
     "dev:https": "next dev --turbopack --experimental-https",
     "build": "next build",
     "start": "next start",
+    "start:build": "next build && next start",
     "lint": "pnpm lint:eslint && pnpm lint:ts && pnpm lint:fsd",
     "lint:eslint": "next lint",
     "lint:ts": "tsc --noEmit",
