@@ -8,7 +8,6 @@ import { useEffect, useRef, useState } from 'react';
 import { CustomComponentProps } from '@shared/lib';
 
 import { ProjectData } from '../../model/projects';
-
 import { Links } from './Links';
 import { PreviewImage } from './PreviewImage';
 import { Property, PropertyType } from './Property';

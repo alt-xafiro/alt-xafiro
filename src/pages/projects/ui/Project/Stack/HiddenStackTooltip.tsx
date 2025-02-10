@@ -11,7 +11,6 @@ import { getProjectDataById } from '../../../lib/project';
 import { StackType, getStack } from '../../../lib/stack';
 import { ProjectData } from '../../../model/projects';
 import { StackItem } from '../../../model/stack-meta';
-
 import { StackLocales } from './Stack';
 
 type HiddenStackTooltipProps = CustomComponentProps & {

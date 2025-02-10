@@ -5,8 +5,9 @@ import { Header } from '@widgets/header';
 
 import { Background, exo2 } from '@shared/ui';
 
-import { NoJs } from '../styles/NoJs';
 import '../styles/globals.css';
+
+import { NoJs } from '../styles/NoJs';
 
 export async function RootLayout({
   children

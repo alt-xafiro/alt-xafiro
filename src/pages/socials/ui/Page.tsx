@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl';
 import { CenteredContent } from '@shared/ui';
 
 import { socialLinks } from '../model/socials';
-
 import { Socials } from './Socials';
 
 export function Page() {

@@ -6,7 +6,6 @@ import { ExternalLink, sourceCodePro } from '@shared/ui';
 
 import { CURRENT_DAY } from '../config/challenge';
 import { ChallengeData, challengeData } from '../model/challenge';
-
 import { Day } from './Day';
 
 type ChallengeProps = CustomComponentProps & {

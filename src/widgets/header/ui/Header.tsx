@@ -6,7 +6,6 @@ import { CustomComponentProps } from '@shared/lib';
 import { Logo } from '@shared/ui';
 
 import { NAVIGATION_PAGES } from '../config/navigation-pages';
-
 import {
   LocaleSwitcher,
   LocalesOfLocales

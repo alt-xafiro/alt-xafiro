@@ -1,7 +1,8 @@
 import { IconTheme } from '@shared/ui';
 
-import { StackList } from '../lib/stack';
 import projectsJson from './projects.json';
+
+import { StackList } from '../lib/stack';
 
 export type ProjectStatus = 'done' | 'development';
 

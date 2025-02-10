@@ -11,7 +11,6 @@ import {
   getStack,
   hasHiddenStack
 } from '../../../lib/stack';
-
 import { HiddenStackButton } from './HiddenStackButton';
 import { ShownStackItem } from './ShownStackItem';
 
