@@ -1,5 +1,34 @@
 [
   {
+    "id": "meta-planet",
+    "locale": "meta-planet",
+    "sourceURL": "https://github.com/alt-xafiro/meta-planet",
+    "previewURL": "https://planets.xafiro.site/",
+    "previewInternal": false,
+    "previewImage": "meta-planet",
+    "centeredPreviewImage": true,
+    "iconTheme": "light",
+    "type": "training",
+    "status": "done",
+    "stackList": [
+      "nextjs",
+      "react",
+      "zustand",
+      "fsd",
+      "tailwind",
+      "typescript",
+      "crossbrowser",
+      "responsive",
+      "mobileFirst",
+      "retina",
+      "a11y",
+      "motion",
+      "pnpm",
+      "eslint",
+      "prettier"
+    ]
+  },
+  {
     "id": "nophone",
     "locale": "nophone",
     "sourceURL": "https://github.com/alt-xafiro/nophone",

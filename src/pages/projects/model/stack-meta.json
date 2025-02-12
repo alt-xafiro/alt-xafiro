@@ -20,6 +20,13 @@
     "main": true,
     "order": 21
   },
+  "zustand": {
+    "locale": "zustand",
+    "icon": "zustand",
+    "link": "https://github.com/pmndrs/zustand",
+    "main": true,
+    "order": 21
+  },
   "fsd": {
     "locale": "fsd",
     "icon": "fsd",

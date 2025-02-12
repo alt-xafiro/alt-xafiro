@@ -59,6 +59,7 @@
     "kekstagram": "Kekstagram",
     "maine-coon": "Maine Coon cattery",
     "mental-calc": "Mental calculation trainer",
+    "meta-planet": "Meta Planet",
     "nerds": "Nёrds",
     "nophone": "Nophone",
     "pognali": "Let's go?",
@@ -105,7 +106,8 @@
     "typescript": "TypeScript",
     "vite": "Vite",
     "vitest": "Vitest",
-    "webpack": "Webpack"
+    "webpack": "Webpack",
+    "zustand": "Zustand"
   },
   "Socials": {
     "codewars": "Codewars",
