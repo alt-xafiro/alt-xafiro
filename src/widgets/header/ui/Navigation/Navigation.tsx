@@ -23,7 +23,7 @@ export function Navigation({ className, locales }: NavigationProps) {
 
   const { width: windowWidth } = useWindowSize();
 
-  const wideScreenBreakpoint = getBreakpoint('3lg');
+  const breakpoint3lg = getBreakpoint('3lg');
 
   const openModal = () => {
     setModalOpen(true);
@@ -34,14 +34,10 @@ export function Navigation({ className, locales }: NavigationProps) {
   };
 
   useEffect(() => {
-    const isScreenWide = windowWidth
-      ? windowWidth >= wideScreenBreakpoint
-      : false;
-
-    if (isScreenWide && modalOpen) {
+    if (modalOpen && windowWidth ? windowWidth >= breakpoint3lg : false) {
       closeModal();
     }
-  }, [windowWidth, modalOpen, wideScreenBreakpoint]);
+  }, [windowWidth, modalOpen, breakpoint3lg]);
 
   const handleNavigationButtonClick = () => {
     openModal();
