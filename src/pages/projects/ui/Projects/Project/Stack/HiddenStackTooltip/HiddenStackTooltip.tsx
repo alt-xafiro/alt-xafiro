@@ -6,12 +6,12 @@ import { Tooltip } from 'react-tooltip';
 import { CustomComponentProps, getDataAttribute } from '@shared/lib';
 import { ExternalLink, SvgIcon } from '@shared/ui';
 
-import { SHOWN_STACK_SIZE } from '../../../config/stack';
-import { getProjectDataById } from '../../../lib/project';
-import { StackType, getStack } from '../../../lib/stack';
-import { ProjectData } from '../../../model/projects';
-import { StackItem } from '../../../model/stack-meta';
-import { StackLocales } from './Stack';
+import { SHOWN_STACK_SIZE } from '../../../../../config/stack';
+import { getProjectDataById } from '../../../../../lib/project';
+import { StackType, getStack } from '../../../../../lib/stack';
+import { ProjectData } from '../../../../../model/projects';
+import { StackItem } from '../../../../../model/stack-meta';
+import { StackLocales } from '../Stack';
 
 type HiddenStackTooltipProps = CustomComponentProps & {
   projects: ProjectData[];

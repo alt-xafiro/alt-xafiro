@@ -4,7 +4,7 @@ import { PlacesType } from 'react-tooltip';
 import { CustomComponentProps } from '@shared/lib';
 import { ExternalLink, SvgIcon } from '@shared/ui';
 
-import { StackItem } from '../../../model/stack-meta';
+import { StackItem } from '../../../../../model/stack-meta';
 
 type ShownStackItemProps = CustomComponentProps & {
   data: StackItem;

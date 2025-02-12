@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { CustomComponentProps } from '@shared/lib';
 import { IconName, SvgIcon } from '@shared/ui';
 
-import { ProjectData } from '../../model/projects';
+import { ProjectData } from '../../../../model/projects';
 
 export enum PropertyType {
   Status = 'status',

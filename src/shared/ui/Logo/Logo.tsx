@@ -2,8 +2,8 @@ import clsx from 'clsx';
 
 import { CustomComponentProps } from '@shared/lib';
 
-import { Safiro } from './Safiro';
-import { X } from './X';
+import { Safiro } from './Safiro/Safiro';
+import { X } from './X/X';
 
 type LogoProps = CustomComponentProps & {
   link?: boolean;

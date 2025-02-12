@@ -4,9 +4,9 @@ import { useTranslations } from 'next-intl';
 import { CustomComponentProps } from '@shared/lib';
 import { ExternalLink, sourceCodePro } from '@shared/ui';
 
-import { CURRENT_DAY } from '../config/challenge';
-import { ChallengeData, challengeData } from '../model/challenge';
-import { Day } from './Day';
+import { CURRENT_DAY } from '../../config/challenge';
+import { ChallengeData, challengeData } from '../../model/challenge';
+import { Day } from './Day/Day';
 
 type ChallengeProps = CustomComponentProps & {
   data: ChallengeData;

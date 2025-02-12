@@ -7,7 +7,7 @@ import { MouseEventHandler, Ref } from 'react';
 import { CustomComponentProps } from '@shared/lib';
 import { ExternalLink, SvgIcon } from '@shared/ui';
 
-import { ProjectData } from '../../model/projects';
+import { ProjectData } from '../../../../model/projects';
 
 type LinksProps = CustomComponentProps & {
   ref?: Ref<HTMLDivElement>;

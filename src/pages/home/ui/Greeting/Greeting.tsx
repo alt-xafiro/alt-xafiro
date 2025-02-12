@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { CustomComponentProps } from '@shared/lib';
 import { SvgIcon, sourceCodePro } from '@shared/ui';
 
-import { SlideIn } from './SlideIn';
+import { SlideIn } from './SlideIn/SlideIn';
 
 type GreetingProps = CustomComponentProps;
 

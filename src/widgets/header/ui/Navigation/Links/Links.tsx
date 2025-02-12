@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { CustomComponentProps } from '@shared/lib';
 import { MenuItem } from '@shared/ui';
 
-import { NAVIGATION_PAGES } from '../../config/navigation-pages';
+import { NAVIGATION_PAGES } from '../../../config/navigation-pages';
 
 type LinksProps = CustomComponentProps & {
   onLinkClick?: () => void;

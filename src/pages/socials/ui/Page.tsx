@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { CenteredContent } from '@shared/ui';
 
 import { socialLinks } from '../model/socials';
-import { Socials } from './Socials';
+import { Socials } from './Socials/Socials';
 
 export function Page() {
   const t = useTranslations('Pages');

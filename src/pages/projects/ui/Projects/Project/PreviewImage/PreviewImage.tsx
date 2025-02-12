@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { CustomComponentProps } from '@shared/lib';
 
-import { ProjectData } from '../../model/projects';
+import { ProjectData } from '../../../../model/projects';
 
 type PreviewImageProps = CustomComponentProps & {
   data: ProjectData;

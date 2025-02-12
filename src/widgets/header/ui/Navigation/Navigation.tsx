@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react';
 import { CustomComponentProps, getBreakpoint } from '@shared/lib';
 import { Modal } from '@shared/ui';
 
-import { BurgerMenu } from './BurgerMenu';
-import { Links } from './Links';
+import { BurgerMenu } from './BurgerMenu/BurgerMenu';
+import { Links } from './Links/Links';
 
 type NavigationProps = CustomComponentProps & {
   locales: {

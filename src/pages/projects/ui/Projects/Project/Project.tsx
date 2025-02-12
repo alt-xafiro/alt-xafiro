@@ -7,10 +7,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import { CustomComponentProps } from '@shared/lib';
 
-import { ProjectData } from '../../model/projects';
-import { Links } from './Links';
-import { PreviewImage } from './PreviewImage';
-import { Property, PropertyType } from './Property';
+import { ProjectData } from '../../../model/projects';
+import { Links } from './Links/Links';
+import { PreviewImage } from './PreviewImage/PreviewImage';
+import { Property, PropertyType } from './Property/Property';
 import { Stack, StackLocales } from './Stack/Stack';
 
 type ProjectProps = CustomComponentProps & {

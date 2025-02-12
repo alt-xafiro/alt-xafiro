@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { CustomComponentProps } from '@shared/lib';
 import { ExternalLink } from '@shared/ui';
 
-import { SocialsLinks } from '../model/socials';
+import { SocialsLinks } from '../../model/socials';
 
 type LinksProps = CustomComponentProps & {
   socialLinks: SocialsLinks;

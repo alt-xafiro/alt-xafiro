@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { CustomComponentProps } from '@shared/lib';
 import { ExternalLink, SvgIcon } from '@shared/ui';
 
-import { DayContent, Js30Project } from '../config/challenge';
+import { DayContent, Js30Project } from '../../../config/challenge';
 
 type DayProps = CustomComponentProps & {
   day: number;

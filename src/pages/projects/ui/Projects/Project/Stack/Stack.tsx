@@ -4,15 +4,15 @@ import { Ref } from 'react';
 
 import { CustomComponentProps } from '@shared/lib';
 
-import { SHOWN_STACK_SIZE } from '../../../config/stack';
+import { SHOWN_STACK_SIZE } from '../../../../config/stack';
 import {
   StackList,
   StackType,
   getStack,
   hasHiddenStack
-} from '../../../lib/stack';
-import { HiddenStackButton } from './HiddenStackButton';
-import { ShownStackItem } from './ShownStackItem';
+} from '../../../../lib/stack';
+import { HiddenStackButton } from './HiddenStackButton/HiddenStackButton';
+import { ShownStackItem } from './ShownStackItem/ShownStackItem';
 
 export type StackLocales = {
   [key: string]: string;

@@ -4,10 +4,10 @@ import { useTranslations } from 'next-intl';
 import { CustomComponentProps } from '@shared/lib';
 import { Tooltip } from '@shared/ui';
 
-import { ProjectData } from '../model/projects';
-import { stackMeta } from '../model/stack-meta';
+import { ProjectData } from '../../model/projects';
+import { stackMeta } from '../../model/stack-meta';
 import { Project } from './Project/Project';
-import { HiddenStackTooltip } from './Project/Stack/HiddenStackTooltip';
+import { HiddenStackTooltip } from './Project/Stack/HiddenStackTooltip/HiddenStackTooltip';
 import { StackLocales } from './Project/Stack/Stack';
 
 type ProjectsProps = CustomComponentProps & {

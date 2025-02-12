@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 
 import { CenteredContent } from '@shared/ui';
 
-import { Greeting } from './Greeting';
+import { Greeting } from './Greeting/Greeting';
 
 export function Page() {
   const t = useTranslations('Pages');
