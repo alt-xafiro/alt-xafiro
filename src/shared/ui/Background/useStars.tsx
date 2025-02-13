@@ -4,23 +4,47 @@ import clamp from 'just-clamp';
 
 import { RefObject, useEffect } from 'react';
 
-import { Colors, getRandomNumber } from '@shared/lib';
+import { getRandomNumber } from '@shared/lib';
 
 const StarsConfig = {
   MIN_STARS_COUNT: 500,
   MAX_STARS_COUNT: 1200,
   STARS_COUNT_MULTIPLIER: 1,
+  STARS_COUNT_MAX_RETINA_MULTIPLIER: 1.5,
   STARS_SPEED: 0.005,
-  SPACE_COLOR: Colors.space['900'],
-  STARS_DENSITY: 1608 // lower = more dense
+  STARS_LIGHTNESS: 1608,
+  LUMINOSITY_MIN: 64,
+  LUMINOSITY_MAX: 208
 } as const;
 
-export function useStars(canvasRef: RefObject<HTMLCanvasElement | null>) {
-  useEffect(() => {
-    if (!canvasRef || !canvasRef.current) return;
+type UseStars = {
+  canvasRef: RefObject<HTMLCanvasElement | null>;
+  wrapperRef: RefObject<HTMLElement | null>;
+};
 
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d')!;
+export const useStars = ({ canvasRef, wrapperRef }: UseStars) => {
+  useEffect(() => {
+    if (!canvasRef || !canvasRef.current || !wrapperRef || !wrapperRef.current)
+      return;
+
+    const canvasNode = canvasRef.current;
+    const wrapperNode = wrapperRef.current;
+
+    const ctx = canvasNode.getContext('2d')!;
+
+    const getDPIRatio = (min?: number) =>
+      min === undefined
+        ? window.devicePixelRatio
+        : Math.max(window.devicePixelRatio, min);
+
+    const canvasConfig = {
+      width: 0,
+      height: 0,
+      center: {
+        x: 0,
+        y: 0
+      }
+    };
 
     class Star {
       angle: number;
@@ -39,51 +63,71 @@ export function useStars(canvasRef: RefObject<HTMLCanvasElement | null>) {
     }
 
     let stars: Star[] = [];
-
     let starsCount: number;
 
-    let canvasWidth: number;
-    let canvasHeight: number;
-    let canvasCenter: {
-      x: number;
-      y: number;
-    };
-
     const setStarsCount = () => {
+      const DPIRatio = getDPIRatio(1);
+
       starsCount = clamp(
-        StarsConfig.MIN_STARS_COUNT,
+        StarsConfig.MIN_STARS_COUNT *
+          Math.min(DPIRatio, StarsConfig.STARS_COUNT_MAX_RETINA_MULTIPLIER),
         Math.floor(
-          ((window.innerWidth * window.innerHeight) /
-            window.devicePixelRatio /
-            StarsConfig.STARS_DENSITY) *
+          ((wrapperNode.offsetWidth *
+            wrapperNode.offsetHeight *
+            Math.min(DPIRatio, StarsConfig.STARS_COUNT_MAX_RETINA_MULTIPLIER)) /
+            StarsConfig.STARS_LIGHTNESS) *
             StarsConfig.STARS_COUNT_MULTIPLIER
         ),
-        StarsConfig.MAX_STARS_COUNT
+        StarsConfig.MAX_STARS_COUNT *
+          Math.min(DPIRatio, StarsConfig.STARS_COUNT_MAX_RETINA_MULTIPLIER)
       );
     };
 
     const setCansvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const DPIRatio = getDPIRatio(1);
 
-      const scale = Math.max(window.devicePixelRatio, 1);
+      canvasConfig.width = wrapperNode.offsetWidth;
+      canvasConfig.height = wrapperNode.offsetHeight;
+      canvasConfig.center = {
+        x: canvasConfig.width / 2,
+        y: canvasConfig.height / 2
+      };
 
-      canvasWidth = canvas.width;
-      canvasHeight = canvas.height;
+      canvasNode.width = canvasConfig.width * DPIRatio;
+      canvasNode.height = canvasConfig.height * DPIRatio;
 
-      canvas.width = canvasWidth * scale;
-      canvas.height = canvasHeight * scale;
+      canvasNode.style.width = `${canvasConfig.width}px`;
+      canvasNode.style.height = `${canvasConfig.height}px`;
 
-      canvas.style.width = canvasWidth + 'px';
-      canvas.style.height = canvasHeight + 'px';
-
-      ctx.scale(scale, scale);
-
-      canvasCenter = { x: canvasWidth / 2, y: canvasHeight / 2 };
+      if (DPIRatio > 1) {
+        ctx.scale(DPIRatio, DPIRatio);
+      }
     };
 
     setCansvasSize();
     setStarsCount();
+
+    const getCanvasLength = () =>
+      canvasConfig.width / 2 + canvasConfig.height / 2;
+
+    const setStarParameters = (
+      star: Star,
+      minDistance: number,
+      fadeIn: number
+    ) => {
+      const luminosity = getRandomNumber(
+        StarsConfig.LUMINOSITY_MIN,
+        StarsConfig.LUMINOSITY_MAX
+      );
+
+      star.angle = getRandomNumber(0, 2 * Math.PI);
+      star.speed = getRandomNumber(10, 100);
+      star.distance = getRandomNumber(minDistance, getCanvasLength());
+      star.fadeIn = fadeIn;
+      star.color.r = luminosity;
+      star.color.g = luminosity;
+      star.color.b = luminosity;
+    };
 
     const createStars = () => {
       const newStarsCount = starsCount - stars.length;
@@ -91,18 +135,7 @@ export function useStars(canvasRef: RefObject<HTMLCanvasElement | null>) {
       for (let i = 0; i < newStarsCount; i++) {
         const newStar = new Star();
 
-        newStar.angle = getRandomNumber(0, 2 * Math.PI);
-        newStar.speed = getRandomNumber(10, 100);
-        newStar.distance = getRandomNumber(
-          20,
-          canvasWidth / 2 + canvasHeight / 2
-        );
-
-        const lum = getRandomNumber(1, 255);
-        newStar.fadeIn = getRandomNumber(0.01, 1);
-        newStar.color.r = lum;
-        newStar.color.g = lum;
-        newStar.color.b = lum;
+        setStarParameters(newStar, 20, getRandomNumber(0.01, 1));
 
         stars.push(newStar);
       }
@@ -113,49 +146,34 @@ export function useStars(canvasRef: RefObject<HTMLCanvasElement | null>) {
         star.distance +=
           star.speed *
           StarsConfig.STARS_SPEED *
-          (star.distance / (canvasWidth / 2 + canvasHeight / 2));
+          (star.distance / getCanvasLength());
         star.fadeIn += 0.01;
 
         if (star.fadeIn > 1) {
           star.fadeIn = 1;
         }
 
-        if (star.distance > canvasWidth / 2 + canvasHeight / 2) {
-          star.angle = getRandomNumber(0, 2 * Math.PI);
-          star.speed = getRandomNumber(10, 100);
-          star.distance = getRandomNumber(
-            1,
-            canvasWidth / 2 + canvasHeight / 2
-          );
-
-          const lum = getRandomNumber(1, 255);
-          star.fadeIn = 0;
-          star.color.r = lum;
-          star.color.g = lum;
-          star.color.b = lum;
+        if (star.distance > getCanvasLength()) {
+          setStarParameters(star, 1, 0);
         }
       }
     };
 
-    const draw = () => {
-      ctx.fillStyle = StarsConfig.SPACE_COLOR;
-      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+    const paintStars = () => {
+      ctx.clearRect(0, 0, canvasConfig.width, canvasConfig.height);
+
+      const DPIRatio = getDPIRatio();
 
       for (const star of stars) {
-        const starX = Math.cos(star.angle) * star.distance + canvasCenter.x;
-        const starY = Math.sin(star.angle) * star.distance + canvasCenter.y;
+        const starX =
+          Math.cos(star.angle) * star.distance + canvasConfig.center.x;
+        const starY =
+          Math.sin(star.angle) * star.distance + canvasConfig.center.y;
         const starTransparency =
           star.color.a * (star.distance / 100) * star.fadeIn;
 
         ctx.beginPath();
-        ctx.arc(
-          starX,
-          starY,
-          1 / window.devicePixelRatio,
-          0,
-          2 * Math.PI,
-          false
-        );
+        ctx.arc(starX, starY, 1 / DPIRatio, 0, 2 * Math.PI, false);
         ctx.fillStyle = `rgba(${star.color.r}, ${star.color.g}, ${star.color.b}, ${starTransparency})`;
         ctx.fill();
       }
@@ -174,19 +192,20 @@ export function useStars(canvasRef: RefObject<HTMLCanvasElement | null>) {
       }
     };
 
-    const frame = () => {
+    const renderFrame = () => {
       updateStars();
-      draw();
-      window.requestAnimationFrame(frame);
+      paintStars();
+
+      window.requestAnimationFrame(renderFrame);
     };
 
     createStars();
-    frame();
+    renderFrame();
 
     window.addEventListener('resize', handleWindowResize);
 
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  }, [canvasRef]);
-}
+  }, [canvasRef, wrapperRef]);
+};
