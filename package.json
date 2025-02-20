@@ -33,9 +33,9 @@
     "clsx": "2.1.1",
     "deepmerge": "4.3.1",
     "just-clamp": "4.2.0",
-    "motion": "12.4.3",
+    "motion": "12.4.5",
     "next": "15.1.7",
-    "next-intl": "3.26.3",
+    "next-intl": "3.26.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-tooltip": "5.28.0",
@@ -62,13 +62,13 @@
     "eslint-config-prettier": "10.0.1",
     "husky": "9.1.7",
     "jsdom": "26.0.0",
-    "postcss": "8.5.2",
+    "postcss": "8.5.3",
     "prettier": "3.5.1",
     "prettier-plugin-tailwindcss": "0.6.11",
     "steiger": "0.5.5",
     "tailwindcss": "3.4.17",
     "typescript": "5.7.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.0.5"
+    "vitest": "3.0.6"
   }
 }
