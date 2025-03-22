@@ -72,7 +72,7 @@
     "postcss": "8.5.3",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11",
-    "steiger": "0.5.5",
+    "steiger": "0.5.6",
     "tailwindcss": "3.4.17",
     "typescript": "5.8.2",
     "vite-tsconfig-paths": "5.1.4",
