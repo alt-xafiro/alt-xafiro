@@ -55,7 +55,7 @@
     "@commitlint/types": "19.8.0",
     "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "9.24.0",
-    "@playwright/test": "1.51.1",
+    "@playwright/test": "1.52.0",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.3.0",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
