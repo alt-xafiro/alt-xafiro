@@ -35,7 +35,7 @@
     ]
   },
   "dependencies": {
-    "@headlessui/react": "2.2.2",
+    "@headlessui/react": "2.2.3",
     "@uidotdev/usehooks": "2.4.1",
     "accept-language": "3.0.20",
     "clsx": "2.1.1",
