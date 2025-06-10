@@ -8,7 +8,6 @@ type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   CustomComponentProps & {
     resetStyles?: boolean;
     active?: boolean;
-    href?: string;
   };
 
 export function ExternalLink({
