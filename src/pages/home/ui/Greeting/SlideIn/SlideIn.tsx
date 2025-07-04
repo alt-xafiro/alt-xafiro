@@ -9,7 +9,7 @@ const Config = {
   OFFSET_Y: 200,
   TYPE: 'spring',
   BOUNCE: 0.4
-};
+} as const;
 
 type SlideInProps = CustomComponentProps & {
   step?: number;
