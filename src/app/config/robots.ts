@@ -1,11 +1,13 @@
 import type { MetadataRoute } from 'next';
 
+import { SITE_URL } from '@shared/config';
+
 export function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/'
     },
-    sitemap: 'https://xafiro.site/sitemap.xml'
+    sitemap: `${SITE_URL}/sitemap.xml`
   };
 }

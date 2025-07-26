@@ -2,6 +2,8 @@ import { getTranslations } from 'next-intl/server';
 
 import type { Metadata } from 'next';
 
+import { SITE_URL } from '@shared/config';
+
 type generateMetadataProps = {
   params: Promise<{ locale: string }>;
 };
@@ -14,7 +16,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
-    metadataBase: new URL('https://xafiro.site'),
+    metadataBase: new URL(SITE_URL),
     title: {
       template: `%s · ${t('title')}`,
       default: `${t('title')} · ${t('subtitle')}`
@@ -41,17 +43,17 @@ export async function generateMetadata({
     manifest: '/manifest.webmanifest',
     openGraph: {
       siteName: `${t('title')} — ${t('subtitle')}`,
-      url: 'https://xafiro.site',
+      url: SITE_URL,
       images: [
         {
-          url: 'https://xafiro.site/opengraph-image.png',
+          url: `${SITE_URL}/opengraph-image.png`,
           width: 1200,
           height: 630
         }
       ]
     },
     twitter: {
-      images: ['https://xafiro.site/opengraph-image.png']
+      images: [`${SITE_URL}/opengraph-image.png`]
     }
   };
 }
