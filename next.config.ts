@@ -14,7 +14,8 @@ const nextConfig: NextConfig = {
     staleTimes: {
       dynamic: 600
     }
-  }
+  },
+  distDir: process.env.NODE_ENV === 'production' ? 'build' : '.next'
 };
 
 export default withNextIntl(nextConfig);
