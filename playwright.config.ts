@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const PORT = 3032;
+
 export default defineConfig({
   testDir: './src',
   testMatch: '**/*.e2e.?(c|m)[jt]s?(x)',
@@ -12,7 +14,7 @@ export default defineConfig({
   reporter: [['html', { open: 'never' }]],
 
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: `http://localhost:${PORT}`,
     trace: 'on-first-retry'
   },
 
@@ -30,7 +32,7 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] }
     },
 
-    /* Mobile viewports. */
+    /* Mobile viewports */
     {
       name: 'Mobile Chrome',
       use: { ...devices['Pixel 7'] }
@@ -40,7 +42,7 @@ export default defineConfig({
       use: { ...devices['iPhone 13'] }
     },
 
-    /* Branded browsers. */
+    /* Branded browsers */
     {
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'], channel: 'msedge' }
@@ -51,8 +53,8 @@ export default defineConfig({
     }
   ],
   webServer: {
-    command: 'pnpm start',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI
+    command: `pnpm start -p ${PORT}`,
+    url: `http://localhost:${PORT}`,
+    reuseExistingServer: false
   }
 });
